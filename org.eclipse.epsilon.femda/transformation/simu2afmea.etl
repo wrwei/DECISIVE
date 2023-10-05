@@ -1,0 +1,132 @@
+import "utility.eol";
+
+pre preblock{
+
+var begin = "";
+var end = "";
+"Begin transformation...".println();
+var related = Sequence{"Resistor", "Inductor", "Capacitor"};
+var component_package = new T!ComponentPackage;
+Block.all.select(b|b.Name = "DC Voltage Source").println();
+}
+
+post postblock{
+"Transformation done!".println();
+}
+
+rule Block2DCPowerSupply
+	transform s: S!SimscapeBlock
+	to t: T!DCPowerSupply {
+	guard: s.Name = "DC Voltage Source"
+	
+	var name = s.Name;
+	t.name = s.Description;
+//	t.voltage = s.ConstantVoltage.asFloat();
+	component_package.elements.add(t);
+
+	var predecessor = getPredecessor(s).equivalent();
+	var successor = getSuccessor(s).equivalent();
+	if(predecessor.isDefined()) {
+		createLine(predecessor, t);
+	}
+	if(sucessor.isDefined()) {
+		createLine(t, successor);
+	}	
+}
+
+rule Block2Inductor
+	transform s: S!SimscapeBlock
+	to t: T!Inductor {
+	guard: s.Name = "Inductor"
+	
+	var name = s.Name;
+	t.name = s.Description;
+	t.inductance = s.Inductance.asFloat();
+	component_package.elements.add(t);
+
+	var predecessor = getPredecessor(s).equivalent();
+	var successor = getSuccessor(s).equivalent();
+	if(predecessor.isDefined()) {
+		createLine(predecessor, t);
+	}
+	if(sucessor.isDefined()) {
+		createLine(t, successor);
+	}	
+}
+
+rule Block2Resistor
+	transform s: S!SimscapeBlock
+	to t: T!Resistor {
+	guard: s.Name = "Resistor"
+	
+	var name = s.Name;
+	t.name = s.Description;
+	t.resistance = s.Resistance.asFloat();
+	component_package.elements.add(t);
+
+	var predecessor = getPredecessor(s).equivalent();
+	var successor = getSuccessor(s).equivalent();
+	if(predecessor.isDefined()) {
+		createLine(predecessor, t);
+	}
+	if(sucessor.isDefined()) {
+		createLine(t, successor);
+	}	
+}
+
+rule Block2Capacitor
+	transform s: S!SimscapeBlock
+	to t: T!Capacitor {
+	guard: s.Name = "Capacitor"
+	
+	var name = s.Name;
+	t.name = s.Description;
+	t.capacitance = s.Capacitance.asFloat();
+	component_package.elements.add(t);
+
+	var predecessor = getPredecessor(s).equivalent();
+	var successor = getSuccessor(s).equivalent();
+	if(predecessor.isDefined()) {
+		createLine(predecessor, t);
+	}
+	if(sucessor.isDefined()) {
+		createLine(t, successor);
+	}	
+}
+
+operation createLine(source: Any, target: Any) {
+	var line = new T!Line;
+	line.source = source;
+	line.destination = target;
+	component_package.elements.add(line);
+}
+operation getConnectivity(element: Any) {
+	return element.PortConnectivity;
+}
+
+operation getElementByHandle(handle : Any) {
+	var blocks = getAllBlocks();
+	var ret = blocks.selectOne(b|b.handle = handle);
+	return ret;
+}
+
+operation getPredecessor(element: Any) {
+	var connectivity = getConnectivity(element).first;
+	connectivity.DstBlock.println();
+	if(connectivity.isDefined()) {
+		return getElementByHandle(connectivity.DstBlock);
+	}
+	else {
+		return null;
+	}
+}
+
+operation getSuccessor(element: Any) {
+	var connectivity = getConnectivity(element).second;
+	if(connectivity.isDefined()) {
+		return getElementByHandle(connectivity.DstBlock);
+	}
+	else {
+		return null;
+	}
+}

@@ -1,0 +1,72 @@
+var start = Component.all.selectOne(c|c.name = "DC1");
+var stop = Component.all.selectOne(c|c.name = "CS1");
+"dfs starting...".println();
+var discovered = new Map;
+dfs(start);
+var safety_related_elements = getPath(start, stop);
+("Safety related elements: " + safety_related_elements.name).println();
+make_safety_related(safety_related_elements);
+"dfs finished...".println();
+
+operation make_safety_related(sequence) {
+	for(e in sequence) {
+		e.safety_related = true;
+	}
+}
+
+operation dfs(start) {
+	var edges = getEdges(start);
+	for(e in edges) {
+		var v = e.to; 
+		if(not discovered.containsKey(v)) {
+			discovered.put(v, e);
+			dfs(v);		
+		}
+	}
+}
+
+operation getEdges(node) {
+	var wires = S!Transmission_Wire.all;
+	var ret = new Set();
+	for(w in wires) {
+		if(w.from = node) {
+			ret.add(w);
+		}
+	}
+	return ret;
+}
+
+operation getPath(start, v) {
+	var result = new Sequence();
+	if(discovered.containsKey(v)) {
+		result.add(v);
+		var walk = v;
+		while(walk <> start) {
+			var e = discovered.get(walk);
+			var parent = e.from;
+			result.add(parent);
+			walk = parent;
+		}
+	}
+	return result;
+}
+
+operation showWires() {
+	for(w in S!Transmission_Wire.all) {
+	var from;
+	var to;
+	if(w.from.isTypeOf(S!Point)) {
+		from = "point";
+	}
+	else {
+		from = w.from.name;
+	}
+	if(w.to.isTypeOf(S!Point)) {
+		to = "point";
+	}
+	else {
+		to = w.to.name;
+	}
+	(from + "-" + to).println();
+}
+}

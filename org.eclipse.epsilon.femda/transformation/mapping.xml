@@ -1,0 +1,11 @@
+<spreadsheet>
+  <worksheet name="FMEA">
+    <column index="0" name="Component" datatype="String"/>
+    <column index="1" name="Type" datatype="String"/>
+    <column index="2" name="FIT" datatype="float"/>
+    <column index="3" name="Safety_Related" datatype="String"/>
+    <column index="4" name="Failure_Mode" datatype="String"/>
+    <column index="5" name="Failure_Mode_Dist" datatype="float"/>
+    <column index="6" name="Single_Point_Failure_Rate" datatype="float"/>
+  </worksheet>
+</spreadsheet>

@@ -1,0 +1,102 @@
+@namespace(uri="http://automated.fmea/electrical", prefix="electrical")
+
+package electrical;
+
+import "http://automated.fmea/arch";
+
+abstract class ElectricalComponent extends arch.Component {
+	attr float fit; 
+	attr boolean safety_related;
+	val Failure_Mode_Entry[*] failure_modes;
+	val Safety_Mechanism[*] safety_mechanisms;
+}
+
+class Failure_Mode_Entry extends arch.ArchitectureAsset {
+	attr String failure_mode;
+	attr float mode_distribution;	
+}
+
+class Safety_Mechanism extends arch.ArchitectureAsset {
+	ref Failure_Mode_Entry handle;
+	attr String mechanism;
+	attr float coverage;	
+}
+
+
+class Line extends arch.ComponentRelationship {
+}
+
+abstract class ElectricalElement extends ElectricalComponent {
+	
+}
+
+class Resistor extends ElectricalElement {
+	attr float resistance;
+}
+
+class Capacitor extends ElectricalElement {
+	attr float capacitance;
+}
+
+class Inductor extends ElectricalElement {
+	attr float inductance;
+}
+
+abstract class ElectricalSource extends ElectricalComponent {
+	attr float voltage;
+	attr float current;
+}
+
+class ACPowerSupply extends ElectricalSource {
+	attr float freuqnecy;
+}
+
+class DCPowerSupply extends ElectricalSource {
+
+}
+
+class Lamp extends Resistor {
+	attr float input_voltage;
+	attr float input_current;
+}
+
+
+abstract class Transistor extends ElectricalElement {
+	
+}
+
+class MOSFET extends Transistor {
+	
+}
+
+class OPAmp extends Transistor {
+	
+}
+
+class Ground extends ElectricalComponent {
+	
+}
+
+class Diode extends Transistor {
+	
+}
+
+class Triode extends Transistor {
+	
+}
+
+class Joint extends ElectricalComponent {
+	
+}
+
+abstract class ElectricalSensor extends ElectricalComponent {
+	
+}
+
+class CurrentSensor extends ElectricalSensor {
+	
+}
+
+class VoltageSensor extends ElectricalSensor {
+	
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<arch:ComponentPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arch="http://automated.fmea/arch" xmlns:electrical="http://automated.fmea/electrical">
+  <elements xsi:type="electrical:CurrentSensor" gid="4.0001220703125" name="CS1"/>
+  <elements xsi:type="electrical:Line" source="//@elements.2" destination="//@elements.0"/>
+  <elements xsi:type="electrical:Resistor" gid="9.0001220703125" name="R1" resistance="10.0"/>
+  <elements xsi:type="electrical:DCPowerSupply" gid="5.0001220703125" name="DC1"/>
+  <elements xsi:type="electrical:Line" source="//@elements.3" destination="//@elements.5"/>
+  <elements xsi:type="electrical:Inductor" gid="7.0001220703125" name="L1" inductance="1.0E-6"/>
+  <elements xsi:type="electrical:Line" source="//@elements.5" destination="//@elements.2"/>
+</arch:ComponentPackage>

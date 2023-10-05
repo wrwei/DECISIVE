@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="electrical" nsURI="http://automated.fmea/electrical" nsPrefix="electrical">
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalComponent" abstract="true"
+      eSuperTypes="http://automated.fmea/arch#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="safety_related" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="failure_modes" upperBound="-1"
+        eType="#//Failure_Mode_Entry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="safety_mechanisms" upperBound="-1"
+        eType="#//Safety_Mechanism" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Failure_Mode_Entry" eSuperTypes="http://automated.fmea/arch#//ArchitectureAsset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="failure_mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode_distribution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Safety_Mechanism" eSuperTypes="http://automated.fmea/arch#//ArchitectureAsset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="handle" eType="#//Failure_Mode_Entry"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanism" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coverage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="http://automated.fmea/arch#//ComponentRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalElement" abstract="true" eSuperTypes="#//ElectricalComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Resistor" eSuperTypes="#//ElectricalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Capacitor" eSuperTypes="#//ElectricalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacitance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inductor" eSuperTypes="#//ElectricalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inductance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalSource" abstract="true" eSuperTypes="#//ElectricalComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ACPowerSupply" eSuperTypes="#//ElectricalSource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="freuqnecy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DCPowerSupply" eSuperTypes="#//ElectricalSource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Lamp" eSuperTypes="#//Resistor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input_voltage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input_current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transistor" abstract="true" eSuperTypes="#//ElectricalElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MOSFET" eSuperTypes="#//Transistor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OPAmp" eSuperTypes="#//Transistor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ground" eSuperTypes="#//ElectricalComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Diode" eSuperTypes="#//Transistor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Triode" eSuperTypes="#//Transistor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Joint" eSuperTypes="#//ElectricalComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalSensor" abstract="true" eSuperTypes="#//ElectricalComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentSensor" eSuperTypes="#//ElectricalSensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VoltageSensor" eSuperTypes="#//ElectricalSensor"/>
+</ecore:EPackage>

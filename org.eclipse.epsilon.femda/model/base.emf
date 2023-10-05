@@ -1,0 +1,32 @@
+@namespace(uri="http://automated.fmea/base", prefix="base")
+	
+package base;
+
+abstract class NamedElement {
+	attr String gid;
+	attr boolean isCitation;
+	attr String name;
+	ref NamedElement citedElement;
+}
+
+abstract class UtilityElement extends NamedElement{
+	attr String content;
+}
+
+class ImplementationConstraint extends UtilityElement {
+	
+}
+
+class Description extends UtilityElement {
+	
+}
+
+abstract class ModelElement extends NamedElement {
+	val Description description;
+	val ImplementationConstraint[*] implementationConstraints;
+}
+
+class ArtifactElement extends ModelElement {
+	
+}
+

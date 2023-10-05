@@ -1,0 +1,92 @@
+var start = getNodeByID("DC1");
+var stop = getNodeByID("CS1");
+
+
+"dfs starting...".println();
+var discovered = new Map;
+dfs(start);
+var safety_related_elements = getPath(start, stop);
+("Safety related elements: " + safety_related_elements.name).println();
+make_safety_related(safety_related_elements);
+"dfs finished...".println();
+
+operation make_safety_related(sequence) {
+	for(e in sequence) {
+		e.safety_related = true;
+	}
+}
+
+operation dfs(start) {
+	var edges = getEdges(start);
+	for(e in edges) {
+		var v = e.destination; 
+		if(not discovered.containsKey(v)) {
+			discovered.put(v, e);
+			dfs(v);		
+		}
+	}
+}
+
+@cached
+operation getNodes() {
+	return S!ElectricalComponent.all;
+}
+
+@cached
+operation getEdges() {
+	return S!Line.all;
+}
+
+operation getEdges(start: Any) {
+	var edges = getEdges();
+	var ret = new Set();
+	for(e in edges) {
+		if(e.source = start) {
+			ret.add(e);
+		}
+	}
+	return ret;
+}
+
+operation getNodeByID(name: String) {
+	return getNodes().selectOne(n|n.name = name);
+}
+
+operation getPath(start, v) {
+	var result = new Sequence();
+	if(discovered.containsKey(v)) {
+		result.add(v);
+		var walk = v;
+		while(walk <> start) {
+			var e = discovered.get(walk);
+			var parent = e.source;
+			result.add(parent);
+			walk = parent;
+		}
+	}
+	return result;
+}
+
+
+operation make_excel() {
+	var current;
+	for(ar in analysis_results) {
+		var component = ar.at(0);
+		var place = component;
+		if(current = component) {
+			place = "";
+		}
+		else {
+			current = component;
+		}
+		new FMEA!FMEA(
+		Component=place,
+		Type=ar.at(1),
+		FIT=ar.at(2),
+		Safety_Related=ar.at(3),
+		Failure_Mode=ar.at(4),
+		Failure_Mode_Dist=ar.at(5),
+		Single_Point_Failure_Rate=ar.at(6)
+		);
+	}
+}

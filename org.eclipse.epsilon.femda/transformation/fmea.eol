@@ -1,0 +1,96 @@
+import "utility.eol";
+
+// ==================params==================
+var fit = new Map;
+var original_settings = new Map;
+var original_reading;
+var failure_rate = new Map;
+var failure_mode = new Map;
+var analysis_results = new Sequence;
+
+
+
+/*
+"initialising...".println();
+var resistor = getResistor("R1");
+resistor.Name.println();
+setResistance(resistor, 10);
+var resistance = resistor.Resistance;
+var name = getDescription(resistor);
+var inductor = getInductors().first;
+inductor.Description = "L1";
+inductor.Inductance = 0.000001;
+"Init done!".println();
+simulate();
+var ir = getReading("simout");
+("Intrinsic(correct) circuit reading: " + ir).println();
+*/
+ 
+
+
+
+init();
+printParams();
+analyse();
+make_excel();
+
+"Analysis done".println();
+for(ar in analysis_results) {
+	ar.println();
+}
+
+
+// ==================demos==================
+operation demo() {
+	var inductor = getInductors().first;
+	inductor.println();
+	var s = inductor_short(inductor);
+	if(s = true) {
+		"inductor short is safety related".errln();
+	}
+	else {
+		"inductor short is NOT safety related".errln();
+	}
+	
+	var inductor = getInductors().first;
+	inductor.println();
+	var s = inductor_open(inductor);
+	if(s = true) {
+		"inductor open is safety related".errln();
+	}
+	else {
+		"inductor open is NOT safety related".errln();
+	}
+	
+	"trying to imitate short...".println();
+	 var short = resistor_short(resistor);
+	if(short = true) {
+		("Resistance " + name + "'s failure mode: Short is safety related").errln();
+	}
+	else {
+		("Resistance " + name + "'s failure mode: Short is NOT safety related").println();
+	}
+	
+	
+	"trying to imitate open...".println();
+	var open = resistor_open(resistor);
+	if(open = true) {
+		("Resistance " + name + "'s failure mode: Open is safety related").errln();
+	}
+	else {
+		("Resistance " + name + "'s failure mode: Open is NOT safety related").println();
+	}
+	
+}
+
+operation demo2() {
+	"Beginning iterative test simulation...".println();
+	 for(i in Sequence{1..10}) {
+	 
+	 	("simulation cycle " + i).println();
+	 	setResistance(resistor, 15 + i*5);
+	 	simulate();
+		("Reading of circuit: " + getReading("simout")).println();
+	 }
+	 "Simulation done".println();
+}

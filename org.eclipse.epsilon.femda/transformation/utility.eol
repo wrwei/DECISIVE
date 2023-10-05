@@ -1,0 +1,344 @@
+operation capacitor_short(element: Any) {
+	var capacitance = element.Capacitance.asFloat();
+	inductance.println();
+	setCapacitance(element, "1e-20");
+	simulate();
+	var sr = getReading("simout");
+	element.Inductance = inductance;
+	if((original_reading-sr).abs()/original_reading > 0.0000001) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+operation capacitor_open(element: Any) {
+	var capacitance = element.Capacitance.asFloat();
+	inductance.println();
+	setCapacitance(element, 10000);
+	simulate();
+	var sr = getReading("simout");
+	element.Inductance = inductance;
+	if((original_reading-sr).abs()/original_reading > 0.0000001) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+operation inductor_open(element: Any) {
+	var inductance = element.Inductance.asFloat();
+	setInductance(element, inductance*100000.0);
+	simulate();
+	var sr = getReading("simout");
+	element.Inductance = inductance;
+	if((original_reading-sr).abs()/original_reading > 0.0000001) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+operation inductor_short(element: Any) {
+	var inductance = element.Inductance.asFloat();
+	setInductance(element, inductance/100000.0);
+	simulate();
+	var sr = getReading("simout");
+	element.Inductance = inductance;
+	if((original_reading-sr).abs()/original_reading > 0.0000001) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+operation inductor_open(element: Any) {
+	var inductance = element.Inductance.asFloat();
+	inductance.println();
+	setInductance(element, inductance*100000.0);
+	element.Inductance.println();
+	simulate();
+	var sr = getReading("simout");
+	element.Inductance = inductance;
+	if((ir-sr).abs()/ir > 0.0000001) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+operation resistor_short(element: Any) {
+	var resistance = element.Resistance;
+	setResistance(element, 0);
+	simulate();
+	var sr = getReading("simout");
+	element.Resistance = resistance;
+	if(sr/original_reading > 10000.0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+	
+}
+
+operation resistor_open(element: Any) {
+	var resistance = element.Resistance.asInteger();
+	setResistance(element, resistance*1000);
+	simulate();
+	var sr = getReading("simout");
+	element.Resistance = resistance;
+	if(sr < original_reading*0.1) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+operation getResistor(name: Any) {
+	var r = getResistors().select(r|r.description = name);
+	if(r.size() > 1) {
+		("error: more than one resistor has name: " + name).errln();
+	}
+	else {
+		return r.first();
+	}
+}
+
+operation getDescription(element: Any) {
+	return element.description;
+}
+
+operation setDescription(element : Any, value: String) {
+	element.description = value;
+}
+
+operation simulate() {
+	M.simulate();
+}
+
+// ==================Query related==================
+@cached
+operation getEngine() {
+	return M.engine;
+}
+
+operation inspect(element : Any) {
+	element.inspect();
+}
+
+operation getReading(simout : String) {
+	var engine = getEngine();
+	engine.evalAsync("s = simout.get('"+simout+"')");
+	var s = engine.getVariable("s").last;
+	return s;
+}
+
+operation setResistance(element: Any, value: Integer) {
+	element.Resistance = value;
+}
+
+operation setInductance(element: Any, value: Any) {
+	element.Inductance = value;
+}
+
+operation setCapacitance(element: Any, value: Any) {
+	element.Capacitance = value;
+}
+
+operation getHandle(element : Any) {
+	return element.handle;
+}
+
+operation getResistors() {
+	return getAllBlocks().select(b|b.Name = "Resistor");
+}
+
+operation getCapacitors() {
+	return getAllBlocks().select(b|b.Name = "Capacitor");
+}
+
+operation getInductors() {
+	return getAllBlocks().select(b|b.Name = "Inductor");
+}
+
+operation getCurrentSensors() {
+	return getAllBlocks().select(b|b.Name = "Current Sensor");
+}
+
+operation getScopes() {
+	return Scope.all();
+}
+
+operation getSolvers() {
+	return getAllBlocks().select(b|b.Name = "Solver Configuration");
+}
+
+operation getToWorkspace() {
+	return getAllBlocks().select(b|b.Name = "To Workspace");
+}
+
+@cached
+operation getAllBlocks() {
+	return Block.all;
+}
+
+// ==================FIT related operations==================
+operation importFIT() {
+	var entries = FIT!Entry.all;
+	for(e in entries) {
+		fit.put(e.Component.asString(), e.FIT.asReal());
+	}
+}
+
+operation getFIT(element: String) {
+	return fit.get(element);
+}
+
+// ==================Failure Mode related==================
+operation import_failure_mode() {
+	var entries = FM!Entry.all;
+	var current;
+	for(e in entries) {
+		var map;
+		if(e.Device_Type.isDefined()) {
+			current = e.Device_Type;
+			var type = current.asString();
+			map = new Map();
+			map.put(e.Failure_Mode.asString(), e.Mode_Distribution.asFloat());
+			failure_mode.put(type, map);			
+		}
+		else {
+			var type = current.asString();
+			map = failure_mode.get(type);
+			map.put(e.Failure_Mode.asString(), e.Mode_Distribution.asFloat());
+		}
+	}
+}
+
+// ==================Config related==================
+operation init() {
+	save_origin();
+	simulate();
+	original_reading = getReading("simout");
+	importFIT();
+	import_failure_mode();
+}
+
+operation printParams() {
+	("Fit size: " + fit.size).println();
+	fit.println();
+	("intrinsic set:" + original_settings.size).println();
+	("intrinsic reading: " + original_reading).println();
+	("failure mode size: " + failure_mode.size).println();
+}
+
+operation save_origin() {
+	for(r in getResistors()) {
+		original_settings.put(r.Description, r.Resistance);
+	}
+	for(c in getCapacitors()) {
+		original_settings.put(c.Description, c.Capacitance);
+	}
+	for(l in getInductors()) {
+		original_settings.put(l.Description, l.Inductance);
+	}
+}
+// ==================Analysis related==================
+operation analyse() {
+	for(r in getResistors()) {
+		("analysing " + r.Description + "... ").println();
+		var type = "Resistor";
+		var fms = failure_mode.get(type);
+		for(fm in fms.keySet()) {
+			if(fm = "Open") {
+				var ret = resistor_open(r);
+				record_failure_mode(r, type, "Open", ret);		
+			}
+			else if(fm = "Short") {
+				var ret = resistor_short(r);
+				record_failure_mode(r, type, "Short", ret);
+			}
+			
+		}
+	}
+	for(c in getCapacitors()) {
+		("analysing " + c.Description + "... ").println();
+		var type = "Capacitor";
+		var fms = failure_mode.get(type);
+		for(fm in fms.keySet()) {
+			if(fm = "Open") {
+				var ret = capacitor_open(c);
+				record_failure_mode(c, type, "Open", ret);		
+			}
+			else if(fm = "Short") {
+				var ret = capacitor_short(c);
+				record_failure_mode(c, type, "Short", ret);
+			}
+			
+		}
+	}
+	for(l in getInductors()) {
+		("analysing " + l.Description + "... ").println();
+		var type = "Inductor";
+		var fms = failure_mode.get(type);
+		for(fm in fms.keySet()) {
+			if(fm = "Open") {
+				var ret = inductor_open(l);
+				record_failure_mode(l, type, "Open", ret);		
+			}
+			else if(fm = "Short") {
+				var ret = inductor_short(l);
+				record_failure_mode(l, type, "Short", ret);
+			}
+		}
+	}
+}
+
+operation record_failure_mode(element: Any, type: Any, fm: Any, safety_related: Boolean) {
+	var ret = new Sequence;
+	var failure_mode_dist = failure_mode.get(type).get(fm.asString());
+	var ffit = fit.get(type);
+	var spfr = ffit*failure_mode_dist;
+	ret.add(element.Description.asString());
+	ret.add(type.asString());
+	ret.add(ffit);
+	ret.add(safety_related ? "yes" : "no");
+	ret.add(fm.asString());
+	ret.add(failure_mode_dist);
+	ret.add(spfr);
+	analysis_results.add(ret);
+}
+
+// ==================Output related==================
+operation make_excel() {
+	var current;
+	for(ar in analysis_results) {
+		var component = ar.at(0);
+		var place = component;
+		if(current = component) {
+			place = "";
+		}
+		else {
+			current = component;
+		}
+		new FMEA!FMEA(
+		Component=place,
+		Type=ar.at(1),
+		FIT=ar.at(2),
+		Safety_Related=ar.at(3),
+		Failure_Mode=ar.at(4),
+		Failure_Mode_Dist=ar.at(5),
+//		Potential_To_Violate_Safety_Goal=ar.at(5),
+//		Safety_Mechanism="",
+//		Safety_Mechanism_Coverage="",
+		Single_Point_Failure_Rate=ar.at(6)
+		);
+	}
+}
