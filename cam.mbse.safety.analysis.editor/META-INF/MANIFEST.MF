@@ -5,7 +5,7 @@ Bundle-SymbolicName: cam.mbse.safety.analysis.editor;singleton:=true
 Automatic-Module-Name: cam.mbse.safety.analysis.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: mbsa.presentation.MbsaEditorPlugin$Implementation
+Bundle-Activator: hazard.presentation.HazardEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

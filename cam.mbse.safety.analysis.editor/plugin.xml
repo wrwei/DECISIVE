@@ -57,7 +57,7 @@
             id="hazard.presentation.Hazard_EditorID"
             name="%_UI_Hazard_Editor_label"
             icon="icons/full/obj16/Hazard_ModelFile.gif"
-            extensions="hazard"
+            extensions="hazard_"
             class="hazard.presentation.Hazard_Editor"
             contributorClass="hazard.presentation.Hazard_ActionBarContributor">
       </editor>

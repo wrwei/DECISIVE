@@ -4,8 +4,7 @@
     modelPluginID="cam.mbse.safety.analysis" modelName="Hazard" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false">
   <foreignModel>hazard.ecore</foreignModel>
-  <genPackages prefix="Hazard_" disposableProviderFactory="true" fileExtensions="hazard"
-      ecorePackage="hazard.ecore#/">
+  <genPackages prefix="Hazard_" disposableProviderFactory="true" ecorePackage="hazard.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Severity">
       <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/catastrophic"/>
       <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/critical"/>
@@ -56,7 +55,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//SafetyDecisionRationale/text"/>
     </genClasses>
   </genPackages>
-  <genPackages prefix="Base_" fileExtensions="base" ecorePackage="http://cam.ac.uk/mbsa/base#/">
+  <genPackages prefix="Base_" ecorePackage="http://cam.ac.uk/mbsa/base#/">
     <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//Element"/>
     <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//BaseElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/base#//BaseElement/gid"/>

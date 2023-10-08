@@ -552,7 +552,7 @@ public class Base_Editor
 					}
 				}
 				catch (CoreException exception) {
-					MbsaEditorPlugin.INSTANCE.log(exception);
+					HazardEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -669,7 +669,7 @@ public class Base_Editor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					MbsaEditorPlugin.INSTANCE.log(exception);
+					HazardEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -678,7 +678,7 @@ public class Base_Editor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					MbsaEditorPlugin.INSTANCE.log(exception);
+					HazardEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -721,13 +721,8 @@ public class Base_Editor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Mbsa_ItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Base_ItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Component_ItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Requirement_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Hazard_ItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Safety_concept_ItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Fta_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Base_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1563,7 +1558,7 @@ public class Base_Editor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			MbsaEditorPlugin.INSTANCE.log(exception);
+			HazardEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1772,7 +1767,7 @@ public class Base_Editor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return MbsaEditorPlugin.INSTANCE.getString(key);
+		return HazardEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1782,7 +1777,7 @@ public class Base_Editor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return MbsaEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return HazardEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

@@ -6,10 +6,6 @@ import base.Base_Package;
 
 import base.impl.Base_PackageImpl;
 
-import component.Component_Package;
-import component.impl.Component_PackageImpl;
-import fta.Fta_Package;
-import fta.impl.Fta_PackageImpl;
 import hazard.Cause;
 import hazard.ControlMeasure;
 import hazard.HazardElement;
@@ -25,8 +21,6 @@ import hazard.Severity;
 import hazard.Validation;
 import hazard.VerificationofEffectiveness;
 
-import mbsa.Mbsa_Package;
-import mbsa.impl.Mbsa_PackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -34,10 +28,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import requirement.Requirement_Package;
-import requirement.impl.Requirement_PackageImpl;
-import safety_concept.Safety_concept_Package;
-import safety_concept.impl.Safety_concept_PackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -178,36 +168,16 @@ public class Hazard_PackageImpl extends EPackageImpl implements Hazard_Package {
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Mbsa_Package.eNS_URI);
-		Mbsa_PackageImpl theMbsa_Package = (Mbsa_PackageImpl)(registeredPackage instanceof Mbsa_PackageImpl ? registeredPackage : Mbsa_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Base_Package.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Base_Package.eNS_URI);
 		Base_PackageImpl theBase_Package = (Base_PackageImpl)(registeredPackage instanceof Base_PackageImpl ? registeredPackage : Base_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Component_Package.eNS_URI);
-		Component_PackageImpl theComponent_Package = (Component_PackageImpl)(registeredPackage instanceof Component_PackageImpl ? registeredPackage : Component_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Requirement_Package.eNS_URI);
-		Requirement_PackageImpl theRequirement_Package = (Requirement_PackageImpl)(registeredPackage instanceof Requirement_PackageImpl ? registeredPackage : Requirement_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Safety_concept_Package.eNS_URI);
-		Safety_concept_PackageImpl theSafety_concept_Package = (Safety_concept_PackageImpl)(registeredPackage instanceof Safety_concept_PackageImpl ? registeredPackage : Safety_concept_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Fta_Package.eNS_URI);
-		Fta_PackageImpl theFta_Package = (Fta_PackageImpl)(registeredPackage instanceof Fta_PackageImpl ? registeredPackage : Fta_Package.eINSTANCE);
 
 		// Create package meta-data objects
 		theHazard_Package.createPackageContents();
-		theMbsa_Package.createPackageContents();
 		theBase_Package.createPackageContents();
-		theComponent_Package.createPackageContents();
-		theRequirement_Package.createPackageContents();
-		theSafety_concept_Package.createPackageContents();
-		theFta_Package.createPackageContents();
 
 		// Initialize created meta-data
 		theHazard_Package.initializePackageContents();
-		theMbsa_Package.initializePackageContents();
 		theBase_Package.initializePackageContents();
-		theComponent_Package.initializePackageContents();
-		theRequirement_Package.initializePackageContents();
-		theSafety_concept_Package.initializePackageContents();
-		theFta_Package.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theHazard_Package.freeze();
