@@ -1,6 +1,6 @@
 /**
  */
-package fta.presentation;
+package mbsa.presentation;
 
 
 import java.util.ArrayList;
@@ -69,12 +69,10 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import fta.Fta_Factory;
-import fta.Fta_Package;
+import mbsa.Mbsa_Factory;
+import mbsa.Mbsa_Package;
 import mbsa.provider.MbsaEditPlugin;
 
-
-import mbsa.presentation.MbsaEditorPlugin;
 
 import org.eclipse.core.runtime.Path;
 
@@ -93,7 +91,7 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Fta_ModelWizard extends Wizard implements INewWizard {
+public class Mbsa_ModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -101,7 +99,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_EditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -110,7 +108,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -118,7 +116,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Fta_Package fta_Package = Fta_Package.eINSTANCE;
+	protected Mbsa_Package mbsa_Package = Mbsa_Package.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -126,7 +124,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Fta_Factory fta_Factory = fta_Package.getFta_Factory();
+	protected Mbsa_Factory mbsa_Factory = mbsa_Package.getMbsa_Factory();
 
 	/**
 	 * This is the file creation page.
@@ -134,7 +132,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Fta_ModelWizardNewFileCreationPage newFileCreationPage;
+	protected Mbsa_ModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -142,7 +140,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Fta_ModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected Mbsa_ModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -179,7 +177,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MbsaEditorPlugin.INSTANCE.getImage("full/wizban/NewFta_")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MbsaEditorPlugin.INSTANCE.getImage("full/wizban/NewMbsa_")));
 	}
 
 	/**
@@ -191,7 +189,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : fta_Package.getEClassifiers()) {
+			for (EClassifier eClassifier : mbsa_Package.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
@@ -211,8 +209,8 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)fta_Package.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = fta_Factory.create(eClass);
+		EClass eClass = (EClass)mbsa_Package.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = mbsa_Factory.create(eClass);
 		return rootObject;
 	}
 
@@ -314,14 +312,14 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class Fta_ModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class Mbsa_ModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Fta_ModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public Mbsa_ModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -361,7 +359,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class Fta_ModelWizardInitialObjectCreationPage extends WizardPage {
+	public class Mbsa_ModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -389,7 +387,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Fta_ModelWizardInitialObjectCreationPage(String pageId) {
+		public Mbsa_ModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -400,7 +398,8 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 		 */
 		@Override
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -575,10 +574,10 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new Fta_ModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_ModelWizard_label"));
-		newFileCreationPage.setDescription(MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_ModelWizard_description"));
-		newFileCreationPage.setFileName(MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new Mbsa_ModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_ModelWizard_label"));
+		newFileCreationPage.setDescription(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_ModelWizard_description"));
+		newFileCreationPage.setFileName(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -604,7 +603,7 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_EditorFilenameDefaultBase");
+					String defaultModelBaseFilename = MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -614,8 +613,8 @@ public class Fta_ModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		initialObjectCreationPage = new Fta_ModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Fta_ModelWizard_label"));
+		initialObjectCreationPage = new Mbsa_ModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_ModelWizard_label"));
 		initialObjectCreationPage.setDescription(MbsaEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
