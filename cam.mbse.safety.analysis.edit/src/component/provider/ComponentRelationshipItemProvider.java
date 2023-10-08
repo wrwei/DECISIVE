@@ -46,8 +46,6 @@ public class ComponentRelationshipItemProvider extends ComponentElementItemProvi
 			super.getPropertyDescriptors(object);
 
 			addLabelPropertyDescriptor(object);
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,61 +70,6 @@ public class ComponentRelationshipItemProvider extends ComponentElementItemProvi
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentRelationship_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentRelationship_source_feature", "_UI_ComponentRelationship_type"),
-				 Component_Package.Literals.COMPONENT_RELATIONSHIP__SOURCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentRelationship_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentRelationship_target_feature", "_UI_ComponentRelationship_type"),
-				 Component_Package.Literals.COMPONENT_RELATIONSHIP__TARGET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns ComponentRelationship.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentRelationship"));
 	}
 
 	/**

@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Hazard_ItemProviderAdapterFactory extends Hazard_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class Hazard_ItemProviderAdapterFactory extends Hazard_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -373,25 +373,6 @@ public class Hazard_ItemProviderAdapterFactory extends Hazard_AdapterFactory imp
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void dispose() {
-		if (hazardPackageItemProvider != null) hazardPackageItemProvider.dispose();
-		if (hazardPackageBindingItemProvider != null) hazardPackageBindingItemProvider.dispose();
-		if (hazardPackageInterfaceItemProvider != null) hazardPackageInterfaceItemProvider.dispose();
-		if (hazardousSituationItemProvider != null) hazardousSituationItemProvider.dispose();
-		if (causeItemProvider != null) causeItemProvider.dispose();
-		if (controlMeasureItemProvider != null) controlMeasureItemProvider.dispose();
-		if (verificationofEffectivenessItemProvider != null) verificationofEffectivenessItemProvider.dispose();
-		if (validationItemProvider != null) validationItemProvider.dispose();
-		if (safetyDecisionRationaleItemProvider != null) safetyDecisionRationaleItemProvider.dispose();
 	}
 
 }

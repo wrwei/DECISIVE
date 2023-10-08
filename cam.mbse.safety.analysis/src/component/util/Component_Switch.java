@@ -125,30 +125,6 @@ public class Component_Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Component_Package.FORK: {
-				Fork fork = (Fork)theEObject;
-				T result = caseFork(fork);
-				if (result == null) result = caseComponent(fork);
-				if (result == null) result = caseComponentElement(fork);
-				if (result == null) result = caseArtifactElement(fork);
-				if (result == null) result = caseModelElement(fork);
-				if (result == null) result = caseBaseElement(fork);
-				if (result == null) result = caseElement(fork);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Component_Package.JOIN: {
-				Join join = (Join)theEObject;
-				T result = caseJoin(join);
-				if (result == null) result = caseComponent(join);
-				if (result == null) result = caseComponentElement(join);
-				if (result == null) result = caseArtifactElement(join);
-				if (result == null) result = caseModelElement(join);
-				if (result == null) result = caseBaseElement(join);
-				if (result == null) result = caseElement(join);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case Component_Package.COMPONENT_RELATIONSHIP: {
 				ComponentRelationship componentRelationship = (ComponentRelationship)theEObject;
 				T result = caseComponentRelationship(componentRelationship);
@@ -160,6 +136,30 @@ public class Component_Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Component_Package.DIRECTED_RELATIONSHIP: {
+				DirectedRelationship directedRelationship = (DirectedRelationship)theEObject;
+				T result = caseDirectedRelationship(directedRelationship);
+				if (result == null) result = caseComponentRelationship(directedRelationship);
+				if (result == null) result = caseComponentElement(directedRelationship);
+				if (result == null) result = caseArtifactElement(directedRelationship);
+				if (result == null) result = caseModelElement(directedRelationship);
+				if (result == null) result = caseBaseElement(directedRelationship);
+				if (result == null) result = caseElement(directedRelationship);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.UNDIRECTED_RELATIONSHIP: {
+				UndirectedRelationship undirectedRelationship = (UndirectedRelationship)theEObject;
+				T result = caseUndirectedRelationship(undirectedRelationship);
+				if (result == null) result = caseComponentRelationship(undirectedRelationship);
+				if (result == null) result = caseComponentElement(undirectedRelationship);
+				if (result == null) result = caseArtifactElement(undirectedRelationship);
+				if (result == null) result = caseModelElement(undirectedRelationship);
+				if (result == null) result = caseBaseElement(undirectedRelationship);
+				if (result == null) result = caseElement(undirectedRelationship);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case Component_Package.COMPONENT_ASSET: {
 				ComponentAsset componentAsset = (ComponentAsset)theEObject;
 				T result = caseComponentAsset(componentAsset);
@@ -168,6 +168,128 @@ public class Component_Switch<T> extends Switch<T> {
 				if (result == null) result = caseModelElement(componentAsset);
 				if (result == null) result = caseBaseElement(componentAsset);
 				if (result == null) result = caseElement(componentAsset);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.UTILITY_NODES: {
+				UtilityNodes utilityNodes = (UtilityNodes)theEObject;
+				T result = caseUtilityNodes(utilityNodes);
+				if (result == null) result = caseComponentAsset(utilityNodes);
+				if (result == null) result = caseComponentElement(utilityNodes);
+				if (result == null) result = caseArtifactElement(utilityNodes);
+				if (result == null) result = caseModelElement(utilityNodes);
+				if (result == null) result = caseBaseElement(utilityNodes);
+				if (result == null) result = caseElement(utilityNodes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.TRANSITION_NODE: {
+				TransitionNode transitionNode = (TransitionNode)theEObject;
+				T result = caseTransitionNode(transitionNode);
+				if (result == null) result = caseUtilityNodes(transitionNode);
+				if (result == null) result = caseComponentAsset(transitionNode);
+				if (result == null) result = caseComponentElement(transitionNode);
+				if (result == null) result = caseArtifactElement(transitionNode);
+				if (result == null) result = caseModelElement(transitionNode);
+				if (result == null) result = caseBaseElement(transitionNode);
+				if (result == null) result = caseElement(transitionNode);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.FORK: {
+				Fork fork = (Fork)theEObject;
+				T result = caseFork(fork);
+				if (result == null) result = caseTransitionNode(fork);
+				if (result == null) result = caseUtilityNodes(fork);
+				if (result == null) result = caseComponentAsset(fork);
+				if (result == null) result = caseComponentElement(fork);
+				if (result == null) result = caseArtifactElement(fork);
+				if (result == null) result = caseModelElement(fork);
+				if (result == null) result = caseBaseElement(fork);
+				if (result == null) result = caseElement(fork);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.SWITCH: {
+				component.Switch switch_ = (component.Switch)theEObject;
+				T result = caseSwitch(switch_);
+				if (result == null) result = caseTransitionNode(switch_);
+				if (result == null) result = caseUtilityNodes(switch_);
+				if (result == null) result = caseComponentAsset(switch_);
+				if (result == null) result = caseComponentElement(switch_);
+				if (result == null) result = caseArtifactElement(switch_);
+				if (result == null) result = caseModelElement(switch_);
+				if (result == null) result = caseBaseElement(switch_);
+				if (result == null) result = caseElement(switch_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.IO_NODE: {
+				IONode ioNode = (IONode)theEObject;
+				T result = caseIONode(ioNode);
+				if (result == null) result = caseUtilityNodes(ioNode);
+				if (result == null) result = caseComponentAsset(ioNode);
+				if (result == null) result = caseComponentElement(ioNode);
+				if (result == null) result = caseArtifactElement(ioNode);
+				if (result == null) result = caseModelElement(ioNode);
+				if (result == null) result = caseBaseElement(ioNode);
+				if (result == null) result = caseElement(ioNode);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.INPUT: {
+				Input input = (Input)theEObject;
+				T result = caseInput(input);
+				if (result == null) result = caseIONode(input);
+				if (result == null) result = caseUtilityNodes(input);
+				if (result == null) result = caseComponentAsset(input);
+				if (result == null) result = caseComponentElement(input);
+				if (result == null) result = caseArtifactElement(input);
+				if (result == null) result = caseModelElement(input);
+				if (result == null) result = caseBaseElement(input);
+				if (result == null) result = caseElement(input);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.OUTPUT: {
+				Output output = (Output)theEObject;
+				T result = caseOutput(output);
+				if (result == null) result = caseIONode(output);
+				if (result == null) result = caseUtilityNodes(output);
+				if (result == null) result = caseComponentAsset(output);
+				if (result == null) result = caseComponentElement(output);
+				if (result == null) result = caseArtifactElement(output);
+				if (result == null) result = caseModelElement(output);
+				if (result == null) result = caseBaseElement(output);
+				if (result == null) result = caseElement(output);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.LPORT: {
+				LPort lPort = (LPort)theEObject;
+				T result = caseLPort(lPort);
+				if (result == null) result = caseIONode(lPort);
+				if (result == null) result = caseUtilityNodes(lPort);
+				if (result == null) result = caseComponentAsset(lPort);
+				if (result == null) result = caseComponentElement(lPort);
+				if (result == null) result = caseArtifactElement(lPort);
+				if (result == null) result = caseModelElement(lPort);
+				if (result == null) result = caseBaseElement(lPort);
+				if (result == null) result = caseElement(lPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Component_Package.RPORT: {
+				RPort rPort = (RPort)theEObject;
+				T result = caseRPort(rPort);
+				if (result == null) result = caseIONode(rPort);
+				if (result == null) result = caseUtilityNodes(rPort);
+				if (result == null) result = caseComponentAsset(rPort);
+				if (result == null) result = caseComponentElement(rPort);
+				if (result == null) result = caseArtifactElement(rPort);
+				if (result == null) result = caseModelElement(rPort);
+				if (result == null) result = caseBaseElement(rPort);
+				if (result == null) result = caseElement(rPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,27 +305,15 @@ public class Component_Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Component_Package.INPUT: {
-				Input input = (Input)theEObject;
-				T result = caseInput(input);
-				if (result == null) result = caseComponentAsset(input);
-				if (result == null) result = caseComponentElement(input);
-				if (result == null) result = caseArtifactElement(input);
-				if (result == null) result = caseModelElement(input);
-				if (result == null) result = caseBaseElement(input);
-				if (result == null) result = caseElement(input);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Component_Package.OUTPUT: {
-				Output output = (Output)theEObject;
-				T result = caseOutput(output);
-				if (result == null) result = caseComponentAsset(output);
-				if (result == null) result = caseComponentElement(output);
-				if (result == null) result = caseArtifactElement(output);
-				if (result == null) result = caseModelElement(output);
-				if (result == null) result = caseBaseElement(output);
-				if (result == null) result = caseElement(output);
+			case Component_Package.READING: {
+				Reading reading = (Reading)theEObject;
+				T result = caseReading(reading);
+				if (result == null) result = caseComponentAsset(reading);
+				if (result == null) result = caseComponentElement(reading);
+				if (result == null) result = caseArtifactElement(reading);
+				if (result == null) result = caseModelElement(reading);
+				if (result == null) result = caseBaseElement(reading);
+				if (result == null) result = caseElement(reading);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,36 +490,6 @@ public class Component_Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fork</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fork</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFork(Fork object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Join</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Join</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseJoin(Join object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Component Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -421,6 +501,36 @@ public class Component_Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentRelationship(ComponentRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Directed Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Directed Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDirectedRelationship(DirectedRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Undirected Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Undirected Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUndirectedRelationship(UndirectedRelationship object) {
 		return null;
 	}
 
@@ -440,17 +550,77 @@ public class Component_Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Utility Nodes</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Utility Nodes</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFunction(Function object) {
+	public T caseUtilityNodes(UtilityNodes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Transition Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Transition Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTransitionNode(TransitionNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fork</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fork</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFork(Fork object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Switch</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Switch</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSwitch(component.Switch object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IO Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IO Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIONode(IONode object) {
 		return null;
 	}
 
@@ -481,6 +651,66 @@ public class Component_Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOutput(Output object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>LPort</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>LPort</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLPort(LPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>RPort</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>RPort</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRPort(RPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunction(Function object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reading</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reading</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReading(Reading object) {
 		return null;
 	}
 

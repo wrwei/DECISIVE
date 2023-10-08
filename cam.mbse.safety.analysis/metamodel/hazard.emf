@@ -1,6 +1,6 @@
-@namespace(uri="http://dlut.mbsa/hazard", prefix="hazard_")
+@namespace(uri="http://cam.ac.uk/mbsa/hazard", prefix="hazard_")
 package hazard;
-import "http://dlut.mbsa/base";
+import "http://cam.ac.uk/mbsa/base";
 
 abstract class HazardElement extends base.ArtifactElement {
 	attr int identity;

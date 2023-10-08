@@ -4,7 +4,6 @@ package hazard.provider;
 
 
 import hazard.Cause;
-import hazard.Hazard_Factory;
 import hazard.Hazard_Package;
 
 import java.util.Collection;
@@ -13,11 +12,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link hazard.Cause} object.

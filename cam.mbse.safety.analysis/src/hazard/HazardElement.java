@@ -21,7 +21,6 @@ import base.ArtifactElement;
  * @generated
  */
 public interface HazardElement extends ArtifactElement {
-
 	/**
 	 * Returns the value of the '<em><b>Identity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -43,4 +42,5 @@ public interface HazardElement extends ArtifactElement {
 	 * @generated
 	 */
 	void setIdentity(int value);
+
 } // HazardElement

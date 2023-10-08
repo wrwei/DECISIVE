@@ -3,6 +3,7 @@
 package component.impl;
 
 import base.ArtifactElement;
+
 import component.Component;
 import component.ComponentElement;
 import component.ComponentType;
@@ -10,9 +11,12 @@ import component.Component_Package;
 import component.FailureMode;
 import component.Function;
 import component.Input;
+import component.LPort;
 import component.Output;
-
+import component.RPort;
+import component.Reading;
 import component.SafetyMechanism;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link component.impl.ComponentImpl#isDyamic <em>Dyamic</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getIdentity <em>Identity</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getComponent_name <em>Component name</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getReuse <em>Reuse</em>}</li>
@@ -44,10 +49,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link component.impl.ComponentImpl#getFit <em>Fit</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#isSafety_related <em>Safety related</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSil <em>Sil</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getReadings <em>Readings</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getBlockType <em>Block Type</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getLports <em>Lports</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getRports <em>Rports</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSub_components <em>Sub components</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFailure_modes <em>Failure modes</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSafety_mechanisms <em>Safety mechanisms</em>}</li>
@@ -57,6 +66,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ComponentImpl extends ComponentElementImpl implements Component {
+	/**
+	 * The default value of the '{@link #isDyamic() <em>Dyamic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDyamic()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DYAMIC_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDyamic() <em>Dyamic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDyamic()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean dyamic = DYAMIC_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getIdentity() <em>Identity</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -198,6 +227,26 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	protected int sil = SIL_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getReadings() <em>Readings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReadings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Reading> readings;
+
+	/**
+	 * The cached value of the '{@link #getBlockType() <em>Block Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBlockType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ArtifactElement blockType;
+
+	/**
 	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +295,26 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<Output> outputs;
+
+	/**
+	 * The cached value of the '{@link #getLports() <em>Lports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLports()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LPort> lports;
+
+	/**
+	 * The cached value of the '{@link #getRports() <em>Rports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRports()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RPort> rports;
 
 	/**
 	 * The cached value of the '{@link #getSub_components() <em>Sub components</em>}' containment reference list.
@@ -304,6 +373,29 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	@Override
 	protected EClass eStaticClass() {
 		return Component_Package.Literals.COMPONENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isDyamic() {
+		return dyamic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDyamic(boolean newDyamic) {
+		boolean oldDyamic = dyamic;
+		dyamic = newDyamic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.COMPONENT__DYAMIC, oldDyamic, dyamic));
 	}
 
 	/**
@@ -473,6 +565,59 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<Reading> getReadings() {
+		if (readings == null) {
+			readings = new EObjectContainmentEList<Reading>(Reading.class, this, Component_Package.COMPONENT__READINGS);
+		}
+		return readings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ArtifactElement getBlockType() {
+		if (blockType != null && blockType.eIsProxy()) {
+			InternalEObject oldBlockType = (InternalEObject)blockType;
+			blockType = (ArtifactElement)eResolveProxy(oldBlockType);
+			if (blockType != oldBlockType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Component_Package.COMPONENT__BLOCK_TYPE, oldBlockType, blockType));
+			}
+		}
+		return blockType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArtifactElement basicGetBlockType() {
+		return blockType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBlockType(ArtifactElement newBlockType) {
+		ArtifactElement oldBlockType = blockType;
+		blockType = newBlockType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.COMPONENT__BLOCK_TYPE, oldBlockType, blockType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Function getFunction() {
 		if (function != null && function.eIsProxy()) {
 			InternalEObject oldFunction = (InternalEObject)function;
@@ -562,6 +707,32 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<LPort> getLports() {
+		if (lports == null) {
+			lports = new EObjectContainmentEList<LPort>(LPort.class, this, Component_Package.COMPONENT__LPORTS);
+		}
+		return lports;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<RPort> getRports() {
+		if (rports == null) {
+			rports = new EObjectContainmentEList<RPort>(RPort.class, this, Component_Package.COMPONENT__RPORTS);
+		}
+		return rports;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<ComponentElement> getSub_components() {
 		if (sub_components == null) {
 			sub_components = new EObjectContainmentEList<ComponentElement>(ComponentElement.class, this, Component_Package.COMPONENT__SUB_COMPONENTS);
@@ -616,10 +787,16 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case Component_Package.COMPONENT__READINGS:
+				return ((InternalEList<?>)getReadings()).basicRemove(otherEnd, msgs);
 			case Component_Package.COMPONENT__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 			case Component_Package.COMPONENT__OUTPUTS:
 				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+			case Component_Package.COMPONENT__LPORTS:
+				return ((InternalEList<?>)getLports()).basicRemove(otherEnd, msgs);
+			case Component_Package.COMPONENT__RPORTS:
+				return ((InternalEList<?>)getRports()).basicRemove(otherEnd, msgs);
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 				return ((InternalEList<?>)getSub_components()).basicRemove(otherEnd, msgs);
 			case Component_Package.COMPONENT__FAILURE_MODES:
@@ -638,6 +815,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case Component_Package.COMPONENT__DYAMIC:
+				return isDyamic();
 			case Component_Package.COMPONENT__IDENTITY:
 				return getIdentity();
 			case Component_Package.COMPONENT__COMPONENT_NAME:
@@ -652,6 +831,11 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return isSafety_related();
 			case Component_Package.COMPONENT__SIL:
 				return getSil();
+			case Component_Package.COMPONENT__READINGS:
+				return getReadings();
+			case Component_Package.COMPONENT__BLOCK_TYPE:
+				if (resolve) return getBlockType();
+				return basicGetBlockType();
 			case Component_Package.COMPONENT__FUNCTION:
 				if (resolve) return getFunction();
 				return basicGetFunction();
@@ -661,6 +845,10 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return getInputs();
 			case Component_Package.COMPONENT__OUTPUTS:
 				return getOutputs();
+			case Component_Package.COMPONENT__LPORTS:
+				return getLports();
+			case Component_Package.COMPONENT__RPORTS:
+				return getRports();
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 				return getSub_components();
 			case Component_Package.COMPONENT__FAILURE_MODES:
@@ -682,6 +870,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case Component_Package.COMPONENT__DYAMIC:
+				setDyamic((Boolean)newValue);
+				return;
 			case Component_Package.COMPONENT__IDENTITY:
 				setIdentity((Integer)newValue);
 				return;
@@ -703,6 +894,13 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__SIL:
 				setSil((Integer)newValue);
 				return;
+			case Component_Package.COMPONENT__READINGS:
+				getReadings().clear();
+				getReadings().addAll((Collection<? extends Reading>)newValue);
+				return;
+			case Component_Package.COMPONENT__BLOCK_TYPE:
+				setBlockType((ArtifactElement)newValue);
+				return;
 			case Component_Package.COMPONENT__FUNCTION:
 				setFunction((Function)newValue);
 				return;
@@ -716,6 +914,14 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__OUTPUTS:
 				getOutputs().clear();
 				getOutputs().addAll((Collection<? extends Output>)newValue);
+				return;
+			case Component_Package.COMPONENT__LPORTS:
+				getLports().clear();
+				getLports().addAll((Collection<? extends LPort>)newValue);
+				return;
+			case Component_Package.COMPONENT__RPORTS:
+				getRports().clear();
+				getRports().addAll((Collection<? extends RPort>)newValue);
 				return;
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 				getSub_components().clear();
@@ -745,6 +951,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case Component_Package.COMPONENT__DYAMIC:
+				setDyamic(DYAMIC_EDEFAULT);
+				return;
 			case Component_Package.COMPONENT__IDENTITY:
 				setIdentity(IDENTITY_EDEFAULT);
 				return;
@@ -766,6 +975,12 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__SIL:
 				setSil(SIL_EDEFAULT);
 				return;
+			case Component_Package.COMPONENT__READINGS:
+				getReadings().clear();
+				return;
+			case Component_Package.COMPONENT__BLOCK_TYPE:
+				setBlockType((ArtifactElement)null);
+				return;
 			case Component_Package.COMPONENT__FUNCTION:
 				setFunction((Function)null);
 				return;
@@ -777,6 +992,12 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return;
 			case Component_Package.COMPONENT__OUTPUTS:
 				getOutputs().clear();
+				return;
+			case Component_Package.COMPONENT__LPORTS:
+				getLports().clear();
+				return;
+			case Component_Package.COMPONENT__RPORTS:
+				getRports().clear();
 				return;
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 				getSub_components().clear();
@@ -802,6 +1023,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case Component_Package.COMPONENT__DYAMIC:
+				return dyamic != DYAMIC_EDEFAULT;
 			case Component_Package.COMPONENT__IDENTITY:
 				return identity != IDENTITY_EDEFAULT;
 			case Component_Package.COMPONENT__COMPONENT_NAME:
@@ -816,6 +1039,10 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return safety_related != SAFETY_RELATED_EDEFAULT;
 			case Component_Package.COMPONENT__SIL:
 				return sil != SIL_EDEFAULT;
+			case Component_Package.COMPONENT__READINGS:
+				return readings != null && !readings.isEmpty();
+			case Component_Package.COMPONENT__BLOCK_TYPE:
+				return blockType != null;
 			case Component_Package.COMPONENT__FUNCTION:
 				return function != null;
 			case Component_Package.COMPONENT__COMPONENT_TYPE:
@@ -824,6 +1051,10 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return inputs != null && !inputs.isEmpty();
 			case Component_Package.COMPONENT__OUTPUTS:
 				return outputs != null && !outputs.isEmpty();
+			case Component_Package.COMPONENT__LPORTS:
+				return lports != null && !lports.isEmpty();
+			case Component_Package.COMPONENT__RPORTS:
+				return rports != null && !rports.isEmpty();
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 				return sub_components != null && !sub_components.isEmpty();
 			case Component_Package.COMPONENT__FAILURE_MODES:
@@ -846,7 +1077,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (identity: ");
+		result.append(" (dyamic: ");
+		result.append(dyamic);
+		result.append(", identity: ");
 		result.append(identity);
 		result.append(", component_name: ");
 		result.append(component_name);

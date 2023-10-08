@@ -159,7 +159,16 @@ import base.provider.Base_ItemProviderAdapterFactory;
 
 import component.presentation.ComponentEditorPlugin;
 import component.provider.Component_ItemProviderAdapterFactory;
+import fta.provider.Fta_ItemProviderAdapterFactory;
+import hazard.presentation.HazardEditorPlugin;
+import hazard.provider.Hazard_ItemProviderAdapterFactory;
+import mbsa.presentation.MbsaEditorPlugin;
+import mbsa.provider.Mbsa_ItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import requirement.presentation.RequirementEditorPlugin;
+import requirement.provider.Requirement_ItemProviderAdapterFactory;
+import safety_concept.presentation.Safety_conceptEditorPlugin;
+import safety_concept.provider.Safety_concept_ItemProviderAdapterFactory;
 
 
 /**
@@ -543,7 +552,7 @@ public class Base_Editor
 					}
 				}
 				catch (CoreException exception) {
-					ComponentEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -632,7 +641,7 @@ public class Base_Editor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "dlut.mbsa.toolchain.editor",
+					 "cam.mbse.safety.analysis.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -660,7 +669,7 @@ public class Base_Editor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					ComponentEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -669,7 +678,7 @@ public class Base_Editor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					ComponentEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -712,8 +721,13 @@ public class Base_Editor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new Component_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Mbsa_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Base_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Component_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Requirement_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Hazard_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Safety_concept_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Fta_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1000,7 +1014,7 @@ public class Base_Editor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
-					 "dlut.mbsa.toolchain.editor",
+					 "cam.mbse.safety.analysis.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -1011,7 +1025,7 @@ public class Base_Editor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "dlut.mbsa.toolchain.editor",
+					 "cam.mbse.safety.analysis.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });
@@ -1549,7 +1563,7 @@ public class Base_Editor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			ComponentEditorPlugin.INSTANCE.log(exception);
+			MbsaEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1758,7 +1772,7 @@ public class Base_Editor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return ComponentEditorPlugin.INSTANCE.getString(key);
+		return MbsaEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1768,7 +1782,7 @@ public class Base_Editor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return ComponentEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return MbsaEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

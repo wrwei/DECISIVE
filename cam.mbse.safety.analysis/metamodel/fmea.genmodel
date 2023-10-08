@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/cam.mbse.safety.analysis/src"
+    modelPluginID="cam.mbse.safety.analysis" modelName="Fmea" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>fmea.ecore</foreignModel>
+  <genPackages prefix="Fmea_" disposableProviderFactory="true" fileExtensions="fmea"
+      ecorePackage="fmea.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fmea.ecore#//Severity">
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//Severity/catastrophic"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//Severity/fatal"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//Severity/median"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//Severity/moderate"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fmea.ecore#//FailureEffect">
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//FailureEffect/LossOfFunction"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//FailureEffect/UnintededDeliveryOfFunction"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//FailureEffect/EarlyDeployment"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//FailureEffect/LateDeployment"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//FailureEffect/ProvisionValueHigh"/>
+      <genEnumLiterals ecoreEnumLiteral="fmea.ecore#//FailureEffect/ProvisionValueLow"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="fmea.ecore#//FMEAElement"/>
+    <genClasses ecoreClass="fmea.ecore#//FMEAPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAPackage/FMEAElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAPackage/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//FMEAPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAPackageInterface/implements"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//FMEAPackageBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAPackageBinding/participantPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//Effect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//Effect/effect"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//RegionEffect"/>
+    <genClasses ecoreClass="fmea.ecore#//HigherLevelEffect"/>
+    <genClasses ecoreClass="fmea.ecore#//EndEffect"/>
+    <genClasses ecoreClass="fmea.ecore#//CorrectiveAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//CorrectiveAction/corrective_action"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//IndentureLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//IndentureLevel/initial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//IndentureLevel/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//IndentureLevel/lowest"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//Stakeholder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//Stakeholder/identity"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//FailureMode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FailureMode/failure_mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FailureMode/distribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FailureMode/severity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FailureMode/remarks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fmea.ecore#//FailureMode/endEffect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fmea.ecore#//FailureMode/high_level_effect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fmea.ecore#//FailureMode/region_effect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fmea.ecore#//FailureMode/corrective_action"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//FMEAEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FMEAEntry/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FMEAEntry/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAEntry/failure_modes"/>
+    </genClasses>
+    <genClasses ecoreClass="fmea.ecore#//FMEAForm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FMEAForm/mission"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FMEAForm/approved"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fmea.ecore#//FMEAForm/date"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAForm/analysts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAForm/validator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fmea.ecore#//FMEAForm/entries"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Base_" fileExtensions="base" ecorePackage="http://cam.ac.uk/mbsa/base#/">
+    <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//Element"/>
+    <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//BaseElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/base#//BaseElement/gid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/base#//BaseElement/isCitation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/base#//BaseElement/isAbstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//BaseElement/citedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//BaseElement/abstractForm"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//ModelElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//ModelElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//ModelElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//ModelElement/implementationConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//ModelElement/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//ModelElement/taggedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/base#//LangString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/base#//LangString/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/base#//LangString/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/base#//MultiLangString">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//MultiLangString/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//UtilityElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//UtilityElement/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/base#//Description"/>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/base#//ImplementationConstraint"/>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/base#//Note"/>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/base#//TaggedValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/base#//TaggedValue/key"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/base#//ArtifactElement"/>
+  </genPackages>
+</genmodel:GenModel>

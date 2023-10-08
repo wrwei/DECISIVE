@@ -10,6 +10,7 @@ import component.ComponentElement;
 import java.util.Collection;
 import java.util.List;
 
+import mbsa.provider.MbsaEditPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -97,7 +98,7 @@ public class ComponentElementItemProvider extends ArtifactElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ComponentEditPlugin.INSTANCE;
+		return MbsaEditPlugin.INSTANCE;
 	}
 
 }

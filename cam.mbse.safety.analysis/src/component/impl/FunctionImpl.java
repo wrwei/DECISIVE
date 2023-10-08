@@ -4,6 +4,7 @@ package component.impl;
 
 import component.Component_Package;
 import component.Function;
+import component.ToleranceType;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link component.impl.FunctionImpl#getFunc <em>Func</em>}</li>
+ *   <li>{@link component.impl.FunctionImpl#getToleranceType <em>Tolerance Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +46,26 @@ public class FunctionImpl extends ComponentAssetImpl implements Function {
 	 * @ordered
 	 */
 	protected String func = FUNC_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getToleranceType() <em>Tolerance Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToleranceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ToleranceType TOLERANCE_TYPE_EDEFAULT = ToleranceType.ONEOO1;
+
+	/**
+	 * The cached value of the '{@link #getToleranceType() <em>Tolerance Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getToleranceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ToleranceType toleranceType = TOLERANCE_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,10 +115,35 @@ public class FunctionImpl extends ComponentAssetImpl implements Function {
 	 * @generated
 	 */
 	@Override
+	public ToleranceType getToleranceType() {
+		return toleranceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setToleranceType(ToleranceType newToleranceType) {
+		ToleranceType oldToleranceType = toleranceType;
+		toleranceType = newToleranceType == null ? TOLERANCE_TYPE_EDEFAULT : newToleranceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.FUNCTION__TOLERANCE_TYPE, oldToleranceType, toleranceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Component_Package.FUNCTION__FUNC:
 				return getFunc();
+			case Component_Package.FUNCTION__TOLERANCE_TYPE:
+				return getToleranceType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,6 +158,9 @@ public class FunctionImpl extends ComponentAssetImpl implements Function {
 		switch (featureID) {
 			case Component_Package.FUNCTION__FUNC:
 				setFunc((String)newValue);
+				return;
+			case Component_Package.FUNCTION__TOLERANCE_TYPE:
+				setToleranceType((ToleranceType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -127,6 +177,9 @@ public class FunctionImpl extends ComponentAssetImpl implements Function {
 			case Component_Package.FUNCTION__FUNC:
 				setFunc(FUNC_EDEFAULT);
 				return;
+			case Component_Package.FUNCTION__TOLERANCE_TYPE:
+				setToleranceType(TOLERANCE_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,6 +194,8 @@ public class FunctionImpl extends ComponentAssetImpl implements Function {
 		switch (featureID) {
 			case Component_Package.FUNCTION__FUNC:
 				return FUNC_EDEFAULT == null ? func != null : !FUNC_EDEFAULT.equals(func);
+			case Component_Package.FUNCTION__TOLERANCE_TYPE:
+				return toleranceType != TOLERANCE_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,6 +212,8 @@ public class FunctionImpl extends ComponentAssetImpl implements Function {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (func: ");
 		result.append(func);
+		result.append(", toleranceType: ");
+		result.append(toleranceType);
 		result.append(')');
 		return result.toString();
 	}

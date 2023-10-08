@@ -1,6 +1,6 @@
-@namespace(uri="http://dlut.mbsa/requirement", prefix="requirement_")
+@namespace(uri="http://cam.ac.uk/mbsa/requirement", prefix="requirement_")
 package requirement;
-import "http://dlut.mbsa/base";
+import "http://cam.ac.uk/mbsa/base";
 
   abstract class RequirementElement extends base.ArtifactElement {
   

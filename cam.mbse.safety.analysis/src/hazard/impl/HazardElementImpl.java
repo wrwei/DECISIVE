@@ -8,7 +8,9 @@ import hazard.HazardElement;
 import hazard.Hazard_Package;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,6 +36,7 @@ public abstract class HazardElementImpl extends ArtifactElementImpl implements H
 	 * @ordered
 	 */
 	protected static final int IDENTITY_EDEFAULT = 0;
+
 	/**
 	 * The cached value of the '{@link #getIdentity() <em>Identity</em>}' attribute.
 	 * <!-- begin-user-doc -->

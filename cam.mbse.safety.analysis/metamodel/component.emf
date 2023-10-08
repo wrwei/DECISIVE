@@ -1,10 +1,9 @@
-@namespace(uri="http://dlut.mbsa/component", prefix="component_")
+@namespace(uri="http://cam.ac.uk/mbsa/component", prefix="component_")
 package component;
 
-import "http://dlut.mbsa/base";
+import "http://cam.ac.uk/mbsa/base";
 
 abstract class ComponentElement extends base.ArtifactElement {
-	
 }
 
 class ComponentPackage extends ComponentElement {
@@ -21,6 +20,7 @@ class ComponentPackageBinding extends ComponentElement {
 }
 
 class Component extends ComponentElement {
+	attr boolean dyamic;
 	attr int identity;
 	attr String component_name;
 	attr Boolean reuse;
@@ -28,44 +28,78 @@ class Component extends ComponentElement {
 	attr float fit; //failure in time (hour e-1)
 	attr boolean safety_related;
 	attr int sil;
+	val Reading[*] readings;
+	ref base.ArtifactElement blockType;
 	ref Function function;
 	attr ComponentType[1] componentType;
 	val Input[*] inputs;
 	val Output[*] outputs;
+	val LPort[*] lports;
+	val RPort[*] rports;
 	val ComponentElement[*] sub_components;
 	val FailureMode[*] failure_modes;
 	val SafetyMechanism[*] safety_mechanisms;
 	ref base.ArtifactElement[*] requirements;
 }
 
-class Fork extends Component {
-}
-
-class Join extends Component {
-}
-
-class ComponentRelationship extends ComponentElement {
+abstract class ComponentRelationship extends ComponentElement {
 	attr String label;
-	ref Component source;
-	ref Component target;
+}
+
+class DirectedRelationship extends ComponentRelationship {
+	ref ComponentElement source;
+	ref ComponentElement target;
+}
+
+class UndirectedRelationship extends ComponentRelationship {
+	ref ComponentElement source;
+	ref ComponentElement target;
 }
 
 abstract class ComponentAsset extends ComponentElement {
-	
+}
+
+abstract class UtilityNodes extends ComponentAsset {
+	val Reading reading;
+}
+
+abstract class TransitionNode extends UtilityNodes {
+}
+
+class Fork extends TransitionNode {
+	ref ComponentElement[1] source;
+	ref ComponentElement[*] target;
+}
+
+class Switch extends TransitionNode {
+	ref ComponentElement[*] ports;
+}
+
+abstract class IONode extends UtilityNodes {
+	attr float upper;
+	attr float lower;
+}
+
+class Input extends IONode {
+}
+
+class Output extends IONode {
+}
+
+class LPort extends IONode {
+}
+
+class RPort extends IONode {
 }
 
 class Function extends ComponentAsset {
 	attr String func;
+	attr ToleranceType toleranceType;
 }
 
-class Input extends ComponentAsset {
-	attr String input;
-	ref Component source;
-}
-
-class Output extends ComponentAsset {
-	attr String output;
-	ref Component target;
+class Reading extends ComponentAsset {
+	attr double value;
+	attr String unit;
 }
 
 abstract class ComponentSafetyElement extends ComponentAsset {
@@ -97,6 +131,7 @@ class FailureMode extends ComponentSafetyElement {
 	attr String cause;
 	attr float probability;
 	attr boolean safety_related;
+	attr FailureSeverity failureSeverity;
 	ref base.ArtifactElement[*] hazards;
 	val RegionalEffect regional;
 	val HigherLevelEffect higher_level;
@@ -109,21 +144,26 @@ class SafetyMechanism extends ComponentSafetyElement {
 	attr float coverage;
 }
 
-
 abstract class FailureEffect extends ComponentSafetyElement {
-	attr String desc;
+	attr FailureEffectEnum effect;
 	ref Component[*] affected;
 }
 
 class RegionalEffect extends FailureEffect {
-	
 }
 
 class HigherLevelEffect extends FailureEffect {
-	
 }
 
 class FinalEffect extends FailureEffect {
-	
+}
+
+enum FailureEffectEnum {
+	LossOfFunction = 1;
+	UnintededDeliveryOfFunction = 2;
+	EarlyDeployment = 3;
+	LateDeployment = 4;
+	ProvisionValueHigh = 5;
+	ProvisionValueLow = 4;
 }
 

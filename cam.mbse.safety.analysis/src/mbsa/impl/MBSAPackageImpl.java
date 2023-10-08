@@ -6,12 +6,14 @@ import base.impl.ArtifactElementImpl;
 
 import component.ComponentPackage;
 
+import fta.FTAPackage;
+
 import hazard.HazardPackage;
 
 import java.util.Collection;
 
 import mbsa.MBSAPackage;
-import mbsa.MBSA_Package;
+import mbsa.Mbsa_Package;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -25,6 +27,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import requirement.RequirementPackage;
 
+import safety_concept.SafetyConceptPackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>MBSA Package</b></em>'.
@@ -37,6 +41,8 @@ import requirement.RequirementPackage;
  *   <li>{@link mbsa.impl.MBSAPackageImpl#getComponentPackage <em>Component Package</em>}</li>
  *   <li>{@link mbsa.impl.MBSAPackageImpl#getRequirementPackage <em>Requirement Package</em>}</li>
  *   <li>{@link mbsa.impl.MBSAPackageImpl#getHazardPackage <em>Hazard Package</em>}</li>
+ *   <li>{@link mbsa.impl.MBSAPackageImpl#getSafetyConceptPackage <em>Safety Concept Package</em>}</li>
+ *   <li>{@link mbsa.impl.MBSAPackageImpl#getFtaPackage <em>Fta Package</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +89,26 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	protected EList<HazardPackage> hazardPackage;
 
 	/**
+	 * The cached value of the '{@link #getSafetyConceptPackage() <em>Safety Concept Package</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSafetyConceptPackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SafetyConceptPackage> safetyConceptPackage;
+
+	/**
+	 * The cached value of the '{@link #getFtaPackage() <em>Fta Package</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFtaPackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FTAPackage> ftaPackage;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,7 +124,7 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MBSA_Package.Literals.MBSA_PACKAGE;
+		return Mbsa_Package.Literals.MBSA_PACKAGE;
 	}
 
 	/**
@@ -109,7 +135,7 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public EList<MBSAPackage> getMbsaPackages() {
 		if (mbsaPackages == null) {
-			mbsaPackages = new EObjectContainmentEList<MBSAPackage>(MBSAPackage.class, this, MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES);
+			mbsaPackages = new EObjectContainmentEList<MBSAPackage>(MBSAPackage.class, this, Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES);
 		}
 		return mbsaPackages;
 	}
@@ -122,7 +148,7 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public EList<ComponentPackage> getComponentPackage() {
 		if (componentPackage == null) {
-			componentPackage = new EObjectContainmentEList<ComponentPackage>(ComponentPackage.class, this, MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE);
+			componentPackage = new EObjectContainmentEList<ComponentPackage>(ComponentPackage.class, this, Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE);
 		}
 		return componentPackage;
 	}
@@ -135,7 +161,7 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public EList<RequirementPackage> getRequirementPackage() {
 		if (requirementPackage == null) {
-			requirementPackage = new EObjectContainmentEList<RequirementPackage>(RequirementPackage.class, this, MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE);
+			requirementPackage = new EObjectContainmentEList<RequirementPackage>(RequirementPackage.class, this, Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE);
 		}
 		return requirementPackage;
 	}
@@ -148,7 +174,7 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public EList<HazardPackage> getHazardPackage() {
 		if (hazardPackage == null) {
-			hazardPackage = new EObjectContainmentEList<HazardPackage>(HazardPackage.class, this, MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE);
+			hazardPackage = new EObjectContainmentEList<HazardPackage>(HazardPackage.class, this, Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE);
 		}
 		return hazardPackage;
 	}
@@ -159,16 +185,46 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	 * @generated
 	 */
 	@Override
+	public EList<SafetyConceptPackage> getSafetyConceptPackage() {
+		if (safetyConceptPackage == null) {
+			safetyConceptPackage = new EObjectContainmentEList<SafetyConceptPackage>(SafetyConceptPackage.class, this, Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE);
+		}
+		return safetyConceptPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<FTAPackage> getFtaPackage() {
+		if (ftaPackage == null) {
+			ftaPackage = new EObjectContainmentEList<FTAPackage>(FTAPackage.class, this, Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE);
+		}
+		return ftaPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES:
+			case Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES:
 				return ((InternalEList<?>)getMbsaPackages()).basicRemove(otherEnd, msgs);
-			case MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
 				return ((InternalEList<?>)getComponentPackage()).basicRemove(otherEnd, msgs);
-			case MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
 				return ((InternalEList<?>)getRequirementPackage()).basicRemove(otherEnd, msgs);
-			case MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
 				return ((InternalEList<?>)getHazardPackage()).basicRemove(otherEnd, msgs);
+			case Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE:
+				return ((InternalEList<?>)getSafetyConceptPackage()).basicRemove(otherEnd, msgs);
+			case Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE:
+				return ((InternalEList<?>)getFtaPackage()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,14 +237,18 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES:
+			case Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES:
 				return getMbsaPackages();
-			case MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
 				return getComponentPackage();
-			case MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
 				return getRequirementPackage();
-			case MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
 				return getHazardPackage();
+			case Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE:
+				return getSafetyConceptPackage();
+			case Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE:
+				return getFtaPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,21 +262,29 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES:
+			case Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES:
 				getMbsaPackages().clear();
 				getMbsaPackages().addAll((Collection<? extends MBSAPackage>)newValue);
 				return;
-			case MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
 				getComponentPackage().clear();
 				getComponentPackage().addAll((Collection<? extends ComponentPackage>)newValue);
 				return;
-			case MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
 				getRequirementPackage().clear();
 				getRequirementPackage().addAll((Collection<? extends RequirementPackage>)newValue);
 				return;
-			case MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
 				getHazardPackage().clear();
 				getHazardPackage().addAll((Collection<? extends HazardPackage>)newValue);
+				return;
+			case Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE:
+				getSafetyConceptPackage().clear();
+				getSafetyConceptPackage().addAll((Collection<? extends SafetyConceptPackage>)newValue);
+				return;
+			case Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE:
+				getFtaPackage().clear();
+				getFtaPackage().addAll((Collection<? extends FTAPackage>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,17 +298,23 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES:
+			case Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES:
 				getMbsaPackages().clear();
 				return;
-			case MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
 				getComponentPackage().clear();
 				return;
-			case MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
 				getRequirementPackage().clear();
 				return;
-			case MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
 				getHazardPackage().clear();
+				return;
+			case Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE:
+				getSafetyConceptPackage().clear();
+				return;
+			case Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE:
+				getFtaPackage().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -254,14 +328,18 @@ public class MBSAPackageImpl extends ArtifactElementImpl implements MBSAPackage 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES:
+			case Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES:
 				return mbsaPackages != null && !mbsaPackages.isEmpty();
-			case MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
 				return componentPackage != null && !componentPackage.isEmpty();
-			case MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
 				return requirementPackage != null && !requirementPackage.isEmpty();
-			case MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
 				return hazardPackage != null && !hazardPackage.isEmpty();
+			case Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE:
+				return safetyConceptPackage != null && !safetyConceptPackage.isEmpty();
+			case Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE:
+				return ftaPackage != null && !ftaPackage.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

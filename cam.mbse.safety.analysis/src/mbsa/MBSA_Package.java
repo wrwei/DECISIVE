@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see mbsa.MBSA_Factory
+ * @see mbsa.Mbsa_Factory
  * @model kind="package"
  * @generated
  */
-public interface MBSA_Package extends EPackage {
+public interface Mbsa_Package extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public interface MBSA_Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://dlut.mbsa/mbsa";
+	String eNS_URI = "http://cam.ac.uk/mbsa/mbsa";
 
 	/**
 	 * The package namespace name.
@@ -54,14 +54,14 @@ public interface MBSA_Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	MBSA_Package eINSTANCE = mbsa.impl.MBSA_PackageImpl.init();
+	Mbsa_Package eINSTANCE = mbsa.impl.Mbsa_PackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link mbsa.impl.MBSAPackageImpl <em>MBSA Package</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mbsa.impl.MBSAPackageImpl
-	 * @see mbsa.impl.MBSA_PackageImpl#getMBSAPackage()
+	 * @see mbsa.impl.Mbsa_PackageImpl#getMBSAPackage()
 	 * @generated
 	 */
 	int MBSA_PACKAGE = 0;
@@ -193,13 +193,31 @@ public interface MBSA_Package extends EPackage {
 	int MBSA_PACKAGE__HAZARD_PACKAGE = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Safety Concept Package</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Fta Package</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MBSA_PACKAGE__FTA_PACKAGE = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>MBSA Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MBSA_PACKAGE_FEATURE_COUNT = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 4;
+	int MBSA_PACKAGE_FEATURE_COUNT = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 6;
 
 
 	/**
@@ -257,13 +275,35 @@ public interface MBSA_Package extends EPackage {
 	EReference getMBSAPackage_HazardPackage();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mbsa.MBSAPackage#getSafetyConceptPackage <em>Safety Concept Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Safety Concept Package</em>'.
+	 * @see mbsa.MBSAPackage#getSafetyConceptPackage()
+	 * @see #getMBSAPackage()
+	 * @generated
+	 */
+	EReference getMBSAPackage_SafetyConceptPackage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mbsa.MBSAPackage#getFtaPackage <em>Fta Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fta Package</em>'.
+	 * @see mbsa.MBSAPackage#getFtaPackage()
+	 * @see #getMBSAPackage()
+	 * @generated
+	 */
+	EReference getMBSAPackage_FtaPackage();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	MBSA_Factory getMBSA_Factory();
+	Mbsa_Factory getMbsa_Factory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,7 +323,7 @@ public interface MBSA_Package extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see mbsa.impl.MBSAPackageImpl
-		 * @see mbsa.impl.MBSA_PackageImpl#getMBSAPackage()
+		 * @see mbsa.impl.Mbsa_PackageImpl#getMBSAPackage()
 		 * @generated
 		 */
 		EClass MBSA_PACKAGE = eINSTANCE.getMBSAPackage();
@@ -320,6 +360,22 @@ public interface MBSA_Package extends EPackage {
 		 */
 		EReference MBSA_PACKAGE__HAZARD_PACKAGE = eINSTANCE.getMBSAPackage_HazardPackage();
 
+		/**
+		 * The meta object literal for the '<em><b>Safety Concept Package</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE = eINSTANCE.getMBSAPackage_SafetyConceptPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Fta Package</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MBSA_PACKAGE__FTA_PACKAGE = eINSTANCE.getMBSAPackage_FtaPackage();
+
 	}
 
-} //MBSA_Package
+} //Mbsa_Package

@@ -2,18 +2,20 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: cam.mbse.safety.analysis.editor;singleton:=true
-Automatic-Module-Name: dlut.mbsa.toolchain.editor
+Automatic-Module-Name: cam.mbse.safety.analysis.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: component.presentation.ComponentEditorPlugin$Implementation
+Bundle-Activator: mbsa.presentation.MbsaEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: base.presentation,
+ requirement.presentation,
+ safety_concept.presentation,
  hazard.presentation,
  mbsa.presentation,
- requirement.presentation,
- component.presentation
+ component.presentation,
+ fta.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  cam.mbse.safety.analysis.edit;visibility:=reexport,

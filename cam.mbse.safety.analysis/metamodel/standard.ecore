@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hazard" nsURI="http://dlut.mbsa/hazard" nsPrefix="hazard_">
-  <eClassifiers xsi:type="ecore:EClass" name="StandardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="standard" nsURI="http://cam.ac.uk/mbsa/standard" nsPrefix="standard_">
+  <eClassifiers xsi:type="ecore:EClass" name="StandardElement" abstract="true" eSuperTypes="http://cam.ac.uk/mbsa/base#//ArtifactElement"/>
   <eClassifiers xsi:type="ecore:EEnum" name="FaultToleranceLevel">
     <eLiterals name="zero"/>
     <eLiterals name="one" value="1"/>

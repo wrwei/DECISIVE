@@ -10,13 +10,17 @@ import component.Component_Package;
 
 import component.impl.Component_PackageImpl;
 
+import fta.Fta_Package;
+
+import fta.impl.Fta_PackageImpl;
+
 import hazard.Hazard_Package;
 
 import hazard.impl.Hazard_PackageImpl;
 
 import mbsa.MBSAPackage;
-import mbsa.MBSA_Factory;
-import mbsa.MBSA_Package;
+import mbsa.Mbsa_Factory;
+import mbsa.Mbsa_Package;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -28,13 +32,17 @@ import requirement.Requirement_Package;
 
 import requirement.impl.Requirement_PackageImpl;
 
+import safety_concept.Safety_concept_Package;
+
+import safety_concept.impl.Safety_concept_PackageImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
  * @generated
  */
-public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
+public class Mbsa_PackageImpl extends EPackageImpl implements Mbsa_Package {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,12 +61,12 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see mbsa.MBSA_Package#eNS_URI
+	 * @see mbsa.Mbsa_Package#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MBSA_PackageImpl() {
-		super(eNS_URI, MBSA_Factory.eINSTANCE);
+	private Mbsa_PackageImpl() {
+		super(eNS_URI, Mbsa_Factory.eINSTANCE);
 	}
 
 	/**
@@ -71,7 +79,7 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MBSA_Package#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link Mbsa_Package#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,12 +88,12 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MBSA_Package init() {
-		if (isInited) return (MBSA_Package)EPackage.Registry.INSTANCE.getEPackage(MBSA_Package.eNS_URI);
+	public static Mbsa_Package init() {
+		if (isInited) return (Mbsa_Package)EPackage.Registry.INSTANCE.getEPackage(Mbsa_Package.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredMBSA_Package = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MBSA_PackageImpl theMBSA_Package = registeredMBSA_Package instanceof MBSA_PackageImpl ? (MBSA_PackageImpl)registeredMBSA_Package : new MBSA_PackageImpl();
+		Object registeredMbsa_Package = EPackage.Registry.INSTANCE.get(eNS_URI);
+		Mbsa_PackageImpl theMbsa_Package = registeredMbsa_Package instanceof Mbsa_PackageImpl ? (Mbsa_PackageImpl)registeredMbsa_Package : new Mbsa_PackageImpl();
 
 		isInited = true;
 
@@ -98,27 +106,35 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 		Requirement_PackageImpl theRequirement_Package = (Requirement_PackageImpl)(registeredPackage instanceof Requirement_PackageImpl ? registeredPackage : Requirement_Package.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Hazard_Package.eNS_URI);
 		Hazard_PackageImpl theHazard_Package = (Hazard_PackageImpl)(registeredPackage instanceof Hazard_PackageImpl ? registeredPackage : Hazard_Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Safety_concept_Package.eNS_URI);
+		Safety_concept_PackageImpl theSafety_concept_Package = (Safety_concept_PackageImpl)(registeredPackage instanceof Safety_concept_PackageImpl ? registeredPackage : Safety_concept_Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Fta_Package.eNS_URI);
+		Fta_PackageImpl theFta_Package = (Fta_PackageImpl)(registeredPackage instanceof Fta_PackageImpl ? registeredPackage : Fta_Package.eINSTANCE);
 
 		// Create package meta-data objects
-		theMBSA_Package.createPackageContents();
+		theMbsa_Package.createPackageContents();
 		theBase_Package.createPackageContents();
 		theComponent_Package.createPackageContents();
 		theRequirement_Package.createPackageContents();
 		theHazard_Package.createPackageContents();
+		theSafety_concept_Package.createPackageContents();
+		theFta_Package.createPackageContents();
 
 		// Initialize created meta-data
-		theMBSA_Package.initializePackageContents();
+		theMbsa_Package.initializePackageContents();
 		theBase_Package.initializePackageContents();
 		theComponent_Package.initializePackageContents();
 		theRequirement_Package.initializePackageContents();
 		theHazard_Package.initializePackageContents();
+		theSafety_concept_Package.initializePackageContents();
+		theFta_Package.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMBSA_Package.freeze();
+		theMbsa_Package.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MBSA_Package.eNS_URI, theMBSA_Package);
-		return theMBSA_Package;
+		EPackage.Registry.INSTANCE.put(Mbsa_Package.eNS_URI, theMbsa_Package);
+		return theMbsa_Package;
 	}
 
 	/**
@@ -177,8 +193,28 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 	 * @generated
 	 */
 	@Override
-	public MBSA_Factory getMBSA_Factory() {
-		return (MBSA_Factory)getEFactoryInstance();
+	public EReference getMBSAPackage_SafetyConceptPackage() {
+		return (EReference)mbsaPackageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMBSAPackage_FtaPackage() {
+		return (EReference)mbsaPackageEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Mbsa_Factory getMbsa_Factory() {
+		return (Mbsa_Factory)getEFactoryInstance();
 	}
 
 	/**
@@ -205,6 +241,8 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 		createEReference(mbsaPackageEClass, MBSA_PACKAGE__COMPONENT_PACKAGE);
 		createEReference(mbsaPackageEClass, MBSA_PACKAGE__REQUIREMENT_PACKAGE);
 		createEReference(mbsaPackageEClass, MBSA_PACKAGE__HAZARD_PACKAGE);
+		createEReference(mbsaPackageEClass, MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE);
+		createEReference(mbsaPackageEClass, MBSA_PACKAGE__FTA_PACKAGE);
 	}
 
 	/**
@@ -235,6 +273,8 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 		Component_Package theComponent_Package = (Component_Package)EPackage.Registry.INSTANCE.getEPackage(Component_Package.eNS_URI);
 		Requirement_Package theRequirement_Package = (Requirement_Package)EPackage.Registry.INSTANCE.getEPackage(Requirement_Package.eNS_URI);
 		Hazard_Package theHazard_Package = (Hazard_Package)EPackage.Registry.INSTANCE.getEPackage(Hazard_Package.eNS_URI);
+		Safety_concept_Package theSafety_concept_Package = (Safety_concept_Package)EPackage.Registry.INSTANCE.getEPackage(Safety_concept_Package.eNS_URI);
+		Fta_Package theFta_Package = (Fta_Package)EPackage.Registry.INSTANCE.getEPackage(Fta_Package.eNS_URI);
 
 		// Create type parameters
 
@@ -249,9 +289,11 @@ public class MBSA_PackageImpl extends EPackageImpl implements MBSA_Package {
 		initEReference(getMBSAPackage_ComponentPackage(), theComponent_Package.getComponentPackage(), null, "componentPackage", null, 0, -1, MBSAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMBSAPackage_RequirementPackage(), theRequirement_Package.getRequirementPackage(), null, "requirementPackage", null, 0, -1, MBSAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMBSAPackage_HazardPackage(), theHazard_Package.getHazardPackage(), null, "hazardPackage", null, 0, -1, MBSAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBSAPackage_SafetyConceptPackage(), theSafety_concept_Package.getSafetyConceptPackage(), null, "safetyConceptPackage", null, 0, -1, MBSAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMBSAPackage_FtaPackage(), theFta_Package.getFTAPackage(), null, "ftaPackage", null, 0, -1, MBSAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //MBSA_PackageImpl
+} //Mbsa_PackageImpl

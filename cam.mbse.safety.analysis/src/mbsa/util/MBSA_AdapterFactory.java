@@ -21,17 +21,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see mbsa.MBSA_Package
+ * @see mbsa.Mbsa_Package
  * @generated
  */
-public class MBSA_AdapterFactory extends AdapterFactoryImpl {
+public class Mbsa_AdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MBSA_Package modelPackage;
+	protected static Mbsa_Package modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -39,9 +39,9 @@ public class MBSA_AdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSA_AdapterFactory() {
+	public Mbsa_AdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = MBSA_Package.eINSTANCE;
+			modelPackage = Mbsa_Package.eINSTANCE;
 		}
 	}
 
@@ -70,8 +70,8 @@ public class MBSA_AdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MBSA_Switch<Adapter> modelSwitch =
-		new MBSA_Switch<Adapter>() {
+	protected Mbsa_Switch<Adapter> modelSwitch =
+		new Mbsa_Switch<Adapter>() {
 			@Override
 			public Adapter caseMBSAPackage(MBSAPackage object) {
 				return createMBSAPackageAdapter();
@@ -194,4 +194,4 @@ public class MBSA_AdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //MBSA_AdapterFactory
+} //Mbsa_AdapterFactory

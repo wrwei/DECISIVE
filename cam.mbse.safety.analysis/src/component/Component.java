@@ -3,6 +3,7 @@
 package component;
 
 import base.ArtifactElement;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link component.Component#isDyamic <em>Dyamic</em>}</li>
  *   <li>{@link component.Component#getIdentity <em>Identity</em>}</li>
  *   <li>{@link component.Component#getComponent_name <em>Component name</em>}</li>
  *   <li>{@link component.Component#getReuse <em>Reuse</em>}</li>
@@ -21,10 +23,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link component.Component#getFit <em>Fit</em>}</li>
  *   <li>{@link component.Component#isSafety_related <em>Safety related</em>}</li>
  *   <li>{@link component.Component#getSil <em>Sil</em>}</li>
+ *   <li>{@link component.Component#getReadings <em>Readings</em>}</li>
+ *   <li>{@link component.Component#getBlockType <em>Block Type</em>}</li>
  *   <li>{@link component.Component#getFunction <em>Function</em>}</li>
  *   <li>{@link component.Component#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link component.Component#getInputs <em>Inputs</em>}</li>
  *   <li>{@link component.Component#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link component.Component#getLports <em>Lports</em>}</li>
+ *   <li>{@link component.Component#getRports <em>Rports</em>}</li>
  *   <li>{@link component.Component#getSub_components <em>Sub components</em>}</li>
  *   <li>{@link component.Component#getFailure_modes <em>Failure modes</em>}</li>
  *   <li>{@link component.Component#getSafety_mechanisms <em>Safety mechanisms</em>}</li>
@@ -36,6 +42,28 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Component extends ComponentElement {
+	/**
+	 * Returns the value of the '<em><b>Dyamic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dyamic</em>' attribute.
+	 * @see #setDyamic(boolean)
+	 * @see component.Component_Package#getComponent_Dyamic()
+	 * @model
+	 * @generated
+	 */
+	boolean isDyamic();
+
+	/**
+	 * Sets the value of the '{@link component.Component#isDyamic <em>Dyamic</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dyamic</em>' attribute.
+	 * @see #isDyamic()
+	 * @generated
+	 */
+	void setDyamic(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Identity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -191,6 +219,40 @@ public interface Component extends ComponentElement {
 	void setSil(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Readings</b></em>' containment reference list.
+	 * The list contents are of type {@link component.Reading}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Readings</em>' containment reference list.
+	 * @see component.Component_Package#getComponent_Readings()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Reading> getReadings();
+
+	/**
+	 * Returns the value of the '<em><b>Block Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Block Type</em>' reference.
+	 * @see #setBlockType(ArtifactElement)
+	 * @see component.Component_Package#getComponent_BlockType()
+	 * @model
+	 * @generated
+	 */
+	ArtifactElement getBlockType();
+
+	/**
+	 * Sets the value of the '{@link component.Component#getBlockType <em>Block Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Block Type</em>' reference.
+	 * @see #getBlockType()
+	 * @generated
+	 */
+	void setBlockType(ArtifactElement value);
+
+	/**
 	 * Returns the value of the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,6 +322,30 @@ public interface Component extends ComponentElement {
 	 * @generated
 	 */
 	EList<Output> getOutputs();
+
+	/**
+	 * Returns the value of the '<em><b>Lports</b></em>' containment reference list.
+	 * The list contents are of type {@link component.LPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lports</em>' containment reference list.
+	 * @see component.Component_Package#getComponent_Lports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<LPort> getLports();
+
+	/**
+	 * Returns the value of the '<em><b>Rports</b></em>' containment reference list.
+	 * The list contents are of type {@link component.RPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rports</em>' containment reference list.
+	 * @see component.Component_Package#getComponent_Rports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RPort> getRports();
 
 	/**
 	 * Returns the value of the '<em><b>Sub components</b></em>' containment reference list.

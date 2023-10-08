@@ -46,6 +46,7 @@ public class FunctionItemProvider extends ComponentAssetItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addFuncPropertyDescriptor(object);
+			addToleranceTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +65,28 @@ public class FunctionItemProvider extends ComponentAssetItemProvider {
 				 getString("_UI_Function_func_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Function_func_feature", "_UI_Function_type"),
 				 Component_Package.Literals.FUNCTION__FUNC,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tolerance Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToleranceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Function_toleranceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Function_toleranceType_feature", "_UI_Function_type"),
+				 Component_Package.Literals.FUNCTION__TOLERANCE_TYPE,
 				 true,
 				 false,
 				 false,
@@ -111,6 +134,7 @@ public class FunctionItemProvider extends ComponentAssetItemProvider {
 
 		switch (notification.getFeatureID(Function.class)) {
 			case Component_Package.FUNCTION__FUNC:
+			case Component_Package.FUNCTION__TOLERANCE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

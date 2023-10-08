@@ -32,7 +32,7 @@ import requirement.util.Requirement_AdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Requirement_ItemProviderAdapterFactory extends Requirement_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class Requirement_ItemProviderAdapterFactory extends Requirement_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -281,21 +281,6 @@ public class Requirement_ItemProviderAdapterFactory extends Requirement_AdapterF
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void dispose() {
-		if (requirementPackageItemProvider != null) requirementPackageItemProvider.dispose();
-		if (requirementPackageBindingItemProvider != null) requirementPackageBindingItemProvider.dispose();
-		if (requirementPackageInterfaceItemProvider != null) requirementPackageInterfaceItemProvider.dispose();
-		if (requirementItemProvider != null) requirementItemProvider.dispose();
-		if (requirementRelationshipItemProvider != null) requirementRelationshipItemProvider.dispose();
 	}
 
 }

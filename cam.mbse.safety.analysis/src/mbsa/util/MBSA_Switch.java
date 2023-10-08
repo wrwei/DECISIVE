@@ -24,17 +24,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see mbsa.MBSA_Package
+ * @see mbsa.Mbsa_Package
  * @generated
  */
-public class MBSA_Switch<T> extends Switch<T> {
+public class Mbsa_Switch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MBSA_Package modelPackage;
+	protected static Mbsa_Package modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -42,9 +42,9 @@ public class MBSA_Switch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSA_Switch() {
+	public Mbsa_Switch() {
 		if (modelPackage == null) {
-			modelPackage = MBSA_Package.eINSTANCE;
+			modelPackage = Mbsa_Package.eINSTANCE;
 		}
 	}
 
@@ -71,7 +71,7 @@ public class MBSA_Switch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MBSA_Package.MBSA_PACKAGE: {
+			case Mbsa_Package.MBSA_PACKAGE: {
 				MBSAPackage mbsaPackage = (MBSAPackage)theEObject;
 				T result = caseMBSAPackage(mbsaPackage);
 				if (result == null) result = caseArtifactElement(mbsaPackage);
@@ -176,4 +176,4 @@ public class MBSA_Switch<T> extends Switch<T> {
 		return null;
 	}
 
-} //MBSA_Switch
+} //Mbsa_Switch

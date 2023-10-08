@@ -5,7 +5,7 @@ package mbsa.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import mbsa.util.MBSA_AdapterFactory;
+import mbsa.util.Mbsa_AdapterFactory;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MBSA_ItemProviderAdapterFactory extends MBSA_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class Mbsa_ItemProviderAdapterFactory extends Mbsa_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class MBSA_ItemProviderAdapterFactory extends MBSA_AdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSA_ItemProviderAdapterFactory() {
+	public Mbsa_ItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);

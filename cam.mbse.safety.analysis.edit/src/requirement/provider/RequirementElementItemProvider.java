@@ -8,6 +8,7 @@ import base.provider.ArtifactElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
+import mbsa.provider.MbsaEditPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import requirement.RequirementElement;
+import safety_concept.provider.Safety_conceptEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link requirement.RequirementElement} object.
@@ -97,7 +99,7 @@ public class RequirementElementItemProvider extends ArtifactElementItemProvider 
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return RequirementEditPlugin.INSTANCE;
+		return MbsaEditPlugin.INSTANCE;
 	}
 
 }

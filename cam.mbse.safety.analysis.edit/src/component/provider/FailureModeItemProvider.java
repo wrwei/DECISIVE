@@ -52,6 +52,7 @@ public class FailureModeItemProvider extends ComponentSafetyElementItemProvider 
 			addCausePropertyDescriptor(object);
 			addProbabilityPropertyDescriptor(object);
 			addSafety_relatedPropertyDescriptor(object);
+			addFailureSeverityPropertyDescriptor(object);
 			addHazardsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -141,6 +142,28 @@ public class FailureModeItemProvider extends ComponentSafetyElementItemProvider 
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Failure Severity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFailureSeverityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FailureMode_failureSeverity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FailureMode_failureSeverity_feature", "_UI_FailureMode_type"),
+				 Component_Package.Literals.FAILURE_MODE__FAILURE_SEVERITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -241,6 +264,7 @@ public class FailureModeItemProvider extends ComponentSafetyElementItemProvider 
 			case Component_Package.FAILURE_MODE__CAUSE:
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
+			case Component_Package.FAILURE_MODE__FAILURE_SEVERITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case Component_Package.FAILURE_MODE__REGIONAL:

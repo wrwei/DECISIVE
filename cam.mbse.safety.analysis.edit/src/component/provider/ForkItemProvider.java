@@ -12,6 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -20,7 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ForkItemProvider extends ComponentItemProvider {
+public class ForkItemProvider extends TransitionNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -42,8 +43,54 @@ public class ForkItemProvider extends ComponentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSourcePropertyDescriptor(object);
+			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Fork_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Fork_source_feature", "_UI_Fork_type"),
+				 Component_Package.Literals.FORK__SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Fork_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Fork_target_feature", "_UI_Fork_type"),
+				 Component_Package.Literals.FORK__TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -65,7 +112,7 @@ public class ForkItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Fork)object).getComponent_name();
+		String label = ((Fork)object).getGid();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Fork_type") :
 			getString("_UI_Fork_type") + " " + label;
@@ -95,32 +142,6 @@ public class ForkItemProvider extends ComponentItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == Component_Package.Literals.COMPONENT__INPUTS ||
-			childFeature == Component_Package.Literals.COMPONENT__SUB_COMPONENTS ||
-			childFeature == Component_Package.Literals.COMPONENT__OUTPUTS ||
-			childFeature == Component_Package.Literals.COMPONENT__FAILURE_MODES ||
-			childFeature == Component_Package.Literals.COMPONENT__SAFETY_MECHANISMS;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

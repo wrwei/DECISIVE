@@ -3,7 +3,6 @@
 package hazard.provider;
 
 
-import hazard.Hazard_Factory;
 import hazard.Hazard_Package;
 import hazard.HazardousSituation;
 
@@ -12,8 +11,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;

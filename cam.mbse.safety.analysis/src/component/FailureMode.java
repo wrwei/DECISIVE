@@ -3,8 +3,8 @@
 package component;
 
 import base.ArtifactElement;
-import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link component.FailureMode#getCause <em>Cause</em>}</li>
  *   <li>{@link component.FailureMode#getProbability <em>Probability</em>}</li>
  *   <li>{@link component.FailureMode#isSafety_related <em>Safety related</em>}</li>
+ *   <li>{@link component.FailureMode#getFailureSeverity <em>Failure Severity</em>}</li>
  *   <li>{@link component.FailureMode#getHazards <em>Hazards</em>}</li>
  *   <li>{@link component.FailureMode#getRegional <em>Regional</em>}</li>
  *   <li>{@link component.FailureMode#getHigher_level <em>Higher level</em>}</li>
@@ -117,6 +118,31 @@ public interface FailureMode extends ComponentSafetyElement {
 	 * @generated
 	 */
 	void setSafety_related(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Failure Severity</b></em>' attribute.
+	 * The literals are from the enumeration {@link component.FailureSeverity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Failure Severity</em>' attribute.
+	 * @see component.FailureSeverity
+	 * @see #setFailureSeverity(FailureSeverity)
+	 * @see component.Component_Package#getFailureMode_FailureSeverity()
+	 * @model
+	 * @generated
+	 */
+	FailureSeverity getFailureSeverity();
+
+	/**
+	 * Sets the value of the '{@link component.FailureMode#getFailureSeverity <em>Failure Severity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Failure Severity</em>' attribute.
+	 * @see component.FailureSeverity
+	 * @see #getFailureSeverity()
+	 * @generated
+	 */
+	void setFailureSeverity(FailureSeverity value);
 
 	/**
 	 * Returns the value of the '<em><b>Hazards</b></em>' reference list.

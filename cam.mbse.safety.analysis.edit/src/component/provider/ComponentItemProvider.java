@@ -48,6 +48,7 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDyamicPropertyDescriptor(object);
 			addIdentityPropertyDescriptor(object);
 			addComponent_namePropertyDescriptor(object);
 			addReusePropertyDescriptor(object);
@@ -55,11 +56,34 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			addFitPropertyDescriptor(object);
 			addSafety_relatedPropertyDescriptor(object);
 			addSilPropertyDescriptor(object);
+			addBlockTypePropertyDescriptor(object);
 			addFunctionPropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Dyamic feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDyamicPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_dyamic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_dyamic_feature", "_UI_Component_type"),
+				 Component_Package.Literals.COMPONENT__DYAMIC,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -217,6 +241,28 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Block Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBlockTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_blockType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_blockType_feature", "_UI_Component_type"),
+				 Component_Package.Literals.COMPONENT__BLOCK_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Function feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,8 +340,11 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(Component_Package.Literals.COMPONENT__READINGS);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__INPUTS);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__OUTPUTS);
+			childrenFeatures.add(Component_Package.Literals.COMPONENT__LPORTS);
+			childrenFeatures.add(Component_Package.Literals.COMPONENT__RPORTS);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__SUB_COMPONENTS);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__FAILURE_MODES);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__SAFETY_MECHANISMS);
@@ -354,6 +403,7 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Component.class)) {
+			case Component_Package.COMPONENT__DYAMIC:
 			case Component_Package.COMPONENT__IDENTITY:
 			case Component_Package.COMPONENT__COMPONENT_NAME:
 			case Component_Package.COMPONENT__REUSE:
@@ -364,8 +414,11 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			case Component_Package.COMPONENT__COMPONENT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case Component_Package.COMPONENT__READINGS:
 			case Component_Package.COMPONENT__INPUTS:
 			case Component_Package.COMPONENT__OUTPUTS:
+			case Component_Package.COMPONENT__LPORTS:
+			case Component_Package.COMPONENT__RPORTS:
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 			case Component_Package.COMPONENT__FAILURE_MODES:
 			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
@@ -388,6 +441,11 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(Component_Package.Literals.COMPONENT__READINGS,
+				 Component_Factory.eINSTANCE.createReading()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(Component_Package.Literals.COMPONENT__INPUTS,
 				 Component_Factory.eINSTANCE.createInput()));
 
@@ -395,6 +453,16 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT__OUTPUTS,
 				 Component_Factory.eINSTANCE.createOutput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__LPORTS,
+				 Component_Factory.eINSTANCE.createLPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__RPORTS,
+				 Component_Factory.eINSTANCE.createRPort()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -419,22 +487,22 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createDirectedRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createUndirectedRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
 				 Component_Factory.eINSTANCE.createFork()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
-				 Component_Factory.eINSTANCE.createJoin()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
-				 Component_Factory.eINSTANCE.createComponentRelationship()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
-				 Component_Factory.eINSTANCE.createFunction()));
+				 Component_Factory.eINSTANCE.createSwitch()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -445,6 +513,26 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
 				 Component_Factory.eINSTANCE.createOutput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createLPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createRPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createReading()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -494,9 +582,12 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == Component_Package.Literals.COMPONENT__INPUTS ||
+			childFeature == Component_Package.Literals.COMPONENT__READINGS ||
 			childFeature == Component_Package.Literals.COMPONENT__SUB_COMPONENTS ||
+			childFeature == Component_Package.Literals.COMPONENT__INPUTS ||
 			childFeature == Component_Package.Literals.COMPONENT__OUTPUTS ||
+			childFeature == Component_Package.Literals.COMPONENT__LPORTS ||
+			childFeature == Component_Package.Literals.COMPONENT__RPORTS ||
 			childFeature == Component_Package.Literals.COMPONENT__FAILURE_MODES ||
 			childFeature == Component_Package.Literals.COMPONENT__SAFETY_MECHANISMS;
 

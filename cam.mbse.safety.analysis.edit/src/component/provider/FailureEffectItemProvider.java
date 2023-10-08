@@ -45,26 +45,26 @@ public class FailureEffectItemProvider extends ComponentSafetyElementItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDescPropertyDescriptor(object);
+			addEffectPropertyDescriptor(object);
 			addAffectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Desc feature.
+	 * This adds a property descriptor for the Effect feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescPropertyDescriptor(Object object) {
+	protected void addEffectPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FailureEffect_desc_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FailureEffect_desc_feature", "_UI_FailureEffect_type"),
-				 Component_Package.Literals.FAILURE_EFFECT__DESC,
+				 getString("_UI_FailureEffect_effect_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FailureEffect_effect_feature", "_UI_FailureEffect_type"),
+				 Component_Package.Literals.FAILURE_EFFECT__EFFECT,
 				 true,
 				 false,
 				 false,
@@ -122,7 +122,7 @@ public class FailureEffectItemProvider extends ComponentSafetyElementItemProvide
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FailureEffect.class)) {
-			case Component_Package.FAILURE_EFFECT__DESC:
+			case Component_Package.FAILURE_EFFECT__EFFECT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

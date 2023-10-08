@@ -69,9 +69,9 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import mbsa.MBSA_Factory;
-import mbsa.MBSA_Package;
-import mbsa.provider.MBSAEditPlugin;
+import mbsa.Mbsa_Factory;
+import mbsa.Mbsa_Package;
+import mbsa.provider.MbsaEditPlugin;
 
 
 import org.eclipse.core.runtime.Path;
@@ -91,7 +91,7 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MBSA_ModelWizard extends Wizard implements INewWizard {
+public class Mbsa_ModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -99,7 +99,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_EditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -108,7 +108,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -116,7 +116,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MBSA_Package mbsA_Package = MBSA_Package.eINSTANCE;
+	protected Mbsa_Package mbsa_Package = Mbsa_Package.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -124,7 +124,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MBSA_Factory mbsA_Factory = mbsA_Package.getMBSA_Factory();
+	protected Mbsa_Factory mbsa_Factory = mbsa_Package.getMbsa_Factory();
 
 	/**
 	 * This is the file creation page.
@@ -132,7 +132,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MBSA_ModelWizardNewFileCreationPage newFileCreationPage;
+	protected Mbsa_ModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -140,7 +140,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MBSA_ModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected Mbsa_ModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -176,8 +176,8 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(MBSAEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MBSAEditorPlugin.INSTANCE.getImage("full/wizban/NewMBSA_")));
+		setWindowTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MbsaEditorPlugin.INSTANCE.getImage("full/wizban/NewMbsa_")));
 	}
 
 	/**
@@ -189,7 +189,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : mbsA_Package.getEClassifiers()) {
+			for (EClassifier eClassifier : mbsa_Package.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
@@ -209,8 +209,8 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)mbsA_Package.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = mbsA_Factory.create(eClass);
+		EClass eClass = (EClass)mbsa_Package.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = mbsa_Factory.create(eClass);
 		return rootObject;
 	}
 
@@ -260,7 +260,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 							resource.save(options);
 						}
 						catch (Exception exception) {
-							MBSAEditorPlugin.INSTANCE.log(exception);
+							MbsaEditorPlugin.INSTANCE.log(exception);
 						}
 						finally {
 							progressMonitor.done();
@@ -294,14 +294,14 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), MBSAEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), MbsaEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
 		catch (Exception exception) {
-			MBSAEditorPlugin.INSTANCE.log(exception);
+			MbsaEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -312,14 +312,14 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class MBSA_ModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class Mbsa_ModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public MBSA_ModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public Mbsa_ModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -335,7 +335,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(MBSAEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(MbsaEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -359,7 +359,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class MBSA_ModelWizardInitialObjectCreationPage extends WizardPage {
+	public class Mbsa_ModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -387,7 +387,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public MBSA_ModelWizardInitialObjectCreationPage(String pageId) {
+		public Mbsa_ModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -414,7 +414,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(MBSAEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(MbsaEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -440,7 +440,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(MBSAEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(MbsaEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -540,10 +540,10 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return MBSAEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return MbsaEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
 			catch(MissingResourceException mre) {
-				MBSAEditorPlugin.INSTANCE.log(mre);
+				MbsaEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -556,7 +556,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(MBSAEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(MbsaEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -574,10 +574,10 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new MBSA_ModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_ModelWizard_label"));
-		newFileCreationPage.setDescription(MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_ModelWizard_description"));
-		newFileCreationPage.setFileName(MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new Mbsa_ModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_ModelWizard_label"));
+		newFileCreationPage.setDescription(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_ModelWizard_description"));
+		newFileCreationPage.setFileName(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -603,7 +603,7 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_EditorFilenameDefaultBase");
+					String defaultModelBaseFilename = MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_EditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -613,9 +613,9 @@ public class MBSA_ModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		initialObjectCreationPage = new MBSA_ModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_ModelWizard_label"));
-		initialObjectCreationPage.setDescription(MBSAEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage = new Mbsa_ModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_ModelWizard_label"));
+		initialObjectCreationPage.setDescription(MbsaEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 

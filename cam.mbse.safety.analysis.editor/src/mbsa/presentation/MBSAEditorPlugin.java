@@ -9,19 +9,19 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the MBSA editor plugin.
+ * This is the central singleton for the Mbsa editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class MBSAEditorPlugin extends EMFPlugin {
+public final class MbsaEditorPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final MBSAEditorPlugin INSTANCE = new MBSAEditorPlugin();
+	public static final MbsaEditorPlugin INSTANCE = new MbsaEditorPlugin();
 	
 	/**
 	 * Keep track of the singleton.
@@ -37,7 +37,7 @@ public final class MBSAEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSAEditorPlugin() {
+	public MbsaEditorPlugin() {
 		super
 			(new ResourceLocator [] {
 			});

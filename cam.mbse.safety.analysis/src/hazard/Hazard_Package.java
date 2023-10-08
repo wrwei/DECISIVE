@@ -40,7 +40,7 @@ public interface Hazard_Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://dlut.mbsa/hazard";
+	String eNS_URI = "http://cam.ac.uk/mbsa/hazard";
 
 	/**
 	 * The package namespace name.

@@ -3,21 +3,26 @@
 package component.impl;
 
 import base.ArtifactElement;
+
 import component.Component_Package;
 import component.FailureMode;
+import component.FailureSeverity;
 import component.FinalEffect;
 import component.HigherLevelEffect;
 import component.RegionalEffect;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -32,6 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link component.impl.FailureModeImpl#getCause <em>Cause</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getProbability <em>Probability</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#isSafety_related <em>Safety related</em>}</li>
+ *   <li>{@link component.impl.FailureModeImpl#getFailureSeverity <em>Failure Severity</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getHazards <em>Hazards</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getRegional <em>Regional</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getHigher_level <em>Higher level</em>}</li>
@@ -120,6 +126,26 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 	 * @ordered
 	 */
 	protected boolean safety_related = SAFETY_RELATED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFailureSeverity() <em>Failure Severity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFailureSeverity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final FailureSeverity FAILURE_SEVERITY_EDEFAULT = FailureSeverity.CATASTROPHIC;
+
+	/**
+	 * The cached value of the '{@link #getFailureSeverity() <em>Failure Severity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFailureSeverity()
+	 * @generated
+	 * @ordered
+	 */
+	protected FailureSeverity failureSeverity = FAILURE_SEVERITY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getHazards() <em>Hazards</em>}' reference list.
@@ -270,6 +296,29 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 		safety_related = newSafety_related;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.FAILURE_MODE__SAFETY_RELATED, oldSafety_related, safety_related));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FailureSeverity getFailureSeverity() {
+		return failureSeverity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFailureSeverity(FailureSeverity newFailureSeverity) {
+		FailureSeverity oldFailureSeverity = failureSeverity;
+		failureSeverity = newFailureSeverity == null ? FAILURE_SEVERITY_EDEFAULT : newFailureSeverity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.FAILURE_MODE__FAILURE_SEVERITY, oldFailureSeverity, failureSeverity));
 	}
 
 	/**
@@ -454,6 +503,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return getProbability();
 			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
 				return isSafety_related();
+			case Component_Package.FAILURE_MODE__FAILURE_SEVERITY:
+				return getFailureSeverity();
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				return getHazards();
 			case Component_Package.FAILURE_MODE__REGIONAL:
@@ -486,6 +537,9 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return;
 			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
 				setSafety_related((Boolean)newValue);
+				return;
+			case Component_Package.FAILURE_MODE__FAILURE_SEVERITY:
+				setFailureSeverity((FailureSeverity)newValue);
 				return;
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				getHazards().clear();
@@ -524,6 +578,9 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
 				setSafety_related(SAFETY_RELATED_EDEFAULT);
 				return;
+			case Component_Package.FAILURE_MODE__FAILURE_SEVERITY:
+				setFailureSeverity(FAILURE_SEVERITY_EDEFAULT);
+				return;
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				getHazards().clear();
 				return;
@@ -556,6 +613,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return probability != PROBABILITY_EDEFAULT;
 			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
 				return safety_related != SAFETY_RELATED_EDEFAULT;
+			case Component_Package.FAILURE_MODE__FAILURE_SEVERITY:
+				return failureSeverity != FAILURE_SEVERITY_EDEFAULT;
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				return hazards != null && !hazards.isEmpty();
 			case Component_Package.FAILURE_MODE__REGIONAL:
@@ -586,6 +645,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 		result.append(probability);
 		result.append(", safety_related: ");
 		result.append(safety_related);
+		result.append(", failureSeverity: ");
+		result.append(failureSeverity);
 		result.append(')');
 		return result.toString();
 	}

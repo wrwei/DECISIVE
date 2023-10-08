@@ -1,0 +1,96 @@
+@namespace(uri="http://cam.ac.uk/mbsa/fmea", prefix="fmea_")
+package fmea;
+
+import "http://cam.ac.uk/mbsa/base";
+
+
+enum Severity {
+	catastrophic = 1;
+	fatal = 2;
+	median = 3;
+	moderate = 4;
+}
+
+enum FailureEffect {
+	LossOfFunction = 1;
+	UnintededDeliveryOfFunction = 2;
+	EarlyDeployment = 3;
+	LateDeployment = 4;
+	ProvisionValueHigh = 5;
+	ProvisionValueLow = 4;
+}
+
+abstract class FMEAElement extends base.ArtifactElement {
+}
+
+class FMEAPackage extends FMEAElement {
+  val FMEAElement[*] FMEAElement;
+  ref FMEAPackageInterface[*] ~interface;
+}
+
+class FMEAPackageInterface extends FMEAPackage {
+  ref FMEAPackage[1] implements;
+}
+
+class FMEAPackageBinding extends FMEAPackage {
+  ref FMEAPackage[2..*] participantPackage;
+}
+
+class Effect extends FMEAElement {
+	attr String effect;
+}
+
+class RegionEffect extends Effect {
+	
+}
+
+class HigherLevelEffect extends Effect {
+	
+}
+
+class EndEffect extends Effect {
+	
+}
+
+class CorrectiveAction extends FMEAElement {
+	attr String corrective_action;
+}
+
+class IndentureLevel extends FMEAElement {
+	attr Boolean initial=false;
+	attr Integer level;
+	attr Boolean lowest=false;
+}
+
+class Stakeholder extends FMEAElement {
+	attr String identity;
+}
+
+class FailureMode extends FMEAElement {
+	attr String failure_mode;
+	attr float distribution;
+	attr Severity severity;
+	attr String[*] remarks;
+	val EndEffect[*] endEffect;
+	val HigherLevelEffect[*] high_level_effect;
+	val RegionEffect[*] region_effect;
+	val CorrectiveAction[*] corrective_action;
+}
+
+class FMEAEntry extends FMEAElement {
+	attr int number;
+	attr String unit;
+	val FailureMode[*] failure_modes;
+}
+
+class FMEAForm extends FMEAElement {
+	attr String mission;
+	attr Boolean approved;
+	attr EDate date;
+	ref Stakeholder[*] analysts;
+	ref Stakeholder[*] validator;
+	ref FMEAEntry[*] entries;
+}
+
+
+

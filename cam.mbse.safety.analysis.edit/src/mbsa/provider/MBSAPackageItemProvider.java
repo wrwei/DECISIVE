@@ -7,14 +7,16 @@ import base.provider.ArtifactElementItemProvider;
 
 import component.Component_Factory;
 
+import fta.Fta_Factory;
+
 import hazard.Hazard_Factory;
 
 import java.util.Collection;
 import java.util.List;
 
 import mbsa.MBSAPackage;
-import mbsa.MBSA_Factory;
-import mbsa.MBSA_Package;
+import mbsa.Mbsa_Factory;
+import mbsa.Mbsa_Package;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,6 +29,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import requirement.Requirement_Factory;
+
+import safety_concept.Safety_concept_Factory;
 
 /**
  * This is the item provider adapter for a {@link mbsa.MBSAPackage} object.
@@ -72,10 +76,12 @@ public class MBSAPackageItemProvider extends ArtifactElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MBSA_Package.Literals.MBSA_PACKAGE__MBSA_PACKAGES);
-			childrenFeatures.add(MBSA_Package.Literals.MBSA_PACKAGE__COMPONENT_PACKAGE);
-			childrenFeatures.add(MBSA_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE);
-			childrenFeatures.add(MBSA_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE);
+			childrenFeatures.add(Mbsa_Package.Literals.MBSA_PACKAGE__MBSA_PACKAGES);
+			childrenFeatures.add(Mbsa_Package.Literals.MBSA_PACKAGE__COMPONENT_PACKAGE);
+			childrenFeatures.add(Mbsa_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE);
+			childrenFeatures.add(Mbsa_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE);
+			childrenFeatures.add(Mbsa_Package.Literals.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE);
+			childrenFeatures.add(Mbsa_Package.Literals.MBSA_PACKAGE__FTA_PACKAGE);
 		}
 		return childrenFeatures;
 	}
@@ -131,10 +137,12 @@ public class MBSAPackageItemProvider extends ArtifactElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MBSAPackage.class)) {
-			case MBSA_Package.MBSA_PACKAGE__MBSA_PACKAGES:
-			case MBSA_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
-			case MBSA_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
-			case MBSA_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__MBSA_PACKAGES:
+			case Mbsa_Package.MBSA_PACKAGE__COMPONENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__REQUIREMENT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__HAZARD_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE:
+			case Mbsa_Package.MBSA_PACKAGE__FTA_PACKAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -154,43 +162,73 @@ public class MBSAPackageItemProvider extends ArtifactElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__MBSA_PACKAGES,
-				 MBSA_Factory.eINSTANCE.createMBSAPackage()));
+				(Mbsa_Package.Literals.MBSA_PACKAGE__MBSA_PACKAGES,
+				 Mbsa_Factory.eINSTANCE.createMBSAPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__COMPONENT_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__COMPONENT_PACKAGE,
 				 Component_Factory.eINSTANCE.createComponentPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE,
 				 Requirement_Factory.eINSTANCE.createRequirementPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE,
 				 Requirement_Factory.eINSTANCE.createRequirementPackageBinding()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__REQUIREMENT_PACKAGE,
 				 Requirement_Factory.eINSTANCE.createRequirementPackageInterface()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE,
 				 Hazard_Factory.eINSTANCE.createHazardPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE,
 				 Hazard_Factory.eINSTANCE.createHazardPackageBinding()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MBSA_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE,
+				(Mbsa_Package.Literals.MBSA_PACKAGE__HAZARD_PACKAGE,
 				 Hazard_Factory.eINSTANCE.createHazardPackageInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Mbsa_Package.Literals.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE,
+				 Safety_concept_Factory.eINSTANCE.createSafetyConceptPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Mbsa_Package.Literals.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE,
+				 Safety_concept_Factory.eINSTANCE.createSafetyConceptPackageBinding()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Mbsa_Package.Literals.MBSA_PACKAGE__SAFETY_CONCEPT_PACKAGE,
+				 Safety_concept_Factory.eINSTANCE.createSafetyConceptPackageInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Mbsa_Package.Literals.MBSA_PACKAGE__FTA_PACKAGE,
+				 Fta_Factory.eINSTANCE.createFTAPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Mbsa_Package.Literals.MBSA_PACKAGE__FTA_PACKAGE,
+				 Fta_Factory.eINSTANCE.createFTAPackageInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Mbsa_Package.Literals.MBSA_PACKAGE__FTA_PACKAGE,
+				 Fta_Factory.eINSTANCE.createComponentPackageBinding()));
 	}
 
 	/**
@@ -201,7 +239,7 @@ public class MBSAPackageItemProvider extends ArtifactElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return MBSAEditPlugin.INSTANCE;
+		return MbsaEditPlugin.INSTANCE;
 	}
 
 }

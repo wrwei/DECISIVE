@@ -39,7 +39,7 @@ public interface Requirement_Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://dlut.mbsa/requirement";
+	String eNS_URI = "http://cam.ac.uk/mbsa/requirement";
 
 	/**
 	 * The package namespace name.

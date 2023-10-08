@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Component_ItemProviderAdapterFactory extends Component_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class Component_ItemProviderAdapterFactory extends Component_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -164,6 +164,52 @@ public class Component_ItemProviderAdapterFactory extends Component_AdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link component.DirectedRelationship} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DirectedRelationshipItemProvider directedRelationshipItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link component.DirectedRelationship}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDirectedRelationshipAdapter() {
+		if (directedRelationshipItemProvider == null) {
+			directedRelationshipItemProvider = new DirectedRelationshipItemProvider(this);
+		}
+
+		return directedRelationshipItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link component.UndirectedRelationship} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UndirectedRelationshipItemProvider undirectedRelationshipItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link component.UndirectedRelationship}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUndirectedRelationshipAdapter() {
+		if (undirectedRelationshipItemProvider == null) {
+			undirectedRelationshipItemProvider = new UndirectedRelationshipItemProvider(this);
+		}
+
+		return undirectedRelationshipItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link component.Fork} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,72 +233,26 @@ public class Component_ItemProviderAdapterFactory extends Component_AdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link component.Join} instances.
+	 * This keeps track of the one adapter used for all {@link component.Switch} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected JoinItemProvider joinItemProvider;
+	protected SwitchItemProvider switchItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link component.Join}.
+	 * This creates an adapter for a {@link component.Switch}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createJoinAdapter() {
-		if (joinItemProvider == null) {
-			joinItemProvider = new JoinItemProvider(this);
+	public Adapter createSwitchAdapter() {
+		if (switchItemProvider == null) {
+			switchItemProvider = new SwitchItemProvider(this);
 		}
 
-		return joinItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link component.ComponentRelationship} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentRelationshipItemProvider componentRelationshipItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link component.ComponentRelationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComponentRelationshipAdapter() {
-		if (componentRelationshipItemProvider == null) {
-			componentRelationshipItemProvider = new ComponentRelationshipItemProvider(this);
-		}
-
-		return componentRelationshipItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link component.Function} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FunctionItemProvider functionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link component.Function}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFunctionAdapter() {
-		if (functionItemProvider == null) {
-			functionItemProvider = new FunctionItemProvider(this);
-		}
-
-		return functionItemProvider;
+		return switchItemProvider;
 	}
 
 	/**
@@ -299,6 +299,98 @@ public class Component_ItemProviderAdapterFactory extends Component_AdapterFacto
 		}
 
 		return outputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link component.LPort} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LPortItemProvider lPortItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link component.LPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLPortAdapter() {
+		if (lPortItemProvider == null) {
+			lPortItemProvider = new LPortItemProvider(this);
+		}
+
+		return lPortItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link component.RPort} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RPortItemProvider rPortItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link component.RPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRPortAdapter() {
+		if (rPortItemProvider == null) {
+			rPortItemProvider = new RPortItemProvider(this);
+		}
+
+		return rPortItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link component.Function} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FunctionItemProvider functionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link component.Function}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFunctionAdapter() {
+		if (functionItemProvider == null) {
+			functionItemProvider = new FunctionItemProvider(this);
+		}
+
+		return functionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link component.Reading} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReadingItemProvider readingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link component.Reading}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReadingAdapter() {
+		if (readingItemProvider == null) {
+			readingItemProvider = new ReadingItemProvider(this);
+		}
+
+		return readingItemProvider;
 	}
 
 	/**
@@ -511,31 +603,6 @@ public class Component_ItemProviderAdapterFactory extends Component_AdapterFacto
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void dispose() {
-		if (componentPackageItemProvider != null) componentPackageItemProvider.dispose();
-		if (componentPackageInterfaceItemProvider != null) componentPackageInterfaceItemProvider.dispose();
-		if (componentPackageBindingItemProvider != null) componentPackageBindingItemProvider.dispose();
-		if (componentItemProvider != null) componentItemProvider.dispose();
-		if (forkItemProvider != null) forkItemProvider.dispose();
-		if (joinItemProvider != null) joinItemProvider.dispose();
-		if (componentRelationshipItemProvider != null) componentRelationshipItemProvider.dispose();
-		if (functionItemProvider != null) functionItemProvider.dispose();
-		if (inputItemProvider != null) inputItemProvider.dispose();
-		if (outputItemProvider != null) outputItemProvider.dispose();
-		if (failureModeItemProvider != null) failureModeItemProvider.dispose();
-		if (safetyMechanismItemProvider != null) safetyMechanismItemProvider.dispose();
-		if (regionalEffectItemProvider != null) regionalEffectItemProvider.dispose();
-		if (higherLevelEffectItemProvider != null) higherLevelEffectItemProvider.dispose();
-		if (finalEffectItemProvider != null) finalEffectItemProvider.dispose();
 	}
 
 }

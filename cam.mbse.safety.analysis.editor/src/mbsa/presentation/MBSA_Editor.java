@@ -155,11 +155,13 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import mbsa.provider.MBSA_ItemProviderAdapterFactory;
+import mbsa.provider.Mbsa_ItemProviderAdapterFactory;
 
 import base.provider.Base_ItemProviderAdapterFactory;
 
 import component.provider.Component_ItemProviderAdapterFactory;
+
+import fta.provider.Fta_ItemProviderAdapterFactory;
 
 import hazard.provider.Hazard_ItemProviderAdapterFactory;
 
@@ -167,14 +169,16 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import requirement.provider.Requirement_ItemProviderAdapterFactory;
 
+import safety_concept.provider.Safety_concept_ItemProviderAdapterFactory;
+
 
 /**
- * This is an example of a MBSA_ model editor.
+ * This is an example of a Mbsa_ model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MBSA_Editor
+public class Mbsa_Editor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -337,18 +341,18 @@ public class MBSA_Editor
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(MBSA_Editor.this);
+						getActionBarContributor().setActiveEditor(Mbsa_Editor.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(MBSA_Editor.this);
+						getActionBarContributor().setActiveEditor(Mbsa_Editor.this);
 						handleActivate();
 					}
 				}
-				else if (p == MBSA_Editor.this) {
+				else if (p == Mbsa_Editor.this) {
 					handleActivate();
 				}
 			}
@@ -529,7 +533,7 @@ public class MBSA_Editor
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(MBSA_Editor.this, false);
+										 getSite().getPage().closeEditor(Mbsa_Editor.this, false);
 									 }
 								 }
 							 });
@@ -541,7 +545,7 @@ public class MBSA_Editor
 								 @Override
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == MBSA_Editor.this) {
+									 if (getSite().getPage().getActiveEditor() == Mbsa_Editor.this) {
 										 handleActivate();
 									 }
 								 }
@@ -549,7 +553,7 @@ public class MBSA_Editor
 					}
 				}
 				catch (CoreException exception) {
-					MBSAEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -573,7 +577,7 @@ public class MBSA_Editor
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(MBSA_Editor.this, false);
+				getSite().getPage().closeEditor(Mbsa_Editor.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -638,7 +642,7 @@ public class MBSA_Editor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "dlut.mbsa.toolchain.editor",
+					 "cam.mbse.safety.analysis.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -666,7 +670,7 @@ public class MBSA_Editor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					MBSAEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -675,7 +679,7 @@ public class MBSA_Editor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					MBSAEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -701,7 +705,7 @@ public class MBSA_Editor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSA_Editor() {
+	public Mbsa_Editor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -718,11 +722,13 @@ public class MBSA_Editor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new MBSA_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Mbsa_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Base_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Component_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Requirement_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Hazard_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Safety_concept_ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Fta_ItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1009,7 +1015,7 @@ public class MBSA_Editor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
-					 "dlut.mbsa.toolchain.editor",
+					 "cam.mbse.safety.analysis.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -1020,7 +1026,7 @@ public class MBSA_Editor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "dlut.mbsa.toolchain.editor",
+					 "cam.mbse.safety.analysis.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });
@@ -1049,7 +1055,7 @@ public class MBSA_Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), MBSA_Editor.this) {
+					new ViewerPane(getSite().getPage(), Mbsa_Editor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1084,7 +1090,7 @@ public class MBSA_Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), MBSA_Editor.this) {
+					new ViewerPane(getSite().getPage(), Mbsa_Editor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1113,7 +1119,7 @@ public class MBSA_Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), MBSA_Editor.this) {
+					new ViewerPane(getSite().getPage(), Mbsa_Editor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1138,7 +1144,7 @@ public class MBSA_Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), MBSA_Editor.this) {
+					new ViewerPane(getSite().getPage(), Mbsa_Editor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1165,7 +1171,7 @@ public class MBSA_Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), MBSA_Editor.this) {
+					new ViewerPane(getSite().getPage(), Mbsa_Editor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1208,7 +1214,7 @@ public class MBSA_Editor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), MBSA_Editor.this) {
+					new ViewerPane(getSite().getPage(), Mbsa_Editor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1433,8 +1439,8 @@ public class MBSA_Editor
 			new ExtendedPropertySheetPage(editingDomain, ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					MBSA_Editor.this.setSelectionToViewer(selection);
-					MBSA_Editor.this.setFocus();
+					Mbsa_Editor.this.setSelectionToViewer(selection);
+					Mbsa_Editor.this.setFocus();
 				}
 
 				@Override
@@ -1558,7 +1564,7 @@ public class MBSA_Editor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			MBSAEditorPlugin.INSTANCE.log(exception);
+			MbsaEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1767,7 +1773,7 @@ public class MBSA_Editor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return MBSAEditorPlugin.INSTANCE.getString(key);
+		return MbsaEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1777,7 +1783,7 @@ public class MBSA_Editor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return MBSAEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return MbsaEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

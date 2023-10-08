@@ -6,7 +6,6 @@ import hazard.HazardElement;
 import hazard.HazardPackage;
 import hazard.HazardPackageInterface;
 import hazard.Hazard_Package;
-import hazard.HazardousSituation;
 
 import java.util.Collection;
 

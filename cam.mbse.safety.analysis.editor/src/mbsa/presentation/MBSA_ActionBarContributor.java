@@ -40,12 +40,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the MBSA_ model editor.
+ * This is the action bar contributor for the Mbsa_ model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MBSA_ActionBarContributor
+public class Mbsa_ActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
@@ -71,14 +71,14 @@ public class MBSA_ActionBarContributor
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction =
-		new Action(MBSAEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
+		new Action(MbsaEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
 			@Override
 			public void run() {
 				try {
 					getPage().showView("org.eclipse.ui.views.PropertySheet");
 				}
 				catch (PartInitException exception) {
-					MBSAEditorPlugin.INSTANCE.log(exception);
+					MbsaEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -91,7 +91,7 @@ public class MBSA_ActionBarContributor
 	 * @generated
 	 */
 	protected IAction refreshViewerAction =
-		new Action(MBSAEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
+		new Action(MbsaEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
 			@Override
 			public boolean isEnabled() {
 				return activeEditorPart instanceof IViewerProvider;
@@ -148,7 +148,7 @@ public class MBSA_ActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSA_ActionBarContributor() {
+	public Mbsa_ActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
@@ -179,7 +179,7 @@ public class MBSA_ActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(MBSAEditorPlugin.INSTANCE.getString("_UI_MBSA_Editor_menu"), "mbsaMenuID");
+		IMenuManager submenuManager = new MenuManager(MbsaEditorPlugin.INSTANCE.getString("_UI_Mbsa_Editor_menu"), "mbsaMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));
@@ -188,12 +188,12 @@ public class MBSA_ActionBarContributor
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(MBSAEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		createChildMenuManager = new MenuManager(MbsaEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		submenuManager.insertBefore("additions", createChildMenuManager);
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(MBSAEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		createSiblingMenuManager = new MenuManager(MbsaEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		submenuManager.insertBefore("additions", createSiblingMenuManager);
 
 		// Force an update because Eclipse hides empty menus now.
@@ -386,11 +386,11 @@ public class MBSA_ActionBarContributor
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(MBSAEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		submenuManager = new MenuManager(MbsaEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager(MBSAEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		submenuManager = new MenuManager(MbsaEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 	}

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -38,7 +37,7 @@ public interface Base_Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://dlut.mbsa/base";
+	String eNS_URI = "http://cam.ac.uk/mbsa/base";
 
 	/**
 	 * The package namespace name.
@@ -796,6 +795,7 @@ public interface Base_Package extends EPackage {
 	 */
 	int ARTIFACT_ELEMENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
+
 	/**
 	 * Returns the meta object for class '{@link base.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1086,7 +1086,6 @@ public interface Base_Package extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

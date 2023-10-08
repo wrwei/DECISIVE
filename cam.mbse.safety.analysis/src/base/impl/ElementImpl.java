@@ -8,7 +8,6 @@ import base.Element;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

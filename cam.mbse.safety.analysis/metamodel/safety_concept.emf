@@ -1,0 +1,59 @@
+@namespace(uri="http://cam.ac.uk/mbsa/safety_concept", prefix="safety_concept_")
+package safety_concept;
+import "http://cam.ac.uk/mbsa/base";
+import "http://cam.ac.uk/mbsa/requirement";
+
+  abstract class ConceptElement extends base.ArtifactElement {
+  
+  }
+  
+  class SafetyConceptPackage extends ConceptElement {
+    val ConceptElement[*] requirementElement;
+    ref SafetyConceptPackageInterface[*] ~interface;
+  }
+
+  class SafetyConceptPackageBinding extends SafetyConceptPackage {
+    ref SafetyConceptPackage[2..*] participantPackage;
+  }
+
+  class SafetyConceptPackageInterface extends SafetyConceptPackage {
+    ref SafetyConceptPackage[1] implements;
+  }
+  
+  class Safety_Concept extends ConceptElement {
+  	attr ABL abstract_level;
+  	attr ASIL asil;
+  	attr SIL sil;
+  	attr int identity;
+  	attr String desc;
+  	attr String script;
+  	attr boolean satisfied;
+  	ref requirement.Requirement requirement;
+  }
+  
+  class RequirementRelationship extends ConceptElement {
+  	attr String label;
+  	ref Safety_Concept source;
+  	ref Safety_Concept target;
+  }
+  
+  enum ASIL {
+  ASIL_A = 1;
+  ASIL_B = 2;
+  ASIL_C = 3;
+  ASIL_D = 4;
+}
+
+  enum SIL {
+  SIL_1 = 1;
+  SIL_2 = 2;
+  SIL_3 = 3;
+  SIL_4 = 4;
+}
+
+  enum ABL {
+  Functional = 1;
+  Technical = 2;
+  Software = 3;
+  Hardware = 4;
+}

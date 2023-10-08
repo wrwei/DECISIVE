@@ -22,46 +22,18 @@
       </wizard>
    </extension>
 
+
    <extension point="org.eclipse.ui.editors">
       <!-- @generated component -->
       <editor
             id="component.presentation.Component_EditorID"
             name="%_UI_Component_Editor_label"
             icon="icons/full/obj16/Component_ModelFile.gif"
-            extensions="component_"
+            extensions="component"
             class="component.presentation.Component_Editor"
             contributorClass="component.presentation.Component_ActionBarContributor">
       </editor>
    </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated mbsa -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="requirement.presentation.Requirement_ModelWizardID"
-            name="%_UI_Requirement_ModelWizard_label"
-            class="requirement.presentation.Requirement_ModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/Requirement_ModelFile.gif">
-         <description>%_UI_Requirement_ModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated mbsa -->
-      <editor
-            id="requirement.presentation.Requirement_EditorID"
-            name="%_UI_Requirement_Editor_label"
-            icon="icons/full/obj16/Requirement_ModelFile.gif"
-            extensions="requirement"
-            class="requirement.presentation.Requirement_Editor"
-            contributorClass="requirement.presentation.Requirement_ActionBarContributor">
-      </editor>
-   </extension>
-
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated hazard -->
       <category
@@ -91,17 +63,101 @@
       </editor>
    </extension>
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated requirement -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="requirement.presentation.Requirement_ModelWizardID"
+            name="%_UI_Requirement_ModelWizard_label"
+            class="requirement.presentation.Requirement_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Requirement_ModelFile.gif">
+         <description>%_UI_Requirement_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated requirement -->
+      <editor
+            id="requirement.presentation.Requirement_EditorID"
+            name="%_UI_Requirement_Editor_label"
+            icon="icons/full/obj16/Requirement_ModelFile.gif"
+            extensions="requirement"
+            class="requirement.presentation.Requirement_Editor"
+            contributorClass="requirement.presentation.Requirement_ActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated safety_concept -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="safety_concept.presentation.Safety_concept_ModelWizardID"
+            name="%_UI_Safety_concept_ModelWizard_label"
+            class="safety_concept.presentation.Safety_concept_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Safety_concept_ModelFile.gif">
+         <description>%_UI_Safety_concept_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated safety_concept -->
+      <editor
+            id="safety_concept.presentation.Safety_concept_EditorID"
+            name="%_UI_Safety_concept_Editor_label"
+            icon="icons/full/obj16/Safety_concept_ModelFile.gif"
+            extensions="safety_concept"
+            class="safety_concept.presentation.Safety_concept_Editor"
+            contributorClass="safety_concept.presentation.Safety_concept_ActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated mbsa -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="mbsa.presentation.MBSA_ModelWizardID"
-            name="%_UI_MBSA_ModelWizard_label"
-            class="mbsa.presentation.MBSA_ModelWizard"
+            id="fta.presentation.Fta_ModelWizardID"
+            name="%_UI_Fta_ModelWizard_label"
+            class="fta.presentation.Fta_ModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/MBSA_ModelFile.gif">
-         <description>%_UI_MBSA_ModelWizard_description</description>
+            icon="icons/full/obj16/Fta_ModelFile.gif">
+         <description>%_UI_Fta_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mbsa -->
+      <editor
+            id="fta.presentation.Fta_EditorID"
+            name="%_UI_Fta_Editor_label"
+            icon="icons/full/obj16/Fta_ModelFile.gif"
+            extensions="fta"
+            class="fta.presentation.Fta_Editor"
+            contributorClass="fta.presentation.Fta_ActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mbsa -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mbsa.presentation.Mbsa_ModelWizardID"
+            name="%_UI_Mbsa_ModelWizard_label"
+            class="mbsa.presentation.Mbsa_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Mbsa_ModelFile.gif">
+         <description>%_UI_Mbsa_ModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -110,16 +166,16 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated mbsa -->
       <editor
-            id="mbsa.presentation.MBSA_EditorID"
-            name="%_UI_MBSA_Editor_label"
-            icon="icons/full/obj16/MBSA_ModelFile.gif"
+            id="mbsa.presentation.Mbsa_EditorID"
+            name="%_UI_Mbsa_Editor_label"
+            icon="icons/full/obj16/Mbsa_ModelFile.gif"
             extensions="mbsa"
-            class="mbsa.presentation.MBSA_Editor"
-            contributorClass="mbsa.presentation.MBSA_ActionBarContributor">
+            class="mbsa.presentation.Mbsa_Editor"
+            contributorClass="mbsa.presentation.Mbsa_ActionBarContributor">
       </editor>
    </extension>
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated component -->
+      <!-- @generated base -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -135,12 +191,12 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated component -->
+      <!-- @generated base -->
       <editor
             id="base.presentation.Base_EditorID"
             name="%_UI_Base_Editor_label"
             icon="icons/full/obj16/Base_ModelFile.gif"
-            extensions="base_"
+            extensions="base"
             class="base.presentation.Base_Editor"
             contributorClass="base.presentation.Base_ActionBarContributor">
       </editor>

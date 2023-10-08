@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MBSA_FactoryImpl extends EFactoryImpl implements MBSA_Factory {
+public class Mbsa_FactoryImpl extends EFactoryImpl implements Mbsa_Factory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static MBSA_Factory init() {
+	public static Mbsa_Factory init() {
 		try {
-			MBSA_Factory theMBSA_Factory = (MBSA_Factory)EPackage.Registry.INSTANCE.getEFactory(MBSA_Package.eNS_URI);
-			if (theMBSA_Factory != null) {
-				return theMBSA_Factory;
+			Mbsa_Factory theMbsa_Factory = (Mbsa_Factory)EPackage.Registry.INSTANCE.getEFactory(Mbsa_Package.eNS_URI);
+			if (theMbsa_Factory != null) {
+				return theMbsa_Factory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new MBSA_FactoryImpl();
+		return new Mbsa_FactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class MBSA_FactoryImpl extends EFactoryImpl implements MBSA_Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MBSA_FactoryImpl() {
+	public Mbsa_FactoryImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class MBSA_FactoryImpl extends EFactoryImpl implements MBSA_Factory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MBSA_Package.MBSA_PACKAGE: return createMBSAPackage();
+			case Mbsa_Package.MBSA_PACKAGE: return createMBSAPackage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,8 +79,8 @@ public class MBSA_FactoryImpl extends EFactoryImpl implements MBSA_Factory {
 	 * @generated
 	 */
 	@Override
-	public MBSA_Package getMBSA_Package() {
-		return (MBSA_Package)getEPackage();
+	public Mbsa_Package getMbsa_Package() {
+		return (Mbsa_Package)getEPackage();
 	}
 
 	/**
@@ -90,8 +90,8 @@ public class MBSA_FactoryImpl extends EFactoryImpl implements MBSA_Factory {
 	 * @generated
 	 */
 	@Deprecated
-	public static MBSA_Package getPackage() {
-		return MBSA_Package.eINSTANCE;
+	public static Mbsa_Package getPackage() {
+		return Mbsa_Package.eINSTANCE;
 	}
 
-} //MBSA_FactoryImpl
+} //Mbsa_FactoryImpl

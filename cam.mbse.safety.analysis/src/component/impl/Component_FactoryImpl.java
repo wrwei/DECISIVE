@@ -61,12 +61,16 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 			case Component_Package.COMPONENT_PACKAGE_INTERFACE: return createComponentPackageInterface();
 			case Component_Package.COMPONENT_PACKAGE_BINDING: return createComponentPackageBinding();
 			case Component_Package.COMPONENT: return createComponent();
+			case Component_Package.DIRECTED_RELATIONSHIP: return createDirectedRelationship();
+			case Component_Package.UNDIRECTED_RELATIONSHIP: return createUndirectedRelationship();
 			case Component_Package.FORK: return createFork();
-			case Component_Package.JOIN: return createJoin();
-			case Component_Package.COMPONENT_RELATIONSHIP: return createComponentRelationship();
-			case Component_Package.FUNCTION: return createFunction();
+			case Component_Package.SWITCH: return createSwitch();
 			case Component_Package.INPUT: return createInput();
 			case Component_Package.OUTPUT: return createOutput();
+			case Component_Package.LPORT: return createLPort();
+			case Component_Package.RPORT: return createRPort();
+			case Component_Package.FUNCTION: return createFunction();
+			case Component_Package.READING: return createReading();
 			case Component_Package.FAILURE_MODE: return createFailureMode();
 			case Component_Package.SAFETY_MECHANISM: return createSafetyMechanism();
 			case Component_Package.REGIONAL_EFFECT: return createRegionalEffect();
@@ -91,6 +95,8 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 				return createComponentTypeFromString(eDataType, initialValue);
 			case Component_Package.TOLERANCE_TYPE:
 				return createToleranceTypeFromString(eDataType, initialValue);
+			case Component_Package.FAILURE_EFFECT_ENUM:
+				return createFailureEffectEnumFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -110,6 +116,8 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 				return convertComponentTypeToString(eDataType, instanceValue);
 			case Component_Package.TOLERANCE_TYPE:
 				return convertToleranceTypeToString(eDataType, instanceValue);
+			case Component_Package.FAILURE_EFFECT_ENUM:
+				return convertFailureEffectEnumToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -165,6 +173,28 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	 * @generated
 	 */
 	@Override
+	public DirectedRelationship createDirectedRelationship() {
+		DirectedRelationshipImpl directedRelationship = new DirectedRelationshipImpl();
+		return directedRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UndirectedRelationship createUndirectedRelationship() {
+		UndirectedRelationshipImpl undirectedRelationship = new UndirectedRelationshipImpl();
+		return undirectedRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Fork createFork() {
 		ForkImpl fork = new ForkImpl();
 		return fork;
@@ -176,31 +206,9 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	 * @generated
 	 */
 	@Override
-	public Join createJoin() {
-		JoinImpl join = new JoinImpl();
-		return join;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ComponentRelationship createComponentRelationship() {
-		ComponentRelationshipImpl componentRelationship = new ComponentRelationshipImpl();
-		return componentRelationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Function createFunction() {
-		FunctionImpl function = new FunctionImpl();
-		return function;
+	public Switch createSwitch() {
+		SwitchImpl switch_ = new SwitchImpl();
+		return switch_;
 	}
 
 	/**
@@ -223,6 +231,50 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	public Output createOutput() {
 		OutputImpl output = new OutputImpl();
 		return output;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LPort createLPort() {
+		LPortImpl lPort = new LPortImpl();
+		return lPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RPort createRPort() {
+		RPortImpl rPort = new RPortImpl();
+		return rPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Function createFunction() {
+		FunctionImpl function = new FunctionImpl();
+		return function;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Reading createReading() {
+		ReadingImpl reading = new ReadingImpl();
+		return reading;
 	}
 
 	/**
@@ -337,6 +389,26 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	 * @generated
 	 */
 	public String convertToleranceTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FailureEffectEnum createFailureEffectEnumFromString(EDataType eDataType, String initialValue) {
+		FailureEffectEnum result = FailureEffectEnum.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFailureEffectEnumToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

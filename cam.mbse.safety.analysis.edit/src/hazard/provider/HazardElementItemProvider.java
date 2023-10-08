@@ -6,11 +6,12 @@ package hazard.provider;
 import base.provider.ArtifactElementItemProvider;
 
 import hazard.HazardElement;
-
 import hazard.Hazard_Package;
+
 import java.util.Collection;
 import java.util.List;
 
+import mbsa.provider.MbsaEditPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -130,7 +131,7 @@ public class HazardElementItemProvider extends ArtifactElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HazardEditPlugin.INSTANCE;
+		return MbsaEditPlugin.INSTANCE;
 	}
 
 }

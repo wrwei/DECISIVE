@@ -4,9 +4,11 @@ package base.provider;
 
 
 import component.provider.ComponentEditPlugin;
+import hazard.provider.HazardEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
+import mbsa.provider.MbsaEditPlugin;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,6 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import requirement.provider.RequirementEditPlugin;
+import safety_concept.provider.Safety_conceptEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link base.Element} object.
@@ -104,7 +108,7 @@ public class ElementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ComponentEditPlugin.INSTANCE;
+		return MbsaEditPlugin.INSTANCE;
 	}
 
 }

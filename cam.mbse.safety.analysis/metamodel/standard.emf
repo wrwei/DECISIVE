@@ -1,6 +1,6 @@
-@namespace(uri="http://dlut.mbsa/hazard", prefix="hazard_")
-package hazard;
-import "http://dlut.mbsa/base";
+@namespace(uri="http://cam.ac.uk/mbsa/standard", prefix="standard_")
+package standard;
+import "http://cam.ac.uk/mbsa/base";
 
 abstract class StandardElement extends base.ArtifactElement{
   	

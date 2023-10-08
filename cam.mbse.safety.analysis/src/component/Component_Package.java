@@ -40,7 +40,7 @@ public interface Component_Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://dlut.mbsa/component";
+	String eNS_URI = "http://cam.ac.uk/mbsa/component";
 
 	/**
 	 * The package namespace name.
@@ -631,13 +631,22 @@ public interface Component_Package extends EPackage {
 	int COMPONENT__TAGGED_VALUE = COMPONENT_ELEMENT__TAGGED_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Dyamic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DYAMIC = COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Identity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IDENTITY = COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT__IDENTITY = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Component name</b></em>' attribute.
@@ -646,7 +655,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENT_NAME = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT__COMPONENT_NAME = COMPONENT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Reuse</b></em>' attribute.
@@ -655,7 +664,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__REUSE = COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT__REUSE = COMPONENT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Cots</b></em>' attribute.
@@ -664,7 +673,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COTS = COMPONENT_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT__COTS = COMPONENT_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Fit</b></em>' attribute.
@@ -673,7 +682,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FIT = COMPONENT_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT__FIT = COMPONENT_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Safety related</b></em>' attribute.
@@ -682,7 +691,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SAFETY_RELATED = COMPONENT_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT__SAFETY_RELATED = COMPONENT_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Sil</b></em>' attribute.
@@ -691,7 +700,25 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SIL = COMPONENT_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT__SIL = COMPONENT_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Readings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__READINGS = COMPONENT_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Block Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__BLOCK_TYPE = COMPONENT_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
@@ -700,7 +727,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FUNCTION = COMPONENT_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT__FUNCTION = COMPONENT_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
@@ -709,7 +736,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENT_TYPE = COMPONENT_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT__COMPONENT_TYPE = COMPONENT_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -718,7 +745,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__INPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 9;
+	int COMPONENT__INPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -727,7 +754,25 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__OUTPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 10;
+	int COMPONENT__OUTPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Lports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__LPORTS = COMPONENT_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Rports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__RPORTS = COMPONENT_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Sub components</b></em>' containment reference list.
@@ -736,7 +781,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SUB_COMPONENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 11;
+	int COMPONENT__SUB_COMPONENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Failure modes</b></em>' containment reference list.
@@ -745,7 +790,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FAILURE_MODES = COMPONENT_ELEMENT_FEATURE_COUNT + 12;
+	int COMPONENT__FAILURE_MODES = COMPONENT_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Safety mechanisms</b></em>' containment reference list.
@@ -754,7 +799,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SAFETY_MECHANISMS = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
+	int COMPONENT__SAFETY_MECHANISMS = COMPONENT_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Requirements</b></em>' reference list.
@@ -763,7 +808,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__REQUIREMENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 14;
+	int COMPONENT__REQUIREMENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -772,495 +817,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 15;
-
-	/**
-	 * The meta object id for the '{@link component.impl.ForkImpl <em>Fork</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see component.impl.ForkImpl
-	 * @see component.impl.Component_PackageImpl#getFork()
-	 * @generated
-	 */
-	int FORK = 5;
-
-	/**
-	 * The feature id for the '<em><b>Gid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__GID = COMPONENT__GID;
-
-	/**
-	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__IS_CITATION = COMPONENT__IS_CITATION;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__IS_ABSTRACT = COMPONENT__IS_ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__CITED_ELEMENT = COMPONENT__CITED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__ABSTRACT_FORM = COMPONENT__ABSTRACT_FORM;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__NAME = COMPONENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__DESCRIPTION = COMPONENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__IMPLEMENTATION_CONSTRAINT = COMPONENT__IMPLEMENTATION_CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__NOTE = COMPONENT__NOTE;
-
-	/**
-	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__TAGGED_VALUE = COMPONENT__TAGGED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Identity</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__IDENTITY = COMPONENT__IDENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Component name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__COMPONENT_NAME = COMPONENT__COMPONENT_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Reuse</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__REUSE = COMPONENT__REUSE;
-
-	/**
-	 * The feature id for the '<em><b>Cots</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__COTS = COMPONENT__COTS;
-
-	/**
-	 * The feature id for the '<em><b>Fit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__FIT = COMPONENT__FIT;
-
-	/**
-	 * The feature id for the '<em><b>Safety related</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__SAFETY_RELATED = COMPONENT__SAFETY_RELATED;
-
-	/**
-	 * The feature id for the '<em><b>Sil</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__SIL = COMPONENT__SIL;
-
-	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__FUNCTION = COMPONENT__FUNCTION;
-
-	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__INPUTS = COMPONENT__INPUTS;
-
-	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__OUTPUTS = COMPONENT__OUTPUTS;
-
-	/**
-	 * The feature id for the '<em><b>Sub components</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__SUB_COMPONENTS = COMPONENT__SUB_COMPONENTS;
-
-	/**
-	 * The feature id for the '<em><b>Failure modes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__FAILURE_MODES = COMPONENT__FAILURE_MODES;
-
-	/**
-	 * The feature id for the '<em><b>Safety mechanisms</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__SAFETY_MECHANISMS = COMPONENT__SAFETY_MECHANISMS;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK__REQUIREMENTS = COMPONENT__REQUIREMENTS;
-
-	/**
-	 * The number of structural features of the '<em>Fork</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORK_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link component.impl.JoinImpl <em>Join</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see component.impl.JoinImpl
-	 * @see component.impl.Component_PackageImpl#getJoin()
-	 * @generated
-	 */
-	int JOIN = 6;
-
-	/**
-	 * The feature id for the '<em><b>Gid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__GID = COMPONENT__GID;
-
-	/**
-	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__IS_CITATION = COMPONENT__IS_CITATION;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__IS_ABSTRACT = COMPONENT__IS_ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__CITED_ELEMENT = COMPONENT__CITED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__ABSTRACT_FORM = COMPONENT__ABSTRACT_FORM;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__NAME = COMPONENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__DESCRIPTION = COMPONENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__IMPLEMENTATION_CONSTRAINT = COMPONENT__IMPLEMENTATION_CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__NOTE = COMPONENT__NOTE;
-
-	/**
-	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__TAGGED_VALUE = COMPONENT__TAGGED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Identity</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__IDENTITY = COMPONENT__IDENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Component name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__COMPONENT_NAME = COMPONENT__COMPONENT_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Reuse</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__REUSE = COMPONENT__REUSE;
-
-	/**
-	 * The feature id for the '<em><b>Cots</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__COTS = COMPONENT__COTS;
-
-	/**
-	 * The feature id for the '<em><b>Fit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__FIT = COMPONENT__FIT;
-
-	/**
-	 * The feature id for the '<em><b>Safety related</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__SAFETY_RELATED = COMPONENT__SAFETY_RELATED;
-
-	/**
-	 * The feature id for the '<em><b>Sil</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__SIL = COMPONENT__SIL;
-
-	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__FUNCTION = COMPONENT__FUNCTION;
-
-	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__INPUTS = COMPONENT__INPUTS;
-
-	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__OUTPUTS = COMPONENT__OUTPUTS;
-
-	/**
-	 * The feature id for the '<em><b>Sub components</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__SUB_COMPONENTS = COMPONENT__SUB_COMPONENTS;
-
-	/**
-	 * The feature id for the '<em><b>Failure modes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__FAILURE_MODES = COMPONENT__FAILURE_MODES;
-
-	/**
-	 * The feature id for the '<em><b>Safety mechanisms</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__SAFETY_MECHANISMS = COMPONENT__SAFETY_MECHANISMS;
-
-	/**
-	 * The feature id for the '<em><b>Requirements</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN__REQUIREMENTS = COMPONENT__REQUIREMENTS;
-
-	/**
-	 * The number of structural features of the '<em>Join</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOIN_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.
@@ -1270,7 +827,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getComponentRelationship()
 	 * @generated
 	 */
-	int COMPONENT_RELATIONSHIP = 7;
+	int COMPONENT_RELATIONSHIP = 5;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -1372,13 +929,131 @@ public interface Component_Package extends EPackage {
 	int COMPONENT_RELATIONSHIP__LABEL = COMPONENT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of structural features of the '<em>Component Relationship</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_RELATIONSHIP_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link component.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.DirectedRelationshipImpl
+	 * @see component.impl.Component_PackageImpl#getDirectedRelationship()
+	 * @generated
+	 */
+	int DIRECTED_RELATIONSHIP = 6;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__GID = COMPONENT_RELATIONSHIP__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__IS_CITATION = COMPONENT_RELATIONSHIP__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__IS_ABSTRACT = COMPONENT_RELATIONSHIP__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__CITED_ELEMENT = COMPONENT_RELATIONSHIP__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__ABSTRACT_FORM = COMPONENT_RELATIONSHIP__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__NAME = COMPONENT_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__DESCRIPTION = COMPONENT_RELATIONSHIP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__IMPLEMENTATION_CONSTRAINT = COMPONENT_RELATIONSHIP__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__NOTE = COMPONENT_RELATIONSHIP__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__TAGGED_VALUE = COMPONENT_RELATIONSHIP__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__LABEL = COMPONENT_RELATIONSHIP__LABEL;
+
+	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_RELATIONSHIP__SOURCE = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+	int DIRECTED_RELATIONSHIP__SOURCE = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1387,16 +1062,152 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_RELATIONSHIP__TARGET = COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+	int DIRECTED_RELATIONSHIP__TARGET = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Component Relationship</em>' class.
+	 * The number of structural features of the '<em>Directed Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_RELATIONSHIP_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 3;
+	int DIRECTED_RELATIONSHIP_FEATURE_COUNT = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link component.impl.UndirectedRelationshipImpl <em>Undirected Relationship</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.UndirectedRelationshipImpl
+	 * @see component.impl.Component_PackageImpl#getUndirectedRelationship()
+	 * @generated
+	 */
+	int UNDIRECTED_RELATIONSHIP = 7;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__GID = COMPONENT_RELATIONSHIP__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__IS_CITATION = COMPONENT_RELATIONSHIP__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__IS_ABSTRACT = COMPONENT_RELATIONSHIP__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__CITED_ELEMENT = COMPONENT_RELATIONSHIP__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__ABSTRACT_FORM = COMPONENT_RELATIONSHIP__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__NAME = COMPONENT_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__DESCRIPTION = COMPONENT_RELATIONSHIP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__IMPLEMENTATION_CONSTRAINT = COMPONENT_RELATIONSHIP__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__NOTE = COMPONENT_RELATIONSHIP__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__TAGGED_VALUE = COMPONENT_RELATIONSHIP__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__LABEL = COMPONENT_RELATIONSHIP__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__SOURCE = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP__TARGET = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Undirected Relationship</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNDIRECTED_RELATIONSHIP_FEATURE_COUNT = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentAssetImpl <em>Component Asset</em>}' class.
@@ -1508,6 +1319,1185 @@ public interface Component_Package extends EPackage {
 	int COMPONENT_ASSET_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link component.impl.UtilityNodesImpl <em>Utility Nodes</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.UtilityNodesImpl
+	 * @see component.impl.Component_PackageImpl#getUtilityNodes()
+	 * @generated
+	 */
+	int UTILITY_NODES = 9;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__GID = COMPONENT_ASSET__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__IS_CITATION = COMPONENT_ASSET__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__IS_ABSTRACT = COMPONENT_ASSET__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__CITED_ELEMENT = COMPONENT_ASSET__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__ABSTRACT_FORM = COMPONENT_ASSET__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__NAME = COMPONENT_ASSET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__DESCRIPTION = COMPONENT_ASSET__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__IMPLEMENTATION_CONSTRAINT = COMPONENT_ASSET__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__NOTE = COMPONENT_ASSET__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__TAGGED_VALUE = COMPONENT_ASSET__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES__READING = COMPONENT_ASSET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Utility Nodes</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILITY_NODES_FEATURE_COUNT = COMPONENT_ASSET_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link component.impl.TransitionNodeImpl <em>Transition Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.TransitionNodeImpl
+	 * @see component.impl.Component_PackageImpl#getTransitionNode()
+	 * @generated
+	 */
+	int TRANSITION_NODE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__GID = UTILITY_NODES__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__IS_CITATION = UTILITY_NODES__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__IS_ABSTRACT = UTILITY_NODES__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__CITED_ELEMENT = UTILITY_NODES__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__ABSTRACT_FORM = UTILITY_NODES__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__NAME = UTILITY_NODES__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__DESCRIPTION = UTILITY_NODES__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__IMPLEMENTATION_CONSTRAINT = UTILITY_NODES__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__NOTE = UTILITY_NODES__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__TAGGED_VALUE = UTILITY_NODES__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE__READING = UTILITY_NODES__READING;
+
+	/**
+	 * The number of structural features of the '<em>Transition Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_NODE_FEATURE_COUNT = UTILITY_NODES_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link component.impl.ForkImpl <em>Fork</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.ForkImpl
+	 * @see component.impl.Component_PackageImpl#getFork()
+	 * @generated
+	 */
+	int FORK = 11;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__GID = TRANSITION_NODE__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__IS_CITATION = TRANSITION_NODE__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__IS_ABSTRACT = TRANSITION_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__CITED_ELEMENT = TRANSITION_NODE__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__ABSTRACT_FORM = TRANSITION_NODE__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__NAME = TRANSITION_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__DESCRIPTION = TRANSITION_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__IMPLEMENTATION_CONSTRAINT = TRANSITION_NODE__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__NOTE = TRANSITION_NODE__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__TAGGED_VALUE = TRANSITION_NODE__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__READING = TRANSITION_NODE__READING;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__SOURCE = TRANSITION_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__TARGET = TRANSITION_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Fork</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK_FEATURE_COUNT = TRANSITION_NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link component.impl.SwitchImpl <em>Switch</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.SwitchImpl
+	 * @see component.impl.Component_PackageImpl#getSwitch()
+	 * @generated
+	 */
+	int SWITCH = 12;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__GID = TRANSITION_NODE__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__IS_CITATION = TRANSITION_NODE__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__IS_ABSTRACT = TRANSITION_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__CITED_ELEMENT = TRANSITION_NODE__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__ABSTRACT_FORM = TRANSITION_NODE__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__NAME = TRANSITION_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__DESCRIPTION = TRANSITION_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__IMPLEMENTATION_CONSTRAINT = TRANSITION_NODE__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__NOTE = TRANSITION_NODE__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__TAGGED_VALUE = TRANSITION_NODE__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__READING = TRANSITION_NODE__READING;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH__PORTS = TRANSITION_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Switch</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SWITCH_FEATURE_COUNT = TRANSITION_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link component.impl.IONodeImpl <em>IO Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.IONodeImpl
+	 * @see component.impl.Component_PackageImpl#getIONode()
+	 * @generated
+	 */
+	int IO_NODE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__GID = UTILITY_NODES__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__IS_CITATION = UTILITY_NODES__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__IS_ABSTRACT = UTILITY_NODES__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__CITED_ELEMENT = UTILITY_NODES__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__ABSTRACT_FORM = UTILITY_NODES__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__NAME = UTILITY_NODES__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__DESCRIPTION = UTILITY_NODES__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__IMPLEMENTATION_CONSTRAINT = UTILITY_NODES__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__NOTE = UTILITY_NODES__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__TAGGED_VALUE = UTILITY_NODES__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__READING = UTILITY_NODES__READING;
+
+	/**
+	 * The feature id for the '<em><b>Upper</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__UPPER = UTILITY_NODES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE__LOWER = UTILITY_NODES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>IO Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_NODE_FEATURE_COUNT = UTILITY_NODES_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link component.impl.InputImpl <em>Input</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.InputImpl
+	 * @see component.impl.Component_PackageImpl#getInput()
+	 * @generated
+	 */
+	int INPUT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__GID = IO_NODE__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__IS_CITATION = IO_NODE__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__IS_ABSTRACT = IO_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__CITED_ELEMENT = IO_NODE__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__ABSTRACT_FORM = IO_NODE__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__NAME = IO_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__DESCRIPTION = IO_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__IMPLEMENTATION_CONSTRAINT = IO_NODE__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__NOTE = IO_NODE__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__TAGGED_VALUE = IO_NODE__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__READING = IO_NODE__READING;
+
+	/**
+	 * The feature id for the '<em><b>Upper</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__UPPER = IO_NODE__UPPER;
+
+	/**
+	 * The feature id for the '<em><b>Lower</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__LOWER = IO_NODE__LOWER;
+
+	/**
+	 * The number of structural features of the '<em>Input</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_FEATURE_COUNT = IO_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link component.impl.OutputImpl <em>Output</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.OutputImpl
+	 * @see component.impl.Component_PackageImpl#getOutput()
+	 * @generated
+	 */
+	int OUTPUT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__GID = IO_NODE__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__IS_CITATION = IO_NODE__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__IS_ABSTRACT = IO_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__CITED_ELEMENT = IO_NODE__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__ABSTRACT_FORM = IO_NODE__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__NAME = IO_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__DESCRIPTION = IO_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__IMPLEMENTATION_CONSTRAINT = IO_NODE__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__NOTE = IO_NODE__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__TAGGED_VALUE = IO_NODE__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__READING = IO_NODE__READING;
+
+	/**
+	 * The feature id for the '<em><b>Upper</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__UPPER = IO_NODE__UPPER;
+
+	/**
+	 * The feature id for the '<em><b>Lower</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT__LOWER = IO_NODE__LOWER;
+
+	/**
+	 * The number of structural features of the '<em>Output</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_FEATURE_COUNT = IO_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link component.impl.LPortImpl <em>LPort</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.LPortImpl
+	 * @see component.impl.Component_PackageImpl#getLPort()
+	 * @generated
+	 */
+	int LPORT = 16;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__GID = IO_NODE__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__IS_CITATION = IO_NODE__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__IS_ABSTRACT = IO_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__CITED_ELEMENT = IO_NODE__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__ABSTRACT_FORM = IO_NODE__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__NAME = IO_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__DESCRIPTION = IO_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__IMPLEMENTATION_CONSTRAINT = IO_NODE__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__NOTE = IO_NODE__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__TAGGED_VALUE = IO_NODE__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__READING = IO_NODE__READING;
+
+	/**
+	 * The feature id for the '<em><b>Upper</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__UPPER = IO_NODE__UPPER;
+
+	/**
+	 * The feature id for the '<em><b>Lower</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT__LOWER = IO_NODE__LOWER;
+
+	/**
+	 * The number of structural features of the '<em>LPort</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPORT_FEATURE_COUNT = IO_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link component.impl.RPortImpl <em>RPort</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.RPortImpl
+	 * @see component.impl.Component_PackageImpl#getRPort()
+	 * @generated
+	 */
+	int RPORT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__GID = IO_NODE__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__IS_CITATION = IO_NODE__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__IS_ABSTRACT = IO_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__CITED_ELEMENT = IO_NODE__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__ABSTRACT_FORM = IO_NODE__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__NAME = IO_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__DESCRIPTION = IO_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__IMPLEMENTATION_CONSTRAINT = IO_NODE__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__NOTE = IO_NODE__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__TAGGED_VALUE = IO_NODE__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Reading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__READING = IO_NODE__READING;
+
+	/**
+	 * The feature id for the '<em><b>Upper</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__UPPER = IO_NODE__UPPER;
+
+	/**
+	 * The feature id for the '<em><b>Lower</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT__LOWER = IO_NODE__LOWER;
+
+	/**
+	 * The number of structural features of the '<em>RPort</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RPORT_FEATURE_COUNT = IO_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link component.impl.FunctionImpl <em>Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1515,7 +2505,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 9;
+	int FUNCTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -1617,150 +2607,32 @@ public interface Component_Package extends EPackage {
 	int FUNCTION__FUNC = COMPONENT_ASSET_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Tolerance Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__TOLERANCE_TYPE = COMPONENT_ASSET_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Function</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = COMPONENT_ASSET_FEATURE_COUNT + 1;
+	int FUNCTION_FEATURE_COUNT = COMPONENT_ASSET_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link component.impl.InputImpl <em>Input</em>}' class.
+	 * The meta object id for the '{@link component.impl.ReadingImpl <em>Reading</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see component.impl.InputImpl
-	 * @see component.impl.Component_PackageImpl#getInput()
+	 * @see component.impl.ReadingImpl
+	 * @see component.impl.Component_PackageImpl#getReading()
 	 * @generated
 	 */
-	int INPUT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Gid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__GID = COMPONENT_ASSET__GID;
-
-	/**
-	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__IS_CITATION = COMPONENT_ASSET__IS_CITATION;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__IS_ABSTRACT = COMPONENT_ASSET__IS_ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__CITED_ELEMENT = COMPONENT_ASSET__CITED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__ABSTRACT_FORM = COMPONENT_ASSET__ABSTRACT_FORM;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__NAME = COMPONENT_ASSET__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__DESCRIPTION = COMPONENT_ASSET__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__IMPLEMENTATION_CONSTRAINT = COMPONENT_ASSET__IMPLEMENTATION_CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__NOTE = COMPONENT_ASSET__NOTE;
-
-	/**
-	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__TAGGED_VALUE = COMPONENT_ASSET__TAGGED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__INPUT = COMPONENT_ASSET_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__SOURCE = COMPONENT_ASSET_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Input</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_FEATURE_COUNT = COMPONENT_ASSET_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link component.impl.OutputImpl <em>Output</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see component.impl.OutputImpl
-	 * @see component.impl.Component_PackageImpl#getOutput()
-	 * @generated
-	 */
-	int OUTPUT = 11;
+	int READING = 19;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -1769,7 +2641,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__GID = COMPONENT_ASSET__GID;
+	int READING__GID = COMPONENT_ASSET__GID;
 
 	/**
 	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
@@ -1778,7 +2650,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__IS_CITATION = COMPONENT_ASSET__IS_CITATION;
+	int READING__IS_CITATION = COMPONENT_ASSET__IS_CITATION;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1787,7 +2659,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__IS_ABSTRACT = COMPONENT_ASSET__IS_ABSTRACT;
+	int READING__IS_ABSTRACT = COMPONENT_ASSET__IS_ABSTRACT;
 
 	/**
 	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
@@ -1796,7 +2668,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__CITED_ELEMENT = COMPONENT_ASSET__CITED_ELEMENT;
+	int READING__CITED_ELEMENT = COMPONENT_ASSET__CITED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
@@ -1805,7 +2677,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__ABSTRACT_FORM = COMPONENT_ASSET__ABSTRACT_FORM;
+	int READING__ABSTRACT_FORM = COMPONENT_ASSET__ABSTRACT_FORM;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1814,7 +2686,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__NAME = COMPONENT_ASSET__NAME;
+	int READING__NAME = COMPONENT_ASSET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' containment reference.
@@ -1823,7 +2695,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__DESCRIPTION = COMPONENT_ASSET__DESCRIPTION;
+	int READING__DESCRIPTION = COMPONENT_ASSET__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
@@ -1832,7 +2704,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__IMPLEMENTATION_CONSTRAINT = COMPONENT_ASSET__IMPLEMENTATION_CONSTRAINT;
+	int READING__IMPLEMENTATION_CONSTRAINT = COMPONENT_ASSET__IMPLEMENTATION_CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
@@ -1841,7 +2713,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__NOTE = COMPONENT_ASSET__NOTE;
+	int READING__NOTE = COMPONENT_ASSET__NOTE;
 
 	/**
 	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
@@ -1850,34 +2722,34 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__TAGGED_VALUE = COMPONENT_ASSET__TAGGED_VALUE;
+	int READING__TAGGED_VALUE = COMPONENT_ASSET__TAGGED_VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Output</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__OUTPUT = COMPONENT_ASSET_FEATURE_COUNT + 0;
+	int READING__VALUE = COMPONENT_ASSET_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__TARGET = COMPONENT_ASSET_FEATURE_COUNT + 1;
+	int READING__UNIT = COMPONENT_ASSET_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Output</em>' class.
+	 * The number of structural features of the '<em>Reading</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_FEATURE_COUNT = COMPONENT_ASSET_FEATURE_COUNT + 2;
+	int READING_FEATURE_COUNT = COMPONENT_ASSET_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentSafetyElementImpl <em>Component Safety Element</em>}' class.
@@ -1887,7 +2759,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getComponentSafetyElement()
 	 * @generated
 	 */
-	int COMPONENT_SAFETY_ELEMENT = 12;
+	int COMPONENT_SAFETY_ELEMENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2005,7 +2877,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFailureMode()
 	 * @generated
 	 */
-	int FAILURE_MODE = 13;
+	int FAILURE_MODE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2143,13 +3015,22 @@ public interface Component_Package extends EPackage {
 	int FAILURE_MODE__SAFETY_RELATED = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Failure Severity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAILURE_MODE__FAILURE_SEVERITY = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Hazards</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__HAZARDS = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
+	int FAILURE_MODE__HAZARDS = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Regional</b></em>' containment reference.
@@ -2158,7 +3039,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__REGIONAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 5;
+	int FAILURE_MODE__REGIONAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Higher level</b></em>' containment reference.
@@ -2167,7 +3048,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__HIGHER_LEVEL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
+	int FAILURE_MODE__HIGHER_LEVEL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Final</b></em>' containment reference.
@@ -2176,7 +3057,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__FINAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 7;
+	int FAILURE_MODE__FINAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Failure Mode</em>' class.
@@ -2185,7 +3066,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 8;
+	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link component.impl.SafetyMechanismImpl <em>Safety Mechanism</em>}' class.
@@ -2195,7 +3076,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getSafetyMechanism()
 	 * @generated
 	 */
-	int SAFETY_MECHANISM = 14;
+	int SAFETY_MECHANISM = 22;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2340,7 +3221,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFailureEffect()
 	 * @generated
 	 */
-	int FAILURE_EFFECT = 15;
+	int FAILURE_EFFECT = 23;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2442,13 +3323,13 @@ public interface Component_Package extends EPackage {
 	int FAILURE_EFFECT__IDENTITY = COMPONENT_SAFETY_ELEMENT__IDENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Desc</b></em>' attribute.
+	 * The feature id for the '<em><b>Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_EFFECT__DESC = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 0;
+	int FAILURE_EFFECT__EFFECT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Affected</b></em>' reference list.
@@ -2476,7 +3357,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getRegionalEffect()
 	 * @generated
 	 */
-	int REGIONAL_EFFECT = 16;
+	int REGIONAL_EFFECT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2578,13 +3459,13 @@ public interface Component_Package extends EPackage {
 	int REGIONAL_EFFECT__IDENTITY = FAILURE_EFFECT__IDENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Desc</b></em>' attribute.
+	 * The feature id for the '<em><b>Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGIONAL_EFFECT__DESC = FAILURE_EFFECT__DESC;
+	int REGIONAL_EFFECT__EFFECT = FAILURE_EFFECT__EFFECT;
 
 	/**
 	 * The feature id for the '<em><b>Affected</b></em>' reference list.
@@ -2612,7 +3493,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getHigherLevelEffect()
 	 * @generated
 	 */
-	int HIGHER_LEVEL_EFFECT = 17;
+	int HIGHER_LEVEL_EFFECT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2714,13 +3595,13 @@ public interface Component_Package extends EPackage {
 	int HIGHER_LEVEL_EFFECT__IDENTITY = FAILURE_EFFECT__IDENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Desc</b></em>' attribute.
+	 * The feature id for the '<em><b>Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HIGHER_LEVEL_EFFECT__DESC = FAILURE_EFFECT__DESC;
+	int HIGHER_LEVEL_EFFECT__EFFECT = FAILURE_EFFECT__EFFECT;
 
 	/**
 	 * The feature id for the '<em><b>Affected</b></em>' reference list.
@@ -2748,7 +3629,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFinalEffect()
 	 * @generated
 	 */
-	int FINAL_EFFECT = 18;
+	int FINAL_EFFECT = 26;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -2850,13 +3731,13 @@ public interface Component_Package extends EPackage {
 	int FINAL_EFFECT__IDENTITY = FAILURE_EFFECT__IDENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Desc</b></em>' attribute.
+	 * The feature id for the '<em><b>Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FINAL_EFFECT__DESC = FAILURE_EFFECT__DESC;
+	int FINAL_EFFECT__EFFECT = FAILURE_EFFECT__EFFECT;
 
 	/**
 	 * The feature id for the '<em><b>Affected</b></em>' reference list.
@@ -2884,8 +3765,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFailureSeverity()
 	 * @generated
 	 */
-	int FAILURE_SEVERITY = 19;
-
+	int FAILURE_SEVERITY = 27;
 
 	/**
 	 * The meta object id for the '{@link component.ComponentType <em>Component Type</em>}' enum.
@@ -2895,8 +3775,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getComponentType()
 	 * @generated
 	 */
-	int COMPONENT_TYPE = 20;
-
+	int COMPONENT_TYPE = 28;
 
 	/**
 	 * The meta object id for the '{@link component.ToleranceType <em>Tolerance Type</em>}' enum.
@@ -2906,7 +3785,17 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getToleranceType()
 	 * @generated
 	 */
-	int TOLERANCE_TYPE = 21;
+	int TOLERANCE_TYPE = 29;
+
+	/**
+	 * The meta object id for the '{@link component.FailureEffectEnum <em>Failure Effect Enum</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.FailureEffectEnum
+	 * @see component.impl.Component_PackageImpl#getFailureEffectEnum()
+	 * @generated
+	 */
+	int FAILURE_EFFECT_ENUM = 30;
 
 
 	/**
@@ -3004,6 +3893,17 @@ public interface Component_Package extends EPackage {
 	EClass getComponent();
 
 	/**
+	 * Returns the meta object for the attribute '{@link component.Component#isDyamic <em>Dyamic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Dyamic</em>'.
+	 * @see component.Component#isDyamic()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_Dyamic();
+
+	/**
 	 * Returns the meta object for the attribute '{@link component.Component#getIdentity <em>Identity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3081,6 +3981,28 @@ public interface Component_Package extends EPackage {
 	EAttribute getComponent_Sil();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link component.Component#getReadings <em>Readings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Readings</em>'.
+	 * @see component.Component#getReadings()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Readings();
+
+	/**
+	 * Returns the meta object for the reference '{@link component.Component#getBlockType <em>Block Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Block Type</em>'.
+	 * @see component.Component#getBlockType()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_BlockType();
+
+	/**
 	 * Returns the meta object for the reference '{@link component.Component#getFunction <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3123,6 +4045,28 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_Outputs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link component.Component#getLports <em>Lports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lports</em>'.
+	 * @see component.Component#getLports()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Lports();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link component.Component#getRports <em>Rports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rports</em>'.
+	 * @see component.Component#getRports()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Rports();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link component.Component#getSub_components <em>Sub components</em>}'.
@@ -3169,26 +4113,6 @@ public interface Component_Package extends EPackage {
 	EReference getComponent_Requirements();
 
 	/**
-	 * Returns the meta object for class '{@link component.Fork <em>Fork</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fork</em>'.
-	 * @see component.Fork
-	 * @generated
-	 */
-	EClass getFork();
-
-	/**
-	 * Returns the meta object for class '{@link component.Join <em>Join</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Join</em>'.
-	 * @see component.Join
-	 * @generated
-	 */
-	EClass getJoin();
-
-	/**
 	 * Returns the meta object for class '{@link component.ComponentRelationship <em>Component Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3210,26 +4134,68 @@ public interface Component_Package extends EPackage {
 	EAttribute getComponentRelationship_Label();
 
 	/**
-	 * Returns the meta object for the reference '{@link component.ComponentRelationship#getSource <em>Source</em>}'.
+	 * Returns the meta object for class '{@link component.DirectedRelationship <em>Directed Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Directed Relationship</em>'.
+	 * @see component.DirectedRelationship
+	 * @generated
+	 */
+	EClass getDirectedRelationship();
+
+	/**
+	 * Returns the meta object for the reference '{@link component.DirectedRelationship#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see component.ComponentRelationship#getSource()
-	 * @see #getComponentRelationship()
+	 * @see component.DirectedRelationship#getSource()
+	 * @see #getDirectedRelationship()
 	 * @generated
 	 */
-	EReference getComponentRelationship_Source();
+	EReference getDirectedRelationship_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link component.ComponentRelationship#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link component.DirectedRelationship#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see component.ComponentRelationship#getTarget()
-	 * @see #getComponentRelationship()
+	 * @see component.DirectedRelationship#getTarget()
+	 * @see #getDirectedRelationship()
 	 * @generated
 	 */
-	EReference getComponentRelationship_Target();
+	EReference getDirectedRelationship_Target();
+
+	/**
+	 * Returns the meta object for class '{@link component.UndirectedRelationship <em>Undirected Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Undirected Relationship</em>'.
+	 * @see component.UndirectedRelationship
+	 * @generated
+	 */
+	EClass getUndirectedRelationship();
+
+	/**
+	 * Returns the meta object for the reference '{@link component.UndirectedRelationship#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see component.UndirectedRelationship#getSource()
+	 * @see #getUndirectedRelationship()
+	 * @generated
+	 */
+	EReference getUndirectedRelationship_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link component.UndirectedRelationship#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see component.UndirectedRelationship#getTarget()
+	 * @see #getUndirectedRelationship()
+	 * @generated
+	 */
+	EReference getUndirectedRelationship_Target();
 
 	/**
 	 * Returns the meta object for class '{@link component.ComponentAsset <em>Component Asset</em>}'.
@@ -3240,6 +4206,162 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EClass getComponentAsset();
+
+	/**
+	 * Returns the meta object for class '{@link component.UtilityNodes <em>Utility Nodes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Utility Nodes</em>'.
+	 * @see component.UtilityNodes
+	 * @generated
+	 */
+	EClass getUtilityNodes();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link component.UtilityNodes#getReading <em>Reading</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reading</em>'.
+	 * @see component.UtilityNodes#getReading()
+	 * @see #getUtilityNodes()
+	 * @generated
+	 */
+	EReference getUtilityNodes_Reading();
+
+	/**
+	 * Returns the meta object for class '{@link component.TransitionNode <em>Transition Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Transition Node</em>'.
+	 * @see component.TransitionNode
+	 * @generated
+	 */
+	EClass getTransitionNode();
+
+	/**
+	 * Returns the meta object for class '{@link component.Fork <em>Fork</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fork</em>'.
+	 * @see component.Fork
+	 * @generated
+	 */
+	EClass getFork();
+
+	/**
+	 * Returns the meta object for the reference '{@link component.Fork#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see component.Fork#getSource()
+	 * @see #getFork()
+	 * @generated
+	 */
+	EReference getFork_Source();
+
+	/**
+	 * Returns the meta object for the reference list '{@link component.Fork#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Target</em>'.
+	 * @see component.Fork#getTarget()
+	 * @see #getFork()
+	 * @generated
+	 */
+	EReference getFork_Target();
+
+	/**
+	 * Returns the meta object for class '{@link component.Switch <em>Switch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Switch</em>'.
+	 * @see component.Switch
+	 * @generated
+	 */
+	EClass getSwitch();
+
+	/**
+	 * Returns the meta object for the reference list '{@link component.Switch#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Ports</em>'.
+	 * @see component.Switch#getPorts()
+	 * @see #getSwitch()
+	 * @generated
+	 */
+	EReference getSwitch_Ports();
+
+	/**
+	 * Returns the meta object for class '{@link component.IONode <em>IO Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IO Node</em>'.
+	 * @see component.IONode
+	 * @generated
+	 */
+	EClass getIONode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link component.IONode#getUpper <em>Upper</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper</em>'.
+	 * @see component.IONode#getUpper()
+	 * @see #getIONode()
+	 * @generated
+	 */
+	EAttribute getIONode_Upper();
+
+	/**
+	 * Returns the meta object for the attribute '{@link component.IONode#getLower <em>Lower</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lower</em>'.
+	 * @see component.IONode#getLower()
+	 * @see #getIONode()
+	 * @generated
+	 */
+	EAttribute getIONode_Lower();
+
+	/**
+	 * Returns the meta object for class '{@link component.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input</em>'.
+	 * @see component.Input
+	 * @generated
+	 */
+	EClass getInput();
+
+	/**
+	 * Returns the meta object for class '{@link component.Output <em>Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Output</em>'.
+	 * @see component.Output
+	 * @generated
+	 */
+	EClass getOutput();
+
+	/**
+	 * Returns the meta object for class '{@link component.LPort <em>LPort</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>LPort</em>'.
+	 * @see component.LPort
+	 * @generated
+	 */
+	EClass getLPort();
+
+	/**
+	 * Returns the meta object for class '{@link component.RPort <em>RPort</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>RPort</em>'.
+	 * @see component.RPort
+	 * @generated
+	 */
+	EClass getRPort();
 
 	/**
 	 * Returns the meta object for class '{@link component.Function <em>Function</em>}'.
@@ -3263,68 +4385,47 @@ public interface Component_Package extends EPackage {
 	EAttribute getFunction_Func();
 
 	/**
-	 * Returns the meta object for class '{@link component.Input <em>Input</em>}'.
+	 * Returns the meta object for the attribute '{@link component.Function#getToleranceType <em>Tolerance Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Input</em>'.
-	 * @see component.Input
+	 * @return the meta object for the attribute '<em>Tolerance Type</em>'.
+	 * @see component.Function#getToleranceType()
+	 * @see #getFunction()
 	 * @generated
 	 */
-	EClass getInput();
+	EAttribute getFunction_ToleranceType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link component.Input#getInput <em>Input</em>}'.
+	 * Returns the meta object for class '{@link component.Reading <em>Reading</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input</em>'.
-	 * @see component.Input#getInput()
-	 * @see #getInput()
+	 * @return the meta object for class '<em>Reading</em>'.
+	 * @see component.Reading
 	 * @generated
 	 */
-	EAttribute getInput_Input();
+	EClass getReading();
 
 	/**
-	 * Returns the meta object for the reference '{@link component.Input#getSource <em>Source</em>}'.
+	 * Returns the meta object for the attribute '{@link component.Reading#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see component.Input#getSource()
-	 * @see #getInput()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see component.Reading#getValue()
+	 * @see #getReading()
 	 * @generated
 	 */
-	EReference getInput_Source();
+	EAttribute getReading_Value();
 
 	/**
-	 * Returns the meta object for class '{@link component.Output <em>Output</em>}'.
+	 * Returns the meta object for the attribute '{@link component.Reading#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Output</em>'.
-	 * @see component.Output
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see component.Reading#getUnit()
+	 * @see #getReading()
 	 * @generated
 	 */
-	EClass getOutput();
-
-	/**
-	 * Returns the meta object for the attribute '{@link component.Output#getOutput <em>Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Output</em>'.
-	 * @see component.Output#getOutput()
-	 * @see #getOutput()
-	 * @generated
-	 */
-	EAttribute getOutput_Output();
-
-	/**
-	 * Returns the meta object for the reference '{@link component.Output#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see component.Output#getTarget()
-	 * @see #getOutput()
-	 * @generated
-	 */
-	EReference getOutput_Target();
+	EAttribute getReading_Unit();
 
 	/**
 	 * Returns the meta object for class '{@link component.ComponentSafetyElement <em>Component Safety Element</em>}'.
@@ -3400,6 +4501,17 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFailureMode_Safety_related();
+
+	/**
+	 * Returns the meta object for the attribute '{@link component.FailureMode#getFailureSeverity <em>Failure Severity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Failure Severity</em>'.
+	 * @see component.FailureMode#getFailureSeverity()
+	 * @see #getFailureMode()
+	 * @generated
+	 */
+	EAttribute getFailureMode_FailureSeverity();
 
 	/**
 	 * Returns the meta object for the reference list '{@link component.FailureMode#getHazards <em>Hazards</em>}'.
@@ -3499,15 +4611,15 @@ public interface Component_Package extends EPackage {
 	EClass getFailureEffect();
 
 	/**
-	 * Returns the meta object for the attribute '{@link component.FailureEffect#getDesc <em>Desc</em>}'.
+	 * Returns the meta object for the attribute '{@link component.FailureEffect#getEffect <em>Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Desc</em>'.
-	 * @see component.FailureEffect#getDesc()
+	 * @return the meta object for the attribute '<em>Effect</em>'.
+	 * @see component.FailureEffect#getEffect()
 	 * @see #getFailureEffect()
 	 * @generated
 	 */
-	EAttribute getFailureEffect_Desc();
+	EAttribute getFailureEffect_Effect();
 
 	/**
 	 * Returns the meta object for the reference list '{@link component.FailureEffect#getAffected <em>Affected</em>}'.
@@ -3579,6 +4691,16 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EEnum getToleranceType();
+
+	/**
+	 * Returns the meta object for enum '{@link component.FailureEffectEnum <em>Failure Effect Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Failure Effect Enum</em>'.
+	 * @see component.FailureEffectEnum
+	 * @generated
+	 */
+	EEnum getFailureEffectEnum();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3685,6 +4807,14 @@ public interface Component_Package extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Dyamic</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__DYAMIC = eINSTANCE.getComponent_Dyamic();
+
+		/**
 		 * The meta object literal for the '<em><b>Identity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3741,6 +4871,22 @@ public interface Component_Package extends EPackage {
 		EAttribute COMPONENT__SIL = eINSTANCE.getComponent_Sil();
 
 		/**
+		 * The meta object literal for the '<em><b>Readings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__READINGS = eINSTANCE.getComponent_Readings();
+
+		/**
+		 * The meta object literal for the '<em><b>Block Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__BLOCK_TYPE = eINSTANCE.getComponent_BlockType();
+
+		/**
 		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3771,6 +4917,22 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__OUTPUTS = eINSTANCE.getComponent_Outputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Lports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__LPORTS = eINSTANCE.getComponent_Lports();
+
+		/**
+		 * The meta object literal for the '<em><b>Rports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__RPORTS = eINSTANCE.getComponent_Rports();
 
 		/**
 		 * The meta object literal for the '<em><b>Sub components</b></em>' containment reference list feature.
@@ -3805,26 +4967,6 @@ public interface Component_Package extends EPackage {
 		EReference COMPONENT__REQUIREMENTS = eINSTANCE.getComponent_Requirements();
 
 		/**
-		 * The meta object literal for the '{@link component.impl.ForkImpl <em>Fork</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see component.impl.ForkImpl
-		 * @see component.impl.Component_PackageImpl#getFork()
-		 * @generated
-		 */
-		EClass FORK = eINSTANCE.getFork();
-
-		/**
-		 * The meta object literal for the '{@link component.impl.JoinImpl <em>Join</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see component.impl.JoinImpl
-		 * @see component.impl.Component_PackageImpl#getJoin()
-		 * @generated
-		 */
-		EClass JOIN = eINSTANCE.getJoin();
-
-		/**
 		 * The meta object literal for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3843,12 +4985,22 @@ public interface Component_Package extends EPackage {
 		EAttribute COMPONENT_RELATIONSHIP__LABEL = eINSTANCE.getComponentRelationship_Label();
 
 		/**
+		 * The meta object literal for the '{@link component.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.DirectedRelationshipImpl
+		 * @see component.impl.Component_PackageImpl#getDirectedRelationship()
+		 * @generated
+		 */
+		EClass DIRECTED_RELATIONSHIP = eINSTANCE.getDirectedRelationship();
+
+		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_RELATIONSHIP__SOURCE = eINSTANCE.getComponentRelationship_Source();
+		EReference DIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getDirectedRelationship_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -3856,7 +5008,33 @@ public interface Component_Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_RELATIONSHIP__TARGET = eINSTANCE.getComponentRelationship_Target();
+		EReference DIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getDirectedRelationship_Target();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.UndirectedRelationshipImpl <em>Undirected Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.UndirectedRelationshipImpl
+		 * @see component.impl.Component_PackageImpl#getUndirectedRelationship()
+		 * @generated
+		 */
+		EClass UNDIRECTED_RELATIONSHIP = eINSTANCE.getUndirectedRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNDIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getUndirectedRelationship_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNDIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getUndirectedRelationship_Target();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.ComponentAssetImpl <em>Component Asset</em>}' class.
@@ -3867,6 +5045,144 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT_ASSET = eINSTANCE.getComponentAsset();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.UtilityNodesImpl <em>Utility Nodes</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.UtilityNodesImpl
+		 * @see component.impl.Component_PackageImpl#getUtilityNodes()
+		 * @generated
+		 */
+		EClass UTILITY_NODES = eINSTANCE.getUtilityNodes();
+
+		/**
+		 * The meta object literal for the '<em><b>Reading</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UTILITY_NODES__READING = eINSTANCE.getUtilityNodes_Reading();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.TransitionNodeImpl <em>Transition Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.TransitionNodeImpl
+		 * @see component.impl.Component_PackageImpl#getTransitionNode()
+		 * @generated
+		 */
+		EClass TRANSITION_NODE = eINSTANCE.getTransitionNode();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.ForkImpl <em>Fork</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.ForkImpl
+		 * @see component.impl.Component_PackageImpl#getFork()
+		 * @generated
+		 */
+		EClass FORK = eINSTANCE.getFork();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORK__SOURCE = eINSTANCE.getFork_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORK__TARGET = eINSTANCE.getFork_Target();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.SwitchImpl <em>Switch</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.SwitchImpl
+		 * @see component.impl.Component_PackageImpl#getSwitch()
+		 * @generated
+		 */
+		EClass SWITCH = eINSTANCE.getSwitch();
+
+		/**
+		 * The meta object literal for the '<em><b>Ports</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SWITCH__PORTS = eINSTANCE.getSwitch_Ports();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.IONodeImpl <em>IO Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.IONodeImpl
+		 * @see component.impl.Component_PackageImpl#getIONode()
+		 * @generated
+		 */
+		EClass IO_NODE = eINSTANCE.getIONode();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IO_NODE__UPPER = eINSTANCE.getIONode_Upper();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IO_NODE__LOWER = eINSTANCE.getIONode_Lower();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.InputImpl <em>Input</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.InputImpl
+		 * @see component.impl.Component_PackageImpl#getInput()
+		 * @generated
+		 */
+		EClass INPUT = eINSTANCE.getInput();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.OutputImpl <em>Output</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.OutputImpl
+		 * @see component.impl.Component_PackageImpl#getOutput()
+		 * @generated
+		 */
+		EClass OUTPUT = eINSTANCE.getOutput();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.LPortImpl <em>LPort</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.LPortImpl
+		 * @see component.impl.Component_PackageImpl#getLPort()
+		 * @generated
+		 */
+		EClass LPORT = eINSTANCE.getLPort();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.RPortImpl <em>RPort</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.RPortImpl
+		 * @see component.impl.Component_PackageImpl#getRPort()
+		 * @generated
+		 */
+		EClass RPORT = eINSTANCE.getRPort();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.FunctionImpl <em>Function</em>}' class.
@@ -3887,56 +5203,38 @@ public interface Component_Package extends EPackage {
 		EAttribute FUNCTION__FUNC = eINSTANCE.getFunction_Func();
 
 		/**
-		 * The meta object literal for the '{@link component.impl.InputImpl <em>Input</em>}' class.
+		 * The meta object literal for the '<em><b>Tolerance Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see component.impl.InputImpl
-		 * @see component.impl.Component_PackageImpl#getInput()
 		 * @generated
 		 */
-		EClass INPUT = eINSTANCE.getInput();
+		EAttribute FUNCTION__TOLERANCE_TYPE = eINSTANCE.getFunction_ToleranceType();
 
 		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' attribute feature.
+		 * The meta object literal for the '{@link component.impl.ReadingImpl <em>Reading</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see component.impl.ReadingImpl
+		 * @see component.impl.Component_PackageImpl#getReading()
 		 * @generated
 		 */
-		EAttribute INPUT__INPUT = eINSTANCE.getInput_Input();
+		EClass READING = eINSTANCE.getReading();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INPUT__SOURCE = eINSTANCE.getInput_Source();
+		EAttribute READING__VALUE = eINSTANCE.getReading_Value();
 
 		/**
-		 * The meta object literal for the '{@link component.impl.OutputImpl <em>Output</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see component.impl.OutputImpl
-		 * @see component.impl.Component_PackageImpl#getOutput()
-		 * @generated
-		 */
-		EClass OUTPUT = eINSTANCE.getOutput();
-
-		/**
-		 * The meta object literal for the '<em><b>Output</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OUTPUT__OUTPUT = eINSTANCE.getOutput_Output();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OUTPUT__TARGET = eINSTANCE.getOutput_Target();
+		EAttribute READING__UNIT = eINSTANCE.getReading_Unit();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.ComponentSafetyElementImpl <em>Component Safety Element</em>}' class.
@@ -3997,6 +5295,14 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute FAILURE_MODE__SAFETY_RELATED = eINSTANCE.getFailureMode_Safety_related();
+
+		/**
+		 * The meta object literal for the '<em><b>Failure Severity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FAILURE_MODE__FAILURE_SEVERITY = eINSTANCE.getFailureMode_FailureSeverity();
 
 		/**
 		 * The meta object literal for the '<em><b>Hazards</b></em>' reference list feature.
@@ -4075,12 +5381,12 @@ public interface Component_Package extends EPackage {
 		EClass FAILURE_EFFECT = eINSTANCE.getFailureEffect();
 
 		/**
-		 * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Effect</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FAILURE_EFFECT__DESC = eINSTANCE.getFailureEffect_Desc();
+		EAttribute FAILURE_EFFECT__EFFECT = eINSTANCE.getFailureEffect_Effect();
 
 		/**
 		 * The meta object literal for the '<em><b>Affected</b></em>' reference list feature.
@@ -4149,6 +5455,16 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EEnum TOLERANCE_TYPE = eINSTANCE.getToleranceType();
+
+		/**
+		 * The meta object literal for the '{@link component.FailureEffectEnum <em>Failure Effect Enum</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.FailureEffectEnum
+		 * @see component.impl.Component_PackageImpl#getFailureEffectEnum()
+		 * @generated
+		 */
+		EEnum FAILURE_EFFECT_ENUM = eINSTANCE.getFailureEffectEnum();
 
 	}
 

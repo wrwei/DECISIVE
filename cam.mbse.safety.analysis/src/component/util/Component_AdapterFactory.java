@@ -93,24 +93,40 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
-			public Adapter caseFork(Fork object) {
-				return createForkAdapter();
-			}
-			@Override
-			public Adapter caseJoin(Join object) {
-				return createJoinAdapter();
-			}
-			@Override
 			public Adapter caseComponentRelationship(ComponentRelationship object) {
 				return createComponentRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseDirectedRelationship(DirectedRelationship object) {
+				return createDirectedRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseUndirectedRelationship(UndirectedRelationship object) {
+				return createUndirectedRelationshipAdapter();
 			}
 			@Override
 			public Adapter caseComponentAsset(ComponentAsset object) {
 				return createComponentAssetAdapter();
 			}
 			@Override
-			public Adapter caseFunction(Function object) {
-				return createFunctionAdapter();
+			public Adapter caseUtilityNodes(UtilityNodes object) {
+				return createUtilityNodesAdapter();
+			}
+			@Override
+			public Adapter caseTransitionNode(TransitionNode object) {
+				return createTransitionNodeAdapter();
+			}
+			@Override
+			public Adapter caseFork(Fork object) {
+				return createForkAdapter();
+			}
+			@Override
+			public Adapter caseSwitch(Switch object) {
+				return createSwitchAdapter();
+			}
+			@Override
+			public Adapter caseIONode(IONode object) {
+				return createIONodeAdapter();
 			}
 			@Override
 			public Adapter caseInput(Input object) {
@@ -119,6 +135,22 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOutput(Output object) {
 				return createOutputAdapter();
+			}
+			@Override
+			public Adapter caseLPort(LPort object) {
+				return createLPortAdapter();
+			}
+			@Override
+			public Adapter caseRPort(RPort object) {
+				return createRPortAdapter();
+			}
+			@Override
+			public Adapter caseFunction(Function object) {
+				return createFunctionAdapter();
+			}
+			@Override
+			public Adapter caseReading(Reading object) {
+				return createReadingAdapter();
 			}
 			@Override
 			public Adapter caseComponentSafetyElement(ComponentSafetyElement object) {
@@ -255,34 +287,6 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link component.Fork <em>Fork</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see component.Fork
-	 * @generated
-	 */
-	public Adapter createForkAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link component.Join <em>Join</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see component.Join
-	 * @generated
-	 */
-	public Adapter createJoinAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link component.ComponentRelationship <em>Component Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -293,6 +297,34 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.DirectedRelationship <em>Directed Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.DirectedRelationship
+	 * @generated
+	 */
+	public Adapter createDirectedRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.UndirectedRelationship <em>Undirected Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.UndirectedRelationship
+	 * @generated
+	 */
+	public Adapter createUndirectedRelationshipAdapter() {
 		return null;
 	}
 
@@ -311,16 +343,72 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link component.Function <em>Function</em>}'.
+	 * Creates a new adapter for an object of class '{@link component.UtilityNodes <em>Utility Nodes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see component.Function
+	 * @see component.UtilityNodes
 	 * @generated
 	 */
-	public Adapter createFunctionAdapter() {
+	public Adapter createUtilityNodesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.TransitionNode <em>Transition Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.TransitionNode
+	 * @generated
+	 */
+	public Adapter createTransitionNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.Fork <em>Fork</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.Fork
+	 * @generated
+	 */
+	public Adapter createForkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.Switch <em>Switch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.Switch
+	 * @generated
+	 */
+	public Adapter createSwitchAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.IONode <em>IO Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.IONode
+	 * @generated
+	 */
+	public Adapter createIONodeAdapter() {
 		return null;
 	}
 
@@ -349,6 +437,62 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOutputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.LPort <em>LPort</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.LPort
+	 * @generated
+	 */
+	public Adapter createLPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.RPort <em>RPort</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.RPort
+	 * @generated
+	 */
+	public Adapter createRPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.Function
+	 * @generated
+	 */
+	public Adapter createFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.Reading <em>Reading</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.Reading
+	 * @generated
+	 */
+	public Adapter createReadingAdapter() {
 		return null;
 	}
 

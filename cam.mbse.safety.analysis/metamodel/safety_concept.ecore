@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="safety_concept" nsURI="http://cam.ac.uk/mbsa/safety_concept"
+    nsPrefix="safety_concept_">
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptElement" abstract="true" eSuperTypes="http://cam.ac.uk/mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyConceptPackage" eSuperTypes="#//ConceptElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirementElement" upperBound="-1"
+        eType="#//ConceptElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//SafetyConceptPackageInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyConceptPackageBinding" eSuperTypes="#//SafetyConceptPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantPackage" lowerBound="2"
+        upperBound="-1" eType="#//SafetyConceptPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyConceptPackageInterface" eSuperTypes="#//SafetyConceptPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
+        eType="#//SafetyConceptPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Safety_Concept" eSuperTypes="#//ConceptElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract_level" eType="#//ABL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="asil" eType="#//ASIL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sil" eType="#//SIL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="script" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="satisfied" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="ecore:EClass http://cam.ac.uk/mbsa/requirement#//Requirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementRelationship" eSuperTypes="#//ConceptElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Safety_Concept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Safety_Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ASIL">
+    <eLiterals name="ASIL_A" value="1"/>
+    <eLiterals name="ASIL_B" value="2"/>
+    <eLiterals name="ASIL_C" value="3"/>
+    <eLiterals name="ASIL_D" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SIL">
+    <eLiterals name="SIL_1" value="1"/>
+    <eLiterals name="SIL_2" value="2"/>
+    <eLiterals name="SIL_3" value="3"/>
+    <eLiterals name="SIL_4" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ABL">
+    <eLiterals name="Functional" value="1"/>
+    <eLiterals name="Technical" value="2"/>
+    <eLiterals name="Software" value="3"/>
+    <eLiterals name="Hardware" value="4"/>
+  </eClassifiers>
+</ecore:EPackage>

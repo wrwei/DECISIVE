@@ -58,6 +58,24 @@ public interface Component_Factory extends EFactory {
 	Component createComponent();
 
 	/**
+	 * Returns a new object of class '<em>Directed Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Directed Relationship</em>'.
+	 * @generated
+	 */
+	DirectedRelationship createDirectedRelationship();
+
+	/**
+	 * Returns a new object of class '<em>Undirected Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Undirected Relationship</em>'.
+	 * @generated
+	 */
+	UndirectedRelationship createUndirectedRelationship();
+
+	/**
 	 * Returns a new object of class '<em>Fork</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,31 +85,13 @@ public interface Component_Factory extends EFactory {
 	Fork createFork();
 
 	/**
-	 * Returns a new object of class '<em>Join</em>'.
+	 * Returns a new object of class '<em>Switch</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Join</em>'.
+	 * @return a new object of class '<em>Switch</em>'.
 	 * @generated
 	 */
-	Join createJoin();
-
-	/**
-	 * Returns a new object of class '<em>Component Relationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Relationship</em>'.
-	 * @generated
-	 */
-	ComponentRelationship createComponentRelationship();
-
-	/**
-	 * Returns a new object of class '<em>Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Function</em>'.
-	 * @generated
-	 */
-	Function createFunction();
+	Switch createSwitch();
 
 	/**
 	 * Returns a new object of class '<em>Input</em>'.
@@ -110,6 +110,42 @@ public interface Component_Factory extends EFactory {
 	 * @generated
 	 */
 	Output createOutput();
+
+	/**
+	 * Returns a new object of class '<em>LPort</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>LPort</em>'.
+	 * @generated
+	 */
+	LPort createLPort();
+
+	/**
+	 * Returns a new object of class '<em>RPort</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>RPort</em>'.
+	 * @generated
+	 */
+	RPort createRPort();
+
+	/**
+	 * Returns a new object of class '<em>Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function</em>'.
+	 * @generated
+	 */
+	Function createFunction();
+
+	/**
+	 * Returns a new object of class '<em>Reading</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reading</em>'.
+	 * @generated
+	 */
+	Reading createReading();
 
 	/**
 	 * Returns a new object of class '<em>Failure Mode</em>'.

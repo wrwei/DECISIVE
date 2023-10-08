@@ -10,17 +10,9 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated requirement -->
       <package
-            uri="http://dlut.mbsa/requirement"
+            uri="http://cam.ac.uk/mbsa/requirement"
             class="requirement.Requirement_Package"
             genModel="metamodel/requirement.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated mbsa -->
-      <package
-            uri="http://dlut.mbsa/mbsa"
-            class="mbsa.MBSA_Package"
-            genModel="metamodel/mbsa.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -34,15 +26,39 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated component -->
       <package
-            uri="http://dlut.mbsa/component"
+            uri="http://cam.ac.uk/mbsa/component"
             class="component.Component_Package"
             genModel="metamodel/component.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated safety_concept -->
+      <package
+            uri="http://cam.ac.uk/mbsa/safety_concept"
+            class="safety_concept.Safety_concept_Package"
+            genModel="metamodel/safety_concept.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mbsa -->
+      <package
+            uri="http://cam.ac.uk/mbsa/fta"
+            class="fta.Fta_Package"
+            genModel="metamodel/mbsa.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mbsa -->
+      <package
+            uri="http://cam.ac.uk/mbsa/mbsa"
+            class="mbsa.Mbsa_Package"
+            genModel="metamodel/mbsa.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated component -->
       <package
-            uri="http://dlut.mbsa/base"
+            uri="http://cam.ac.uk/mbsa/base"
             class="base.Base_Package"
             genModel="metamodel/component.genmodel"/>
    </extension>

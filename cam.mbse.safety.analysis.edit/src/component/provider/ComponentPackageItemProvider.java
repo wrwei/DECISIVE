@@ -183,22 +183,22 @@ public class ComponentPackageItemProvider extends ComponentElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createDirectedRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createUndirectedRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
 				 Component_Factory.eINSTANCE.createFork()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
-				 Component_Factory.eINSTANCE.createJoin()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
-				 Component_Factory.eINSTANCE.createComponentRelationship()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
-				 Component_Factory.eINSTANCE.createFunction()));
+				 Component_Factory.eINSTANCE.createSwitch()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -209,6 +209,26 @@ public class ComponentPackageItemProvider extends ComponentElementItemProvider {
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
 				 Component_Factory.eINSTANCE.createOutput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createLPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createRPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createReading()));
 
 		newChildDescriptors.add
 			(createChildParameter
