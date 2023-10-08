@@ -108,7 +108,7 @@ public class ElementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return HazardEditPlugin.INSTANCE;
+		return ComponentEditPlugin.INSTANCE;
 	}
 
 }

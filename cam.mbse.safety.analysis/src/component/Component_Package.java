@@ -3205,13 +3205,158 @@ public interface Component_Package extends EPackage {
 	int SAFETY_MECHANISM__COVERAGE = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Costs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY_MECHANISM__COSTS = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Safety Mechanism</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MECHANISM_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
+	int SAFETY_MECHANISM_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link component.impl.CostImpl <em>Cost</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.impl.CostImpl
+	 * @see component.impl.Component_PackageImpl#getCost()
+	 * @generated
+	 */
+	int COST = 23;
+
+	/**
+	 * The feature id for the '<em><b>Gid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__GID = COMPONENT_SAFETY_ELEMENT__GID;
+
+	/**
+	 * The feature id for the '<em><b>Is Citation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__IS_CITATION = COMPONENT_SAFETY_ELEMENT__IS_CITATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__IS_ABSTRACT = COMPONENT_SAFETY_ELEMENT__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Cited Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__CITED_ELEMENT = COMPONENT_SAFETY_ELEMENT__CITED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Form</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__ABSTRACT_FORM = COMPONENT_SAFETY_ELEMENT__ABSTRACT_FORM;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__NAME = COMPONENT_SAFETY_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__DESCRIPTION = COMPONENT_SAFETY_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Implementation Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__IMPLEMENTATION_CONSTRAINT = COMPONENT_SAFETY_ELEMENT__IMPLEMENTATION_CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__NOTE = COMPONENT_SAFETY_ELEMENT__NOTE;
+
+	/**
+	 * The feature id for the '<em><b>Tagged Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__TAGGED_VALUE = COMPONENT_SAFETY_ELEMENT__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__IDENTITY = COMPONENT_SAFETY_ELEMENT__IDENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__UNIT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Cost</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST__COST = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Cost</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link component.impl.FailureEffectImpl <em>Failure Effect</em>}' class.
@@ -3221,7 +3366,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFailureEffect()
 	 * @generated
 	 */
-	int FAILURE_EFFECT = 23;
+	int FAILURE_EFFECT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -3357,7 +3502,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getRegionalEffect()
 	 * @generated
 	 */
-	int REGIONAL_EFFECT = 24;
+	int REGIONAL_EFFECT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -3493,7 +3638,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getHigherLevelEffect()
 	 * @generated
 	 */
-	int HIGHER_LEVEL_EFFECT = 25;
+	int HIGHER_LEVEL_EFFECT = 26;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -3629,7 +3774,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFinalEffect()
 	 * @generated
 	 */
-	int FINAL_EFFECT = 26;
+	int FINAL_EFFECT = 27;
 
 	/**
 	 * The feature id for the '<em><b>Gid</b></em>' attribute.
@@ -3765,7 +3910,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFailureSeverity()
 	 * @generated
 	 */
-	int FAILURE_SEVERITY = 27;
+	int FAILURE_SEVERITY = 28;
 
 	/**
 	 * The meta object id for the '{@link component.ComponentType <em>Component Type</em>}' enum.
@@ -3775,7 +3920,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getComponentType()
 	 * @generated
 	 */
-	int COMPONENT_TYPE = 28;
+	int COMPONENT_TYPE = 29;
 
 	/**
 	 * The meta object id for the '{@link component.ToleranceType <em>Tolerance Type</em>}' enum.
@@ -3785,7 +3930,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getToleranceType()
 	 * @generated
 	 */
-	int TOLERANCE_TYPE = 29;
+	int TOLERANCE_TYPE = 30;
 
 	/**
 	 * The meta object id for the '{@link component.FailureEffectEnum <em>Failure Effect Enum</em>}' enum.
@@ -3795,7 +3940,7 @@ public interface Component_Package extends EPackage {
 	 * @see component.impl.Component_PackageImpl#getFailureEffectEnum()
 	 * @generated
 	 */
-	int FAILURE_EFFECT_ENUM = 30;
+	int FAILURE_EFFECT_ENUM = 31;
 
 
 	/**
@@ -4601,6 +4746,49 @@ public interface Component_Package extends EPackage {
 	EAttribute getSafetyMechanism_Coverage();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link component.SafetyMechanism#getCosts <em>Costs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Costs</em>'.
+	 * @see component.SafetyMechanism#getCosts()
+	 * @see #getSafetyMechanism()
+	 * @generated
+	 */
+	EReference getSafetyMechanism_Costs();
+
+	/**
+	 * Returns the meta object for class '{@link component.Cost <em>Cost</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Cost</em>'.
+	 * @see component.Cost
+	 * @generated
+	 */
+	EClass getCost();
+
+	/**
+	 * Returns the meta object for the attribute '{@link component.Cost#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see component.Cost#getUnit()
+	 * @see #getCost()
+	 * @generated
+	 */
+	EAttribute getCost_Unit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link component.Cost#getCost <em>Cost</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cost</em>'.
+	 * @see component.Cost#getCost()
+	 * @see #getCost()
+	 * @generated
+	 */
+	EAttribute getCost_Cost();
+
+	/**
 	 * Returns the meta object for class '{@link component.FailureEffect <em>Failure Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5369,6 +5557,40 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute SAFETY_MECHANISM__COVERAGE = eINSTANCE.getSafetyMechanism_Coverage();
+
+		/**
+		 * The meta object literal for the '<em><b>Costs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SAFETY_MECHANISM__COSTS = eINSTANCE.getSafetyMechanism_Costs();
+
+		/**
+		 * The meta object literal for the '{@link component.impl.CostImpl <em>Cost</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.impl.CostImpl
+		 * @see component.impl.Component_PackageImpl#getCost()
+		 * @generated
+		 */
+		EClass COST = eINSTANCE.getCost();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COST__UNIT = eINSTANCE.getCost_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Cost</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COST__COST = eINSTANCE.getCost_Cost();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.FailureEffectImpl <em>Failure Effect</em>}' class.

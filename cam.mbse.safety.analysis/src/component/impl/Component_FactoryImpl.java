@@ -73,6 +73,7 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 			case Component_Package.READING: return createReading();
 			case Component_Package.FAILURE_MODE: return createFailureMode();
 			case Component_Package.SAFETY_MECHANISM: return createSafetyMechanism();
+			case Component_Package.COST: return createCost();
 			case Component_Package.REGIONAL_EFFECT: return createRegionalEffect();
 			case Component_Package.HIGHER_LEVEL_EFFECT: return createHigherLevelEffect();
 			case Component_Package.FINAL_EFFECT: return createFinalEffect();
@@ -297,6 +298,17 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	public SafetyMechanism createSafetyMechanism() {
 		SafetyMechanismImpl safetyMechanism = new SafetyMechanismImpl();
 		return safetyMechanism;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Cost createCost() {
+		CostImpl cost = new CostImpl();
+		return cost;
 	}
 
 	/**

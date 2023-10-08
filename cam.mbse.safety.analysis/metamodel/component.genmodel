@@ -121,6 +121,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//SafetyMechanism/handle"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//SafetyMechanism/mechanism"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//SafetyMechanism/coverage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//SafetyMechanism/costs"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//Cost">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Cost/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Cost/cost"/>
     </genClasses>
     <genClasses image="false" ecoreClass="component.ecore#//FailureEffect">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureEffect/effect"/>

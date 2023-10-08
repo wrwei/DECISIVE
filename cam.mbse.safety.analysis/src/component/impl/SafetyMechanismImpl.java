@@ -3,15 +3,24 @@
 package component.impl;
 
 import component.Component_Package;
+import component.Cost;
 import component.FailureMode;
 import component.SafetyMechanism;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link component.impl.SafetyMechanismImpl#getHandle <em>Handle</em>}</li>
  *   <li>{@link component.impl.SafetyMechanismImpl#getMechanism <em>Mechanism</em>}</li>
  *   <li>{@link component.impl.SafetyMechanismImpl#getCoverage <em>Coverage</em>}</li>
+ *   <li>{@link component.impl.SafetyMechanismImpl#getCosts <em>Costs</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +88,16 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 	 * @ordered
 	 */
 	protected float coverage = COVERAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCosts() <em>Costs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCosts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Cost> costs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +210,33 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 	 * @generated
 	 */
 	@Override
+	public EList<Cost> getCosts() {
+		if (costs == null) {
+			costs = new EObjectContainmentEList<Cost>(Cost.class, this, Component_Package.SAFETY_MECHANISM__COSTS);
+		}
+		return costs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Component_Package.SAFETY_MECHANISM__COSTS:
+				return ((InternalEList<?>)getCosts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Component_Package.SAFETY_MECHANISM__HANDLE:
@@ -199,6 +246,8 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 				return getMechanism();
 			case Component_Package.SAFETY_MECHANISM__COVERAGE:
 				return getCoverage();
+			case Component_Package.SAFETY_MECHANISM__COSTS:
+				return getCosts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +257,7 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -219,6 +269,10 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 				return;
 			case Component_Package.SAFETY_MECHANISM__COVERAGE:
 				setCoverage((Float)newValue);
+				return;
+			case Component_Package.SAFETY_MECHANISM__COSTS:
+				getCosts().clear();
+				getCosts().addAll((Collection<? extends Cost>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,6 +295,9 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 			case Component_Package.SAFETY_MECHANISM__COVERAGE:
 				setCoverage(COVERAGE_EDEFAULT);
 				return;
+			case Component_Package.SAFETY_MECHANISM__COSTS:
+				getCosts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -259,6 +316,8 @@ public class SafetyMechanismImpl extends ComponentSafetyElementImpl implements S
 				return MECHANISM_EDEFAULT == null ? mechanism != null : !MECHANISM_EDEFAULT.equals(mechanism);
 			case Component_Package.SAFETY_MECHANISM__COVERAGE:
 				return coverage != COVERAGE_EDEFAULT;
+			case Component_Package.SAFETY_MECHANISM__COSTS:
+				return costs != null && !costs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

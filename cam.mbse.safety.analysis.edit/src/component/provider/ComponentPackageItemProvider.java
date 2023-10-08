@@ -243,6 +243,11 @@ public class ComponentPackageItemProvider extends ComponentElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
+				 Component_Factory.eINSTANCE.createCost()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
 				 Component_Factory.eINSTANCE.createRegionalEffect()));
 
 		newChildDescriptors.add

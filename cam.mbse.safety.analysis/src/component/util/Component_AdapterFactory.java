@@ -165,6 +165,10 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 				return createSafetyMechanismAdapter();
 			}
 			@Override
+			public Adapter caseCost(Cost object) {
+				return createCostAdapter();
+			}
+			@Override
 			public Adapter caseFailureEffect(FailureEffect object) {
 				return createFailureEffectAdapter();
 			}
@@ -535,6 +539,20 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSafetyMechanismAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link component.Cost <em>Cost</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see component.Cost
+	 * @generated
+	 */
+	public Adapter createCostAdapter() {
 		return null;
 	}
 

@@ -166,6 +166,15 @@ public interface Component_Factory extends EFactory {
 	SafetyMechanism createSafetyMechanism();
 
 	/**
+	 * Returns a new object of class '<em>Cost</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cost</em>'.
+	 * @generated
+	 */
+	Cost createCost();
+
+	/**
 	 * Returns a new object of class '<em>Regional Effect</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

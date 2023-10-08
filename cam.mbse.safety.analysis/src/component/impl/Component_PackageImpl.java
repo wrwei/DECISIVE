@@ -17,6 +17,7 @@ import component.ComponentSafetyElement;
 import component.ComponentType;
 import component.Component_Factory;
 import component.Component_Package;
+import component.Cost;
 import component.DirectedRelationship;
 import component.FailureEffect;
 import component.FailureEffectEnum;
@@ -40,12 +41,6 @@ import component.TransitionNode;
 import component.UndirectedRelationship;
 import component.UtilityNodes;
 
-import fta.Fta_Package;
-import fta.impl.Fta_PackageImpl;
-import hazard.Hazard_Package;
-import hazard.impl.Hazard_PackageImpl;
-import mbsa.Mbsa_Package;
-import mbsa.impl.Mbsa_PackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -53,10 +48,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import requirement.Requirement_Package;
-import requirement.impl.Requirement_PackageImpl;
-import safety_concept.Safety_concept_Package;
-import safety_concept.impl.Safety_concept_PackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -231,6 +222,13 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass costEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass failureEffectEClass = null;
 
 	/**
@@ -330,36 +328,16 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Mbsa_Package.eNS_URI);
-		Mbsa_PackageImpl theMbsa_Package = (Mbsa_PackageImpl)(registeredPackage instanceof Mbsa_PackageImpl ? registeredPackage : Mbsa_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Base_Package.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Base_Package.eNS_URI);
 		Base_PackageImpl theBase_Package = (Base_PackageImpl)(registeredPackage instanceof Base_PackageImpl ? registeredPackage : Base_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Requirement_Package.eNS_URI);
-		Requirement_PackageImpl theRequirement_Package = (Requirement_PackageImpl)(registeredPackage instanceof Requirement_PackageImpl ? registeredPackage : Requirement_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Hazard_Package.eNS_URI);
-		Hazard_PackageImpl theHazard_Package = (Hazard_PackageImpl)(registeredPackage instanceof Hazard_PackageImpl ? registeredPackage : Hazard_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Safety_concept_Package.eNS_URI);
-		Safety_concept_PackageImpl theSafety_concept_Package = (Safety_concept_PackageImpl)(registeredPackage instanceof Safety_concept_PackageImpl ? registeredPackage : Safety_concept_Package.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Fta_Package.eNS_URI);
-		Fta_PackageImpl theFta_Package = (Fta_PackageImpl)(registeredPackage instanceof Fta_PackageImpl ? registeredPackage : Fta_Package.eINSTANCE);
 
 		// Create package meta-data objects
 		theComponent_Package.createPackageContents();
-		theMbsa_Package.createPackageContents();
 		theBase_Package.createPackageContents();
-		theRequirement_Package.createPackageContents();
-		theHazard_Package.createPackageContents();
-		theSafety_concept_Package.createPackageContents();
-		theFta_Package.createPackageContents();
 
 		// Initialize created meta-data
 		theComponent_Package.initializePackageContents();
-		theMbsa_Package.initializePackageContents();
 		theBase_Package.initializePackageContents();
-		theRequirement_Package.initializePackageContents();
-		theHazard_Package.initializePackageContents();
-		theSafety_concept_Package.initializePackageContents();
-		theFta_Package.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theComponent_Package.freeze();
@@ -1125,6 +1103,46 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
+	public EReference getSafetyMechanism_Costs() {
+		return (EReference)safetyMechanismEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCost() {
+		return costEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCost_Unit() {
+		return (EAttribute)costEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCost_Cost() {
+		return (EAttribute)costEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFailureEffect() {
 		return failureEffectEClass;
 	}
@@ -1345,6 +1363,11 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEReference(safetyMechanismEClass, SAFETY_MECHANISM__HANDLE);
 		createEAttribute(safetyMechanismEClass, SAFETY_MECHANISM__MECHANISM);
 		createEAttribute(safetyMechanismEClass, SAFETY_MECHANISM__COVERAGE);
+		createEReference(safetyMechanismEClass, SAFETY_MECHANISM__COSTS);
+
+		costEClass = createEClass(COST);
+		createEAttribute(costEClass, COST__UNIT);
+		createEAttribute(costEClass, COST__COST);
 
 		failureEffectEClass = createEClass(FAILURE_EFFECT);
 		createEAttribute(failureEffectEClass, FAILURE_EFFECT__EFFECT);
@@ -1417,6 +1440,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		componentSafetyElementEClass.getESuperTypes().add(this.getComponentAsset());
 		failureModeEClass.getESuperTypes().add(this.getComponentSafetyElement());
 		safetyMechanismEClass.getESuperTypes().add(this.getComponentSafetyElement());
+		costEClass.getESuperTypes().add(this.getComponentSafetyElement());
 		failureEffectEClass.getESuperTypes().add(this.getComponentSafetyElement());
 		regionalEffectEClass.getESuperTypes().add(this.getFailureEffect());
 		higherLevelEffectEClass.getESuperTypes().add(this.getFailureEffect());
@@ -1520,6 +1544,11 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEReference(getSafetyMechanism_Handle(), this.getFailureMode(), null, "handle", null, 0, 1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSafetyMechanism_Mechanism(), ecorePackage.getEString(), "mechanism", null, 0, 1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSafetyMechanism_Coverage(), ecorePackage.getEFloat(), "coverage", null, 0, 1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSafetyMechanism_Costs(), this.getCost(), null, "costs", null, 0, -1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(costEClass, Cost.class, "Cost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCost_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Cost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCost_Cost(), ecorePackage.getEFloat(), "cost", null, 0, 1, Cost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(failureEffectEClass, FailureEffect.class, "FailureEffect", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFailureEffect_Effect(), this.getFailureEffectEnum(), "effect", null, 0, 1, FailureEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

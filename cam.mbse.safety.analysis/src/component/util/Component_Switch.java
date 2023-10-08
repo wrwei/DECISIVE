@@ -355,6 +355,19 @@ public class Component_Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Component_Package.COST: {
+				Cost cost = (Cost)theEObject;
+				T result = caseCost(cost);
+				if (result == null) result = caseComponentSafetyElement(cost);
+				if (result == null) result = caseComponentAsset(cost);
+				if (result == null) result = caseComponentElement(cost);
+				if (result == null) result = caseArtifactElement(cost);
+				if (result == null) result = caseModelElement(cost);
+				if (result == null) result = caseBaseElement(cost);
+				if (result == null) result = caseElement(cost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case Component_Package.FAILURE_EFFECT: {
 				FailureEffect failureEffect = (FailureEffect)theEObject;
 				T result = caseFailureEffect(failureEffect);
@@ -756,6 +769,21 @@ public class Component_Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSafetyMechanism(SafetyMechanism object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cost</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cost</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCost(Cost object) {
 		return null;
 	}
 

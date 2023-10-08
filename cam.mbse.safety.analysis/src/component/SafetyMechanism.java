@@ -2,6 +2,7 @@
  */
 package component;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ package component;
  *   <li>{@link component.SafetyMechanism#getHandle <em>Handle</em>}</li>
  *   <li>{@link component.SafetyMechanism#getMechanism <em>Mechanism</em>}</li>
  *   <li>{@link component.SafetyMechanism#getCoverage <em>Coverage</em>}</li>
+ *   <li>{@link component.SafetyMechanism#getCosts <em>Costs</em>}</li>
  * </ul>
  *
  * @see component.Component_Package#getSafetyMechanism()
@@ -87,5 +89,17 @@ public interface SafetyMechanism extends ComponentSafetyElement {
 	 * @generated
 	 */
 	void setCoverage(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Costs</b></em>' containment reference list.
+	 * The list contents are of type {@link component.Cost}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Costs</em>' containment reference list.
+	 * @see component.Component_Package#getSafetyMechanism_Costs()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Cost> getCosts();
 
 } // SafetyMechanism
