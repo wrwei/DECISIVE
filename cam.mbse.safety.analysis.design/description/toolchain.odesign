@@ -2,8 +2,8 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="toolchain" version="12.0.0.2017041100">
   <ownedViewpoints name="MBSAViewPoint" modelFileExtension="mbsa">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="component_package_diagram" domainClass="component::ComponentPackage" enablePopupBars="true">
-      <metamodel href="http://dlut.mbsa/base#/"/>
-      <metamodel href="http://dlut.mbsa/component#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/component#/"/>
       <defaultLayer name="Component_package_diagram">
         <nodeMappings name="Component" semanticCandidatesExpression="aql:self.components->select(s|s.oclIsTypeOf(component::Component))" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']" domainClass="component::Component">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.component_name" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -313,11 +313,6 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="mbsa_package_diagram" initialisation="true" domainClass="mbsa::MBSAPackage" enablePopupBars="true">
-      <metamodel href="http://dlut.mbsa/mbsa#/"/>
-      <metamodel href="http://dlut.mbsa/component#/"/>
-      <metamodel href="http://dlut.mbsa/hazard#/"/>
-      <metamodel href="http://dlut.mbsa/requirement#/"/>
-      <metamodel href="http://dlut.mbsa/base#/"/>
       <defaultLayer name="MBSADiagram">
         <nodeMappings name="MBSAPackage" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewElementProperty']" domainClass="mbsa::MBSAPackage">
           <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.name.content" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
@@ -462,7 +457,6 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="component_diagram" domainClass="component::Component" enablePopupBars="true">
-      <metamodel href="http://dlut.mbsa/component#/"/>
       <defaultLayer name="Component_diagram">
         <nodeMappings name="Component" semanticCandidatesExpression="feature:sub_components" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']" domainClass="component::Component">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.component_name" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -986,8 +980,6 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="requirement_package_diagram" initialisation="true" domainClass="requirement::RequirementPackage" enablePopupBars="true">
-      <metamodel href="http://dlut.mbsa/requirement#/"/>
-      <metamodel href="http://dlut.mbsa/base#/"/>
       <defaultLayer name="Requirement_diagram">
         <nodeMappings name="RequirementNode" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewRequirementProperties']" domainClass="requirement::Requirement">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.name.content" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -1183,8 +1175,6 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="hazard_package_diagram" initialisation="true" domainClass="hazard::HazardPackage" enablePopupBars="true">
-      <metamodel href="http://dlut.mbsa/base#/"/>
-      <metamodel href="http://dlut.mbsa/hazard#/"/>
       <defaultLayer name="Hazard_diagram">
         <nodeMappings name="HazardNode" semanticCandidatesExpression="feature:hazardElement" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfHazard']" domainClass="hazard::HazardousSituation">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.name.content" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -1421,11 +1411,6 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="controlmeasure_diagram" initialisation="true" domainClass="hazard::ControlMeasure" enablePopupBars="true">
-      <metamodel href="http://dlut.mbsa/hazard#/"/>
-      <metamodel href="http://dlut.mbsa/mbsa#/"/>
-      <metamodel href="http://dlut.mbsa/requirement#/"/>
-      <metamodel href="http://dlut.mbsa/component#/"/>
-      <metamodel href="http://dlut.mbsa/base#/"/>
       <defaultLayer name="ControlMeasure_diagram">
         <nodeMappings name="VerificationEffectiveness" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='controlmeasure_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfVerificationEffectiveness']" domainClass="hazard::VerificationofEffectiveness">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.name.content" labelPosition="node" resizeKind="NSEW" width="20" height="5">

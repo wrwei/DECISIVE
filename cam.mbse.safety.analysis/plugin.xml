@@ -17,10 +17,6 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated standard -->
-      <package
-            uri="http://dlut.mbsa/hazard"
-            class="hazard.Hazard_Package"
-            genModel="metamodel/standard.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -53,6 +49,14 @@
             uri="http://cam.ac.uk/mbsa/mbsa"
             class="mbsa.Mbsa_Package"
             genModel="metamodel/mbsa.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hazard -->
+      <package
+            uri="http://cam.ac.uk/mbsa/hazard"
+            class="hazard.Hazard_Package"
+            genModel="metamodel/hazard.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
