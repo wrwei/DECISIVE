@@ -165,6 +165,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/component#//SafetyMechanism/handle"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/component#//SafetyMechanism/mechanism"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/component#//SafetyMechanism/coverage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cam.ac.uk/mbsa/component#//SafetyMechanism/costs"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cam.ac.uk/mbsa/component#//Cost">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/component#//Cost/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/component#//Cost/cost"/>
     </genClasses>
     <genClasses image="false" ecoreClass="http://cam.ac.uk/mbsa/component#//FailureEffect">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cam.ac.uk/mbsa/component#//FailureEffect/effect"/>
