@@ -1,0 +1,303 @@
+"Begin run...".println();
+transform();
+"run done!".println();
+
+operation transform(){
+	var blocks = getAllBlocks();
+	var DTPackages = createDigitalTwinPackage();
+	var cp = DTPackages.Create&AddComponentPackage();
+	var tp = DTPackages.Create&AddTerminologyPackage();
+	var forks = new Sequence;
+	cp.initComponentPackage(blocks);  //create Components
+	tp.initTerminologyPackage(cp, blocks);
+	//create Inputs, Outputs and Forks
+	for (b in blocks){
+		var c = cp.getComponentByGid(b.getBlockGid());
+		var connectivity = b.getConnectivity();
+		for (line in connectivity){
+			if (line.isDefined()){
+//				"++++++++++++++++++++".println();
+//				line.SrcBlock.println();
+//				line.DstBlock.println();
+				if (line.SrcBlock.isDefined()){
+					var input = c.createInput();
+					input.gid = line.SrcBlock.asString();
+				}
+				if (line.DstBlock.isDefined()){
+					if (line.DstBlock.size = 1){
+						var output = c.createOutput();
+						output.gid = line.DstBlock.asString();
+					}
+					else{
+						var f = cp.createFork();
+						var output = c.createOutput();
+						f.gid = c.gid;
+						cp.createRootComponentRelationship(output, f);
+						forks.add(f);
+					}
+				}
+			}
+		}
+	}
+	//create ComponentRelationships
+	for (b in blocks){
+		var c = cp.getComponentByGid(b.getBlockGid());
+		for (i in c.inputs){
+			var sourceComponent = cp.getComponentByGid(i.gid);
+			var sourceOutput = c.getOutputIn(sourceComponent.outputs);
+			if (sourceOutput.isDefined()){				
+				cp.createRootComponentRelationship(sourceOutput, i);
+			}
+			else{
+				var sourceFork = sourceComponent.getOutputIn(forks);
+				cp.createRootComponentRelationship(sourceFork, i);
+			}
+		}
+	}
+}
+
+operation T!ComponentPackage initComponentPackage(blocks){
+	for (b in blocks){
+		var c = self.createRootComponent();
+		c.fillComponentName(b);
+		c.fillComponentGid(b);
+	}
+}
+
+operation T!TerminologyPackage initTerminologyPackage(cp, blocks){
+	var categoryList = self.createAllCategory(cp, blocks);
+	for (b in blocks){
+		var c = cp.getComponentByGid(b.getBlockGid());
+		var category = categoryList.select(e|e.name.content = c.component_name).first();
+		var t = self.createTerm(c, category);
+	}
+}
+
+operation T!TerminologyPackage createAllCategory(cp, blocks){
+	var categoryNameList = new Sequence;
+	var categoryList = new Sequence;
+	for (b in blocks){
+		var c = cp.getComponentByGid(b.getBlockGid());
+		if (not categoryNameList.includes(c.component_name)){
+			categoryNameList.add(c.component_name);
+			var category = self.createCategory(c.component_name);
+			categoryList.add(category);
+		}
+	}
+	return categoryList;
+}
+
+operation T!TerminologyPackage createTerm(c, category){
+	var t = new T!Term;
+	t.createArtifactElement(c.name.content, "Gid = " + c.gid);
+	t.category.add(category);
+	self.terminologyElement.add(t);
+}
+
+operation T!TerminologyPackage createCategory(name){
+	var category = new T!Category;
+	category.createArtifactElement(name, "");
+	self.terminologyElement.add(category);
+	return category;
+}
+
+operation Any getBlockGid(){
+	return self.handle.asString();
+}
+
+operation T!Component getOutputIn(s : Any){
+	return s.select(e|e.gid = self.gid).first();
+}
+
+operation T!ComponentPackage getComponentByGid(gid : String){
+	return self.components.select(e|e.gid = gid).first();
+}
+
+operation Any getConnectivity() {
+	return self.PortConnectivity;
+}
+	
+operation T!Component fillComponentGid(b : Any){
+	self.gid = b.handle.asString();
+}
+
+operation T!Component fillComponentName(b : Any){
+	self.name.content = b.name;
+	var name = self.name.content;
+	var numbers = Sequence{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+	if (numbers.includes(name.substring(name.length()-1))){
+		while (numbers.includes(name.substring(name.length()-1))){
+			name = name.substring(0, name.length()-1);
+		}
+		self.component_name = name;
+	}
+	else{
+		self.component_name = name;
+	}
+}
+
+operation getAllBlocks(){
+	return S!Block.all;
+}
+
+operation Any createName(name : String){
+	var n = new T!LangString;
+	n.content = name;
+	self.name = n;
+}
+
+operation Any createDescription(description : String){
+	var d = new T!Description;
+	var content = new T!MultiLangString;
+	var value = new T!LangString;
+	value.content = description;
+	content.value.add(value);
+	d.content = content;
+	self.description = d;
+}
+
+operation Any createImplementationConstraint(description: String){
+	var d = new T!ImplementationConstraint;
+	var content = new T!MultiLangString;
+	var value = new T!LangString;
+	value.content = description;
+	content.value.add(value);
+	d.content = content;
+	self.implementationConstraint.add(d);
+}
+
+operation Any createExternalReference(){
+	var e = new T!ExternalReference;
+	var locationContent = new T!LangString;
+	var typeContent = new T!LangString;
+	var metadataContent = new T!LangString;
+	locationContent.content = "location";
+	typeContent.content = "type";
+	metadataContent.content = "metadata";
+	e.location = locationContent;
+	e.type = typeContent;
+	e.metadata = metadataContent;
+	e.createImplementationConstraint("Query");
+	self.externalReference = e;
+}
+
+operation T!DigitalTwinPackage Create&AddComponentPackage(){
+	var cp = createComponentPackage();
+	self.componentPackages.add(cp);
+	return cp;
+}
+
+operation T!DigitalTwinPackage Create&AddTerminologyPackage(){
+	var tp = createTerminologyPackage();
+	self.terminologyPackages.add(tp);
+	return tp;
+}
+
+operation createDigitalTwinPackage(){
+	var DTp = new T!DigitalTwinPackage;
+	return DTp;
+}
+
+operation Any createArtifactElement(name : String, description : String){
+	self.createName(name);
+	self.createDescription(description);
+	self.createExternalReference();
+	return self;
+}
+
+operation createComponentPackage(){
+	var cp = new T!ComponentPackage;
+	cp.createComponentElement("New ComponentPackage", "ComponentPackage Description");
+	return cp;
+}
+
+operation createTerminologyPackage(){
+	var tp = new T!TerminologyPackage;
+	tp.createTerminologyElement("New TerminologyPackage", "TerminologyPackage Description");
+	return tp;
+}
+
+operation Any createTerminologyElement(name : String, description : String){
+	return self.createArtifactElement(name, description);
+}
+
+operation Any createComponentElement(name : String, description : String){
+	return self.createArtifactElement(name, description);
+}
+
+operation createComponent(){
+	var c = new T!Component;
+	c.createComponentElement("Component", "");
+	c.externalReference.createImplementationConstraint("Query Result");
+	c.externalReference.createImplementationConstraint("Simulation Variable");
+	c.externalReference.createImplementationConstraint("Simulation Result");
+	return c;
+}
+
+operation T!ComponentPackage createRootComponent(){
+	var c = createComponent();
+	self.components.add(c);
+	return c;
+}
+
+operation T!Component createSubComponent(){
+	var c = createComponent();
+	self.sub_components.add(c);
+	return c;
+}
+
+operation Any createReading(){
+	var r = new T!Reading;
+	self.reading = r;
+}
+
+operation T!Component createOutput(){
+	var output = new T!Output;
+	output = output.createComponentElement("O", "Output Description");
+	output.createReading();
+	self.outputs.add(output);
+	return output;
+}
+
+operation T!Component createInput(){
+	var input = new T!Input;
+	input = input.createComponentElement("I", "Input Description");
+	input.createReading();
+	self.inputs.add(input);
+	return input;
+}
+
+operation createComponentRelationship(source : Any, target : Any){
+	var cr = new T!ComponentRelationship;
+	cr.source = source;
+	cr.target = target;
+	return cr;
+}
+
+operation T!ComponentPackage createRootComponentRelationship(source : Any, target : Any){
+	var cr = createComponentRelationship(source, target);
+	self.components.add(cr);
+	return cr;
+}
+
+operation T!Component createSubComponentRelationship(source : Any, target : Any){
+	var cr = createComponentRelationship(source, target);
+	self.sub_components.add(cr);
+	return cr;
+}
+
+operation T!ComponentPackage createJoin(){
+	var join = new T!Join;
+	join = join.createComponentElement("J", "Join Description");
+	join.createReading(join);
+	self.components.add(join);
+	return join;
+}
+
+operation T!ComponentPackage createFork(){
+	var fork = new T!Fork;
+	fork = fork.createComponentElement("F", "Fork Description");
+	fork.createReading();
+	self.components.add(fork);
+	return fork;
+}

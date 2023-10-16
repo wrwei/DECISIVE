@@ -1,0 +1,155 @@
+@namespace(uri="http://cnsa.ee.digital.twin/component", prefix="component_")
+package component;
+
+import "http://cnsa.ee.digital.twin/base";
+
+abstract class ComponentElement extends base.ArtifactElement {
+}
+
+class ComponentPackage extends ComponentElement {
+	val ComponentElement[*] components;
+	ref ComponentPackageInterface[*] ~interface;
+}
+
+class ComponentPackageInterface extends ComponentElement {
+	ref ComponentPackage[1] implements;
+}
+
+class ComponentPackageBinding extends ComponentElement {
+	ref ComponentPackage[2..*] participantPackage;
+}
+
+class Component extends ComponentElement {
+	attr int identity;
+	attr String component_name;
+	attr Boolean reuse;
+	attr Boolean cots;
+	attr float fit;
+	attr boolean safety_related;
+	attr int sil;
+	val Reading[*] readings;
+	ref base.ArtifactElement blockType;
+	ref Function function;
+	attr ComponentType[1] componentType;
+	val Input[*] inputs;
+	val Output[*] outputs;
+	val LPort[*] lports;
+	val RPort[*] rports;
+	val ComponentElement[*] sub_components;
+	val FailureMode[*] failure_modes;
+	val SafetyMechanism[*] safety_mechanisms;
+	ref base.ArtifactElement[*] requirements;
+}
+
+abstract class ComponentRelationship extends ComponentElement {
+	attr String label;
+}
+
+class DirectedRelationship extends ComponentRelationship {
+	ref ComponentElement source;
+	ref ComponentElement target;
+}
+
+class UndirectedRelationship extends ComponentRelationship {
+	ref ComponentElement source;
+	ref ComponentElement target;
+}
+
+abstract class ComponentAsset extends ComponentElement {
+}
+
+abstract class UtilityNodes extends ComponentAsset {
+	val Reading reading;
+}
+
+abstract class TransitionNode extends UtilityNodes {
+}
+
+class Fork extends TransitionNode {
+	ref ComponentElement[1] source;
+	ref ComponentElement[*] target;
+}
+
+class Switch extends TransitionNode {
+	ref ComponentElement[*] ports;
+}
+
+abstract class IONode extends UtilityNodes {
+}
+
+class Input extends IONode {
+}
+
+class Output extends IONode {
+}
+
+class LPort extends IONode {
+}
+
+class RPort extends IONode {
+}
+
+class Function extends ComponentAsset {
+	attr String func;
+}
+
+class Reading extends ComponentAsset {
+	attr double value;
+	attr String unit;
+}
+
+abstract class ComponentSafetyElement extends ComponentAsset {
+	attr int identity;
+}
+
+enum FailureSeverity {
+	catastrophic = 1;
+	fatal = 2;
+	moderate = 3;
+	minor = 4;
+}
+
+enum ComponentType {
+	function = 1;
+	hardware = 2;
+	software = 3;
+}
+
+enum ToleranceType {
+	oneoo1 = 1;
+	oneoo2 = 2;
+	oneoo3 = 3;
+	twooo3 = 4;
+}
+
+class FailureMode extends ComponentSafetyElement {
+	attr String mode;
+	attr String cause;
+	attr float probability;
+	attr boolean safety_related;
+	ref base.ArtifactElement[*] hazards;
+	val RegionalEffect regional;
+	val HigherLevelEffect higher_level;
+	val FinalEffect final;
+}
+
+class SafetyMechanism extends ComponentSafetyElement {
+	ref FailureMode handle;
+	attr String mechanism;
+	attr float coverage;
+}
+
+abstract class FailureEffect extends ComponentSafetyElement {
+	attr String desc;
+	ref Component[*] affected;
+}
+
+class RegionalEffect extends FailureEffect {
+}
+
+class HigherLevelEffect extends FailureEffect {
+}
+
+class FinalEffect extends FailureEffect {
+}
+

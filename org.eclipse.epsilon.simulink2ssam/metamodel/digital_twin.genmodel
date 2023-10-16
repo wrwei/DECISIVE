@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/cnsa.ee.digital.twin/src" modelPluginID="cnsa.ee.digital.twin"
+    modelName="Digital_twin" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>digital_twin.ecore</foreignModel>
+  <genPackages prefix="Digital_twin" disposableProviderFactory="true" fileExtensions="digital_twin_"
+      ecorePackage="digital_twin.ecore#/">
+    <genClasses ecoreClass="digital_twin.ecore#//DigitalTwinPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference digital_twin.ecore#//DigitalTwinPackage/digitalTwinPackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference digital_twin.ecore#//DigitalTwinPackage/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference digital_twin.ecore#//DigitalTwinPackage/componentPackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference digital_twin.ecore#//DigitalTwinPackage/artifactPackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference digital_twin.ecore#//DigitalTwinPackage/terminologyPackages"/>
+    </genClasses>
+    <genClasses ecoreClass="digital_twin.ecore#//DigitalTwinPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference digital_twin.ecore#//DigitalTwinPackageInterface/interfaceOf"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Base" fileExtensions="base_" ecorePackage="http://cnsa.ee.digital.twin/base#/">
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/base#//Element"/>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/base#//DTElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/base#//DTElement/gid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/base#//DTElement/isCitation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/base#//DTElement/isAbstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//DTElement/citedElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/base#//ModelElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ModelElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ModelElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ModelElement/implementationConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ModelElement/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ModelElement/taggedValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ModelElement/externalReference"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//LangString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/base#//LangString/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/base#//LangString/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//MultiLangString">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//MultiLangString/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/base#//UtilityElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//UtilityElement/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//ExternalReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ExternalReference/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ExternalReference/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ExternalReference/metadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//ExternalReference/implementationConstraint"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//Description"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//ImplementationConstraint"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//Note"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/base#//TaggedValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/base#//TaggedValue/key"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/base#//ArtifactElement"/>
+  </genPackages>
+  <genPackages prefix="Component" fileExtensions="component_" ecorePackage="http://cnsa.ee.digital.twin/component#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://cnsa.ee.digital.twin/component#//FailureSeverity">
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//FailureSeverity/catastrophic"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//FailureSeverity/fatal"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//FailureSeverity/moderate"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//FailureSeverity/minor"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://cnsa.ee.digital.twin/component#//ComponentType">
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ComponentType/function"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ComponentType/hardware"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ComponentType/software"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://cnsa.ee.digital.twin/component#//ToleranceType">
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ToleranceType/oneoo1"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ToleranceType/oneoo2"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ToleranceType/oneoo3"/>
+      <genEnumLiterals ecoreEnumLiteral="http://cnsa.ee.digital.twin/component#//ToleranceType/twooo3"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentElement"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//ComponentPackage/components"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//ComponentPackage/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//ComponentPackageInterface/implements"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentPackageBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//ComponentPackageBinding/participantPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/identity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/component_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/reuse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/cots"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/fit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/safety_related"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/sil"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/readings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/blockType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Component/componentType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/outputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/lports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/rports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/sub_components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/failure_modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/safety_mechanisms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Component/requirements"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentRelationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//ComponentRelationship/label"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//DirectedRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//DirectedRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//DirectedRelationship/target"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//UndirectedRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//UndirectedRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//UndirectedRelationship/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentAsset"/>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//UtilityNodes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//UtilityNodes/reading"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//TransitionNode"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Fork">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Fork/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Fork/target"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Switch">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//Switch/ports"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//IONode"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Input"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Output"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//LPort"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//RPort"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Function/func"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//Reading">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Reading/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//Reading/unit"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//ComponentSafetyElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//ComponentSafetyElement/identity"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//FailureMode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//FailureMode/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//FailureMode/cause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//FailureMode/probability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//FailureMode/safety_related"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//FailureMode/hazards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//FailureMode/regional"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//FailureMode/higher_level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//FailureMode/final"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//SafetyMechanism">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//SafetyMechanism/handle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//SafetyMechanism/mechanism"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//SafetyMechanism/coverage"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/component#//FailureEffect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/component#//FailureEffect/desc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/component#//FailureEffect/affected"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//RegionalEffect"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//HigherLevelEffect"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/component#//FinalEffect"/>
+  </genPackages>
+  <genPackages prefix="Artifact" fileExtensions="artifact_" ecorePackage="http://cnsa.ee.digital.twin/artifact#/">
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//ArtifactPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/artifact#//ArtifactPackage/artifactElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/artifact#//ArtifactPackage/interfaces"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//ArtifactPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/artifact#//ArtifactPackageInterface/interfaceOf"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/artifact#//ArtifactAsset">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/artifact#//ArtifactAsset/artifactProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Property"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Technique"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Participant"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/artifact#//Activity/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/artifact#//Activity/endTime"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/artifact#//Event/occurence"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Resource"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//Artifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/artifact#//Artifact/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/artifact#//Artifact/date"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/artifact#//ArtifactAssetRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/artifact#//ArtifactAssetRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/artifact#//ArtifactAssetRelationship/target"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Terminology" fileExtensions="terminology_" ecorePackage="http://cnsa.ee.digital.twin/terminology#/">
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/terminology#//TerminologyElement"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//TerminologyGroup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//TerminologyGroup/terminologyElement"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//TerminologyPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//TerminologyPackage/terminologyElement"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//TerminologyPackageBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//TerminologyPackageBinding/participantPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//TerminologyPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//TerminologyPackageInterface/implements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/terminology#//TerminologyAsset"/>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//Category">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//Category/category"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://cnsa.ee.digital.twin/terminology#//ExpressionElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://cnsa.ee.digital.twin/terminology#//ExpressionElement/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//ExpressionElement/category"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//Expression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//Expression/element"/>
+    </genClasses>
+    <genClasses ecoreClass="http://cnsa.ee.digital.twin/terminology#//Term">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://cnsa.ee.digital.twin/terminology#//Term/origin"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

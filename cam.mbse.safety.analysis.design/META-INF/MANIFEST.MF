@@ -10,7 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
- cam.mbse.safety.analysis;bundle-version="0.1.0",
  org.eclipse.epsilon.eol.engine;bundle-version="2.4.0",
  org.eclipse.epsilon.eol.dt;bundle-version="2.4.0",
  org.eclipse.sirius.diagram;bundle-version="7.0.5",
@@ -21,7 +20,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.epsilon.emf.dt;bundle-version="2.4.0",
  org.eclipse.emf.common.ui;bundle-version="2.18.0",
  org.eclipse.epsilon.emc.csv;bundle-version="2.4.0",
- org.eclipse.epsilon.emc.spreadsheets.excel;bundle-version="2.4.0"
+ org.eclipse.epsilon.emc.spreadsheets.excel;bundle-version="2.4.0",
+ cam.mbse.safety.analysis;bundle-version="0.1.0",
+ cam.mbse.safety.analysis.edit;bundle-version="1.0.0",
+ cam.mbse.safety.analysis.editor;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName

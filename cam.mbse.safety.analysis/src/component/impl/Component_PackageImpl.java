@@ -663,6 +663,26 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
+	public EReference getComponentRelationship_Source() {
+		return (EReference)componentRelationshipEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponentRelationship_Target() {
+		return (EReference)componentRelationshipEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDirectedRelationship() {
 		return directedRelationshipEClass;
 	}
@@ -673,48 +693,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getDirectedRelationship_Source() {
-		return (EReference)directedRelationshipEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDirectedRelationship_Target() {
-		return (EReference)directedRelationshipEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getUndirectedRelationship() {
 		return undirectedRelationshipEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getUndirectedRelationship_Source() {
-		return (EReference)undirectedRelationshipEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getUndirectedRelationship_Target() {
-		return (EReference)undirectedRelationshipEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1302,14 +1282,12 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 
 		componentRelationshipEClass = createEClass(COMPONENT_RELATIONSHIP);
 		createEAttribute(componentRelationshipEClass, COMPONENT_RELATIONSHIP__LABEL);
+		createEReference(componentRelationshipEClass, COMPONENT_RELATIONSHIP__SOURCE);
+		createEReference(componentRelationshipEClass, COMPONENT_RELATIONSHIP__TARGET);
 
 		directedRelationshipEClass = createEClass(DIRECTED_RELATIONSHIP);
-		createEReference(directedRelationshipEClass, DIRECTED_RELATIONSHIP__SOURCE);
-		createEReference(directedRelationshipEClass, DIRECTED_RELATIONSHIP__TARGET);
 
 		undirectedRelationshipEClass = createEClass(UNDIRECTED_RELATIONSHIP);
-		createEReference(undirectedRelationshipEClass, UNDIRECTED_RELATIONSHIP__SOURCE);
-		createEReference(undirectedRelationshipEClass, UNDIRECTED_RELATIONSHIP__TARGET);
 
 		componentAssetEClass = createEClass(COMPONENT_ASSET);
 
@@ -1483,14 +1461,12 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 
 		initEClass(componentRelationshipEClass, ComponentRelationship.class, "ComponentRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentRelationship_Label(), ecorePackage.getEString(), "label", null, 0, 1, ComponentRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentRelationship_Source(), this.getComponentElement(), null, "source", null, 0, 1, ComponentRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentRelationship_Target(), this.getComponentElement(), null, "target", null, 0, 1, ComponentRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(directedRelationshipEClass, DirectedRelationship.class, "DirectedRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDirectedRelationship_Source(), this.getComponentElement(), null, "source", null, 0, 1, DirectedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDirectedRelationship_Target(), this.getComponentElement(), null, "target", null, 0, 1, DirectedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(undirectedRelationshipEClass, UndirectedRelationship.class, "UndirectedRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUndirectedRelationship_Source(), this.getComponentElement(), null, "source", null, 0, 1, UndirectedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUndirectedRelationship_Target(), this.getComponentElement(), null, "target", null, 0, 1, UndirectedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentAssetEClass, ComponentAsset.class, "ComponentAsset", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -1,0 +1,20 @@
+@namespace(uri="http://cnsa.ee.digital.twin/digital_twin", prefix="digital_twin_")
+package digital_twin;
+import "http://cnsa.ee.digital.twin/base";
+import "http://cnsa.ee.digital.twin/component";
+import "http://cnsa.ee.digital.twin/artifact";
+import "http://cnsa.ee.digital.twin/terminology";
+
+  
+  class DigitalTwinPackage extends base.ArtifactElement {
+    val DigitalTwinPackage[*] digitalTwinPackages;
+    val DigitalTwinPackageInterface[*] interfaces;
+    val component.ComponentPackage[*] componentPackages;
+    val artifact.ArtifactPackage[*] artifactPackages;
+    val terminology.TerminologyPackage[*] terminologyPackages;
+  }
+  
+  class DigitalTwinPackageInterface extends DigitalTwinPackage {
+  	ref DigitalTwinPackage interfaceOf;
+  }
+  

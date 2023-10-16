@@ -51,15 +51,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComponentRelationship" abstract="true"
       eSuperTypes="#//ComponentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" eSuperTypes="#//ComponentRelationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ComponentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//ComponentElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UndirectedRelationship" eSuperTypes="#//ComponentRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ComponentElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//ComponentElement"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" eSuperTypes="#//ComponentRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UndirectedRelationship" eSuperTypes="#//ComponentRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentAsset" abstract="true" eSuperTypes="#//ComponentElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="UtilityNodes" abstract="true" eSuperTypes="#//ComponentAsset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reading" eType="#//Reading"

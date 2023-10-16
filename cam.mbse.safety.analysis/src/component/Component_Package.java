@@ -929,13 +929,31 @@ public interface Component_Package extends EPackage {
 	int COMPONENT_RELATIONSHIP__LABEL = COMPONENT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_RELATIONSHIP__SOURCE = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_RELATIONSHIP__TARGET = COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Component Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_RELATIONSHIP_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_RELATIONSHIP_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link component.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
@@ -1053,7 +1071,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_RELATIONSHIP__SOURCE = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int DIRECTED_RELATIONSHIP__SOURCE = COMPONENT_RELATIONSHIP__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1062,7 +1080,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_RELATIONSHIP__TARGET = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int DIRECTED_RELATIONSHIP__TARGET = COMPONENT_RELATIONSHIP__TARGET;
 
 	/**
 	 * The number of structural features of the '<em>Directed Relationship</em>' class.
@@ -1071,7 +1089,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_RELATIONSHIP_FEATURE_COUNT = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int DIRECTED_RELATIONSHIP_FEATURE_COUNT = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link component.impl.UndirectedRelationshipImpl <em>Undirected Relationship</em>}' class.
@@ -1189,7 +1207,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNDIRECTED_RELATIONSHIP__SOURCE = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 0;
+	int UNDIRECTED_RELATIONSHIP__SOURCE = COMPONENT_RELATIONSHIP__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1198,7 +1216,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNDIRECTED_RELATIONSHIP__TARGET = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 1;
+	int UNDIRECTED_RELATIONSHIP__TARGET = COMPONENT_RELATIONSHIP__TARGET;
 
 	/**
 	 * The number of structural features of the '<em>Undirected Relationship</em>' class.
@@ -1207,7 +1225,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNDIRECTED_RELATIONSHIP_FEATURE_COUNT = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 2;
+	int UNDIRECTED_RELATIONSHIP_FEATURE_COUNT = COMPONENT_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentAssetImpl <em>Component Asset</em>}' class.
@@ -4279,6 +4297,28 @@ public interface Component_Package extends EPackage {
 	EAttribute getComponentRelationship_Label();
 
 	/**
+	 * Returns the meta object for the reference '{@link component.ComponentRelationship#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see component.ComponentRelationship#getSource()
+	 * @see #getComponentRelationship()
+	 * @generated
+	 */
+	EReference getComponentRelationship_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link component.ComponentRelationship#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see component.ComponentRelationship#getTarget()
+	 * @see #getComponentRelationship()
+	 * @generated
+	 */
+	EReference getComponentRelationship_Target();
+
+	/**
 	 * Returns the meta object for class '{@link component.DirectedRelationship <em>Directed Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4289,28 +4329,6 @@ public interface Component_Package extends EPackage {
 	EClass getDirectedRelationship();
 
 	/**
-	 * Returns the meta object for the reference '{@link component.DirectedRelationship#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see component.DirectedRelationship#getSource()
-	 * @see #getDirectedRelationship()
-	 * @generated
-	 */
-	EReference getDirectedRelationship_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link component.DirectedRelationship#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see component.DirectedRelationship#getTarget()
-	 * @see #getDirectedRelationship()
-	 * @generated
-	 */
-	EReference getDirectedRelationship_Target();
-
-	/**
 	 * Returns the meta object for class '{@link component.UndirectedRelationship <em>Undirected Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4319,28 +4337,6 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EClass getUndirectedRelationship();
-
-	/**
-	 * Returns the meta object for the reference '{@link component.UndirectedRelationship#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see component.UndirectedRelationship#getSource()
-	 * @see #getUndirectedRelationship()
-	 * @generated
-	 */
-	EReference getUndirectedRelationship_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link component.UndirectedRelationship#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see component.UndirectedRelationship#getTarget()
-	 * @see #getUndirectedRelationship()
-	 * @generated
-	 */
-	EReference getUndirectedRelationship_Target();
 
 	/**
 	 * Returns the meta object for class '{@link component.ComponentAsset <em>Component Asset</em>}'.
@@ -5173,6 +5169,22 @@ public interface Component_Package extends EPackage {
 		EAttribute COMPONENT_RELATIONSHIP__LABEL = eINSTANCE.getComponentRelationship_Label();
 
 		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_RELATIONSHIP__SOURCE = eINSTANCE.getComponentRelationship_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_RELATIONSHIP__TARGET = eINSTANCE.getComponentRelationship_Target();
+
+		/**
 		 * The meta object literal for the '{@link component.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5183,22 +5195,6 @@ public interface Component_Package extends EPackage {
 		EClass DIRECTED_RELATIONSHIP = eINSTANCE.getDirectedRelationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getDirectedRelationship_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getDirectedRelationship_Target();
-
-		/**
 		 * The meta object literal for the '{@link component.impl.UndirectedRelationshipImpl <em>Undirected Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5207,22 +5203,6 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EClass UNDIRECTED_RELATIONSHIP = eINSTANCE.getUndirectedRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNDIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getUndirectedRelationship_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNDIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getUndirectedRelationship_Target();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.ComponentAssetImpl <em>Component Asset</em>}' class.

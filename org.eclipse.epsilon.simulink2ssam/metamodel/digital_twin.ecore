@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="digital_twin" nsURI="http://cnsa.ee.digital.twin/digital_twin"
+    nsPrefix="digital_twin_">
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalTwinPackage" eSuperTypes="http://cnsa.ee.digital.twin/base#//ArtifactElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="digitalTwinPackages" upperBound="-1"
+        eType="#//DigitalTwinPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+        eType="#//DigitalTwinPackageInterface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentPackages" upperBound="-1"
+        eType="ecore:EClass http://cnsa.ee.digital.twin/component#//ComponentPackage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifactPackages" upperBound="-1"
+        eType="ecore:EClass http://cnsa.ee.digital.twin/artifact#//ArtifactPackage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyPackages" upperBound="-1"
+        eType="ecore:EClass http://cnsa.ee.digital.twin/terminology#//TerminologyPackage"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalTwinPackageInterface" eSuperTypes="#//DigitalTwinPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceOf" eType="#//DigitalTwinPackage"/>
+  </eClassifiers>
+</ecore:EPackage>

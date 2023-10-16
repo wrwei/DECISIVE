@@ -16,6 +16,11 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="fta.Fta_Package"
+            genModel="metamodel/fta.genmodel"
+            uri="http://cam.ac.uk/mbsa/fta">
+      </package>
       <!-- @generated standard -->
    </extension>
 
@@ -64,6 +69,6 @@
       <package
             uri="http://cam.ac.uk/mbsa/base"
             class="base.Base_Package"
-            genModel="metamodel/component.genmodel"/>
+            genModel="metamodel/base.genmodel"/>
    </extension>
 </plugin>

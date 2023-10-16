@@ -66,15 +66,11 @@
     </genClasses>
     <genClasses image="false" ecoreClass="component.ecore#//ComponentRelationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ComponentRelationship/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentRelationship/target"/>
     </genClasses>
-    <genClasses ecoreClass="component.ecore#//DirectedRelationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//DirectedRelationship/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//DirectedRelationship/target"/>
-    </genClasses>
-    <genClasses ecoreClass="component.ecore#//UndirectedRelationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//UndirectedRelationship/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//UndirectedRelationship/target"/>
-    </genClasses>
+    <genClasses ecoreClass="component.ecore#//DirectedRelationship"/>
+    <genClasses ecoreClass="component.ecore#//UndirectedRelationship"/>
     <genClasses image="false" ecoreClass="component.ecore#//ComponentAsset"/>
     <genClasses image="false" ecoreClass="component.ecore#//UtilityNodes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//UtilityNodes/reading"/>

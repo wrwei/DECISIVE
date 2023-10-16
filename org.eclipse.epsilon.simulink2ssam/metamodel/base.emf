@@ -1,0 +1,58 @@
+@namespace(uri="http://cnsa.ee.digital.twin/base", prefix="base_")
+package base;
+
+abstract class Element {
+}
+
+abstract class DTElement extends Element {
+	attr String gid;
+	attr boolean isCitation = false;
+	attr boolean isAbstract = false;
+	ref DTElement citedElement;
+}
+
+abstract class ModelElement extends DTElement {
+	val LangString[1] name;
+	val Description description;
+	val ImplementationConstraint[*] implementationConstraint;
+	val Note[*] note;
+	val TaggedValue[*] taggedValue;
+	val ExternalReference externalReference;
+}
+
+class LangString extends Element {
+	attr String lang;
+	attr String content;
+}
+
+class MultiLangString extends Element {
+	val LangString[+] value;
+}
+
+abstract class UtilityElement extends DTElement {
+	val MultiLangString[1] content;
+}
+
+class ExternalReference extends UtilityElement {
+	val LangString location;
+	val LangString type;
+	val LangString metadata;
+	val ImplementationConstraint[*] implementationConstraint;
+}
+
+class Description extends UtilityElement {
+}
+
+class ImplementationConstraint extends UtilityElement {
+}
+
+class Note extends UtilityElement {
+}
+
+class TaggedValue extends UtilityElement {
+	val MultiLangString[1] key;
+}
+
+abstract class ArtifactElement extends ModelElement {
+}
+

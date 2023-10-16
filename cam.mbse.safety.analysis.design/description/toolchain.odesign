@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="toolchain" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="mbsa" version="12.0.0.2017041100">
   <ownedViewpoints name="MBSAViewPoint" modelFileExtension="mbsa">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="component_package_diagram" domainClass="component::ComponentPackage" enablePopupBars="true">
-      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
       <metamodel href="http://cam.ac.uk/mbsa/component#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/mbsa#/"/>
       <defaultLayer name="Component_package_diagram">
         <nodeMappings name="Component" semanticCandidatesExpression="aql:self.components->select(s|s.oclIsTypeOf(component::Component))" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']" domainClass="component::Component">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.component_name" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -19,7 +20,7 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Join" semanticCandidatesExpression="feature:components" domainClass="component::Join">
+        <nodeMappings name="Join" semanticCandidatesExpression="feature:components" domainClass="component::Switch">
           <style xsi:type="style:DotDescription" labelSize="12" labelExpression="J" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW" strokeSizeComputationExpression="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -102,7 +103,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component::Join" referenceName="components"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="component::Switch" referenceName="components"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -146,10 +147,10 @@
                       <firstModelOperations xsi:type="tool_1:ChangeContext"/>
                     </initialOperation>
                   </buttons>
-                  <page name="Default Page" labelExpression="feature:component_name" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0 //@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1 //@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.2"/>
+                  <page name="Default Page" labelExpression="Component" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0 //@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1 //@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.2"/>
                   <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
                     <controls xsi:type="properties:ContainerDescription" name="container1">
-                      <controls xsi:type="properties:TextDescription" name="id_input" labelExpression="ID" valueExpression="feature:identity">
+                      <controls xsi:type="properties:TextDescription" name="id_input" labelExpression="ID" valueExpression="aql:self.gid">
                         <initialOperation>
                           <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                             <subModelOperations xsi:type="tool_1:SetValue" featureName="identity" valueExpression="var:newValue"/>
@@ -313,6 +314,11 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="mbsa_package_diagram" initialisation="true" domainClass="mbsa::MBSAPackage" enablePopupBars="true">
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/component#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/hazard#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/mbsa#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/requirement#/"/>
       <defaultLayer name="MBSADiagram">
         <nodeMappings name="MBSAPackage" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewElementProperty']" domainClass="mbsa::MBSAPackage">
           <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.name.content" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
@@ -457,6 +463,8 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="component_diagram" domainClass="component::Component" enablePopupBars="true">
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/component#/"/>
       <defaultLayer name="Component_diagram">
         <nodeMappings name="Component" semanticCandidatesExpression="feature:sub_components" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfComponent']" domainClass="component::Component">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.component_name" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -980,6 +988,8 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="requirement_package_diagram" initialisation="true" domainClass="requirement::RequirementPackage" enablePopupBars="true">
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/requirement#/"/>
       <defaultLayer name="Requirement_diagram">
         <nodeMappings name="RequirementNode" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewRequirementProperties']" domainClass="requirement::Requirement">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.name.content" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -1175,6 +1185,8 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="hazard_package_diagram" initialisation="true" domainClass="hazard::HazardPackage" enablePopupBars="true">
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/hazard#/"/>
       <defaultLayer name="Hazard_diagram">
         <nodeMappings name="HazardNode" semanticCandidatesExpression="feature:hazardElement" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_package_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfHazard']" domainClass="hazard::HazardousSituation">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.name.content" labelPosition="node" resizeKind="NSEW" width="20" height="5">
@@ -1411,6 +1423,12 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="controlmeasure_diagram" initialisation="true" domainClass="hazard::ControlMeasure" enablePopupBars="true">
+      <metamodel href="http://cam.ac.uk/mbsa/base#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/component#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/fta#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/hazard#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/mbsa#/"/>
+      <metamodel href="http://cam.ac.uk/mbsa/requirement#/"/>
       <defaultLayer name="ControlMeasure_diagram">
         <nodeMappings name="VerificationEffectiveness" doubleClickDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='controlmeasure_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ViewPropertiesOfVerificationEffectiveness']" domainClass="hazard::VerificationofEffectiveness">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:self.identity+': '+self.name.content" labelPosition="node" resizeKind="NSEW" width="20" height="5">

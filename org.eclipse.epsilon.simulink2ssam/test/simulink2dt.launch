@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.epsilon.eol.eclipse.dt.launching.EolLaunchConfigurationDelegate">
+<stringAttribute key="bad_container_name" value="\org.eclipse.epsilon.simulink2dt\transformation\s"/>
+<booleanAttribute key="fine_grained_profiling" value="false"/>
+<stringAttribute key="implementation_name" value="Parallel"/>
+<listAttribute key="models">
+<listEntry value="#Sat Aug 26 10:22:20 CST 2023&#13;&#10;reduce_matlab_exchanges=false&#13;&#10;closeOnDispose=false&#13;&#10;project=&#13;&#10;storeOnDisposal=false&#13;&#10;type=Simulink&#13;&#10;readOnLoad=true&#13;&#10;use_current_project=false&#13;&#10;tryCatch=true&#13;&#10;concurrent=false&#13;&#10;cached=true&#13;&#10;openOnLoad=false&#13;&#10;include_commented=false&#13;&#10;paths=&#13;&#10;find_optimisation_enabled=true&#13;&#10;aliases=&#13;&#10;follow_links=false&#13;&#10;file=/org.eclipse.epsilon.simulink2dt/test/lab3.slx&#13;&#10;current_simulink_model=false&#13;&#10;working_dir=&#13;&#10;name=S"/>
+<listEntry value="#Sat Aug 26 10:22:29 CST 2023&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=T&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://cnsa.ee.digital.twin/artifact,http\://cnsa.ee.digital.twin/base,http\://cnsa.ee.digital.twin/component,http\://cnsa.ee.digital.twin/digital_twin,http\://cnsa.ee.digital.twin/terminology&#13;&#10;modelUri=platform\:/resource/org.eclipse.epsilon.simulink2dt/test/dt.model&#13;&#10;concurrent=false&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/org.eclipse.epsilon.simulink2dt/test/dt.model&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+<intAttribute key="parallelism" value="19"/>
+<listAttribute key="parameters"/>
+<booleanAttribute key="profile_model_loading" value="false"/>
+<booleanAttribute key="profiling_enabled" value="false"/>
+<booleanAttribute key="reset_profiler" value="false"/>
+<stringAttribute key="source" value="/org.eclipse.epsilon.simulink2dt/test/simulink2dt.eol"/>
+</launchConfiguration>

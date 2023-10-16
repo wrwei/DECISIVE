@@ -44,16 +44,15 @@ class Component extends ComponentElement {
 
 abstract class ComponentRelationship extends ComponentElement {
 	attr String label;
+	ref ComponentElement source;
+	ref ComponentElement target;
 }
 
 class DirectedRelationship extends ComponentRelationship {
-	ref ComponentElement source;
-	ref ComponentElement target;
+	
 }
 
 class UndirectedRelationship extends ComponentRelationship {
-	ref ComponentElement source;
-	ref ComponentElement target;
 }
 
 abstract class ComponentAsset extends ComponentElement {
